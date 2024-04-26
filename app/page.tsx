@@ -9,11 +9,14 @@ export default function Home() {
       <Navbar/>
       <Spotlight className="hidden md:flex md:-top-80 left-80  " fill="white" />
       <div className="p-4 mx-auto relative z-10 w-full pt-10 md:pt-20 px-2">
-        <div className="text-4xl pb-5 md:text-7xl px-6 text-center  bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to bg-neutral-400 bg-opacity-50">
-          Create, grow, and <br /> scale your business
+        <div className="text-4xl pb-5 md:text-5xl px-6 text-center  bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to bg-neutral-400 bg-opacity-50">
+        Welcome to Infinite Edits<br/> where your vision meets our creativity.
         </div>
-        <p className="mt-4 text-lg font-normal  text-neutral-300 max-w-lg text-center mx-auto px-4">
-          Custom tailored solutions for your business. We are a team of creatives who are excited to help you grow your business.
+        <p className="mt-4 text- font-normal  text-neutral-300 max-w-lg text-center mx-auto px-4">
+        We can edit videos that help you get more leads, save your time and make you more money
+        </p>
+        <p className="mt-4  font-normal  text-neutral-300 max-w-lg text-center mx-auto px-4">
+        Specialising in high-quality video editing, graphic design, and motion graphics, we turn your raw footage into polished stories ready to captivate audiences
         </p>
 
         <Link
