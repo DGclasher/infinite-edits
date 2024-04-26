@@ -23,7 +23,7 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({ onClose }) => {
      top-28
      left-0
      right-0
-     z-80
+     z-50
      rounded-t-3xl
     "
       initial={{ opacity: 0, y: "-80%" }}
