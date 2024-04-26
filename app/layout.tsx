@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { Navigation } from "@/components/navbar";
-
+import Navbar from "@/components/navbar";
 const font = Poppins({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
@@ -19,7 +18,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <>
-          <Navigation />
+          <div className="w-full md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
+            <Navbar />
+          </div>
           {children}
         </>
       </body>
