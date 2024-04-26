@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { AuroraBackground } from "./ui/aurora-bg";
+import Link from "next/link";
 
 export function AuroraBackgroundDemo(className: any) {
   return (
@@ -17,15 +18,22 @@ export function AuroraBackgroundDemo(className: any) {
         }}
         className="relative flex flex-col gap-4 items-center justify-center px-4"
       >
-        <div className="text-3xl md:text-7xl font-bold text-white text-center">
-          Background lights are cool you know.
+        <div className="p-4 mx-auto relative z-10 w-full pt-10 md:pt-20 px-2">
+          <div className="text-4xl pb-5 md:text-7xl px-6 text-center  bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to bg-neutral-400 bg-opacity-50">
+            Create, grow, and <br /> scale your business
+          </div>
+          <p className="mt-4 text-lg font-normal  text-neutral-300 max-w-lg text-center mx-auto px-4">
+            Custom tailored solutions for your business. We are a team of
+            creatives who are excited to help you grow your business.
+          </p>
+
+          <Link
+            href={"/book"}
+            className="cursor-pointer flex items-center justify-center border rounded-full w-48 p-2  mx-auto my-6 text-white "
+          >
+            Book a call
+          </Link>
         </div>
-        <div className="font-extralight text-base md:text-4xltext-neutral-200 py-4">
-          And this, is chemical burn.
-        </div>
-        <button className="bg-white rounded-full w-fit text-black px-4 py-2">
-          Debug now
-        </button>
       </motion.div>
     </AuroraBackground>
   );

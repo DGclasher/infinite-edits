@@ -36,7 +36,6 @@ import { useToast } from "@/components/ui/use-toast";
 
 import { Textarea } from "@/components/ui/textarea";
 import { PiCheckLight, PiSmiley } from "react-icons/pi";
-import Navbar from "@/components/navbar";
 
 const FormSchema = z.object({
   first_name: z.string(),
@@ -109,7 +108,10 @@ export default function ContactForm() {
         throw new Error("Something went wrong");
       }
 
-      setSubmitted(true);
+      toast({
+        title: "Success",
+        description: "Your message has been sent",
+      });
     } catch (error) {
       toast({
         title: "Error",
@@ -132,7 +134,7 @@ export default function ContactForm() {
               
               py-4
               text-gray-300
-                    "   
+                    "
           >
             Let&apos;s talk about how Bird can help your team work better.
             <iframe
@@ -149,58 +151,25 @@ export default function ContactForm() {
               title="Google Maps"
             ></iframe>
           </div>
-          
         </div>
 
         <Form {...form}>
-          {!submitted ? (
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="
             space-y-4
             h-full
             border rounded-3xl p-10
             md:w-1/3"
-            >
-              <div className="md:flex items-center gap-6 ">
-                <FormField
-                  control={form.control}
-                  name="first_name"
-                  render={({ field }) => (
-                    <FormItem className="items-center justify-center  w-full">
-                      <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                        First name *
-                      </FormLabel>
-                      <FormControl>
-                        <Input {...field} className="bg-zinc-900 text-white" />
-                      </FormControl>
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="last_name"
-                  render={({ field }) => (
-                    <FormItem className="items-center justify-center  w-full">
-                      <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                        Last name *
-                      </FormLabel>
-                      <FormControl>
-                        <Input {...field} className="bg-zinc-900 text-white" />
-                      </FormControl>
-                    </FormItem>
-                  )}
-                />
-              </div>
-
+          >
+            <div className="md:flex items-center gap-6 ">
               <FormField
                 control={form.control}
-                name="email"
+                name="first_name"
                 render={({ field }) => (
                   <FormItem className="items-center justify-center  w-full">
                     <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                      Email *
+                      First name *
                     </FormLabel>
                     <FormControl>
                       <Input {...field} className="bg-zinc-900 text-white" />
@@ -211,11 +180,11 @@ export default function ContactForm() {
 
               <FormField
                 control={form.control}
-                name="company_name"
+                name="last_name"
                 render={({ field }) => (
                   <FormItem className="items-center justify-center  w-full">
                     <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                      Company name?
+                      Last name *
                     </FormLabel>
                     <FormControl>
                       <Input {...field} className="bg-zinc-900 text-white" />
@@ -223,176 +192,182 @@ export default function ContactForm() {
                   </FormItem>
                 )}
               />
+            </div>
 
-              <FormField
-                control={form.control}
-                name="services"
-                render={({ field }) => (
-                  <FormItem className="w-full items-center justify-center">
-                    <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                      Services you are interested in
-                    </FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger className="bg-zinc-900 text-white">
-                          <SelectValue
-                            placeholder="Select an option"
-                            className="bg-zinc-900 text-white"
-                          />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent className="bg-zinc-900 text-white">
-                        <div className="flex gap-4">
-                          <SelectItem
-                            value="Mobile App Development"
-                            className="text-white"
-                          >
-                            Mobile App Development
-                          </SelectItem>
-                        </div>
-                        <SelectItem
-                          value="Social Media Marketing"
-                          className="text-white"
-                        >
-                          Social Media Marketing
-                        </SelectItem>
-                        <SelectItem value="51-200" className="text-white">
-                          51-200
-                        </SelectItem>
-                        <SelectItem value="501-1000" className="text-white">
-                          501-1000
-                        </SelectItem>
-                        <SelectItem value="1000+" className="text-white">
-                          1000+
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </FormItem>
-                )}
-              />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem className="items-center justify-center  w-full">
+                  <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+                    Email *
+                  </FormLabel>
+                  <FormControl>
+                    <Input {...field} className="bg-zinc-900 text-white" />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
 
-              <FormField
-                control={form.control}
-                name="help"
-                render={({ field }) => (
-                  <FormItem className="w-full items-center justify-center">
-                    <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                      How can we help?
-                    </FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger className="bg-zinc-900 text-white">
-                          <SelectValue
-                            placeholder="Select an option"
-                            className="bg-zinc-900 text-white"
-                          />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent className="bg-zinc-900 text-white">
-                        <SelectItem
-                          value="Evaluate Bird for my company"
-                          className="text-white"
-                        >
-                          Evaluate Bird for my company
-                        </SelectItem>
-                        <SelectItem value="Learn More" className="text-white">
-                          Learn More
-                        </SelectItem>
-                        <SelectItem value="Get a Quote" className="text-white">
-                          Get a Quote
-                        </SelectItem>
-                        <SelectItem value="Other" className="text-white">
-                          Other
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </FormItem>
-                )}
-              />
+            <FormField
+              control={form.control}
+              name="company_name"
+              render={({ field }) => (
+                <FormItem className="items-center justify-center  w-full">
+                  <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+                    Company name?
+                  </FormLabel>
+                  <FormControl>
+                    <Input {...field} className="bg-zinc-900 text-white" />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
 
-              <FormField
-                control={form.control}
-                name="info"
-                render={({ field }) => (
-                  <FormItem className="w-full items-center justify-center">
-                    <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                      Anything else?
-                    </FormLabel>
+            <FormField
+              control={form.control}
+              name="services"
+              render={({ field }) => (
+                <FormItem className="w-full items-center justify-center">
+                  <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+                    Services you are interested in
+                  </FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
                     <FormControl>
-                      <Textarea
-                        style={{ height: "100px" }}
-                        {...field}
-                        className="bg-zinc-900 text-white"
-                      />
+                      <SelectTrigger className="bg-zinc-900 text-white">
+                        <SelectValue
+                          placeholder="Select an option"
+                          className="bg-zinc-900 text-white"
+                        />
+                      </SelectTrigger>
                     </FormControl>
-                  </FormItem>
-                )}
-              />
+                    <SelectContent className="bg-zinc-900 text-white">
+                      <div className="flex gap-4">
+                        <SelectItem
+                          value="Mobile App Development"
+                          className="text-white"
+                        >
+                          Mobile App Development
+                        </SelectItem>
+                      </div>
+                      <SelectItem
+                        value="Social Media Marketing"
+                        className="text-white"
+                      >
+                        Social Media Marketing
+                      </SelectItem>
+                      <SelectItem value="51-200" className="text-white">
+                        51-200
+                      </SelectItem>
+                      <SelectItem value="501-1000" className="text-white">
+                        501-1000
+                      </SelectItem>
+                      <SelectItem value="1000+" className="text-white">
+                        1000+
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
+                </FormItem>
+              )}
+            />
 
-              <div className="flex gap-4 items-center">
-                <div>
-                  <Checkbox
-                    className="
+            <FormField
+              control={form.control}
+              name="help"
+              render={({ field }) => (
+                <FormItem className="w-full items-center justify-center">
+                  <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+                    How can we help?
+                  </FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
+                    <FormControl>
+                      <SelectTrigger className="bg-zinc-900 text-white">
+                        <SelectValue
+                          placeholder="Select an option"
+                          className="bg-zinc-900 text-white"
+                        />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent className="bg-zinc-900 text-white">
+                      <SelectItem
+                        value="Evaluate Bird for my company"
+                        className="text-white"
+                      >
+                        Evaluate Bird for my company
+                      </SelectItem>
+                      <SelectItem value="Learn More" className="text-white">
+                        Learn More
+                      </SelectItem>
+                      <SelectItem value="Get a Quote" className="text-white">
+                        Get a Quote
+                      </SelectItem>
+                      <SelectItem value="Other" className="text-white">
+                        Other
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="info"
+              render={({ field }) => (
+                <FormItem className="w-full items-center justify-center">
+                  <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+                    Anything else?
+                  </FormLabel>
+                  <FormControl>
+                    <Textarea
+                      style={{ height: "100px" }}
+                      {...field}
+                      className="bg-zinc-900 text-white"
+                    />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+
+            <div className="flex gap-4 items-center">
+              <div>
+                <Checkbox
+                  className="
                 outline
                 border-2
                 text-sm
                 font-light
                 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400
                 "
-                  />
-                </div>
-                <div className="text-xs font-light  md:w-3/4 mb-1 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
-                  I agree to Bird&apos; sending marketing communications related
-                  to bird
-                </div>
+                />
               </div>
+              <div className="text-xs font-light  md:w-3/4 mb-1 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+                I agree to Bird&apos; sending marketing communications related
+                to bird
+              </div>
+            </div>
 
-              <div className="flex items-center gap-4">
-                <Button
-                  type="submit"
-                  className="
+            <div className="flex items-center gap-4">
+              <Button
+                type="submit"
+                className="
                             text-sm
                             font-light
                         
                             "
-                  disabled={loading}
-                  onClick={() => form.handleSubmit(onSubmit)}
-                >
-                  Submit
-                </Button>
-              </div>
-            </form>
-          ) : (
-            <>
-              <div
-                className="
-        text-xl 
-        md:text-2xl 
-        flex 
-        items-center
-        justify-center
-        flex-col
-        px-8
-
-        "
+                disabled={loading}
+                onClick={() => form.handleSubmit(onSubmit)}
               >
-                <div className="w-80 py-20">
-                  <PiSmiley className="text-6xl text-[#6c6684] mx-auto" />
-
-                  <div className="text-gray-500 font-light  text-center justify-center mx-auto py-10">
-                    We&apos;ve received your inquiry and will be contacting you
-                    via email shortly.
-                  </div>
-                </div>
-              </div>
-            </>
-          )}
+                Submit
+              </Button>
+            </div>
+          </form>
         </Form>
       </div>
     </div>

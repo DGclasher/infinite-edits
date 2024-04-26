@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <>
-          <div className="w-full md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
+          <div className="w-full sticky top-0 md:items-center md:justify-center backdrop-filter backdrop-blur-md bg-gradient-to-b from-black to-zinc-950 antialiased z-50  overflow-hidden">
             <Navbar />
           </div>
           {children}
