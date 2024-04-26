@@ -9,6 +9,7 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({ onClose }) => {
   return (
     <motion.div
       className="
+      
     w-screen
     h-screen
     bg-gradient-to-b 
@@ -22,7 +23,7 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({ onClose }) => {
      top-28
      left-0
      right-0
-     z-50
+     z-80
      rounded-t-3xl
     "
       initial={{ opacity: 0, y: "-80%" }}
