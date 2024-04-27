@@ -1,15 +1,17 @@
 "use client";
 
 import { useState } from "react";
-
 import { zodResolver } from "@hookform/resolvers/zod";
-
 import { useForm } from "react-hook-form";
-
 import * as z from "zod";
-
-import { Checkbox } from "@/components/ui/checkbox";
-
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import {
   Select,
   SelectContent,
@@ -17,25 +19,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
-import { Button } from "@/components/ui/button";
-
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-
 import { Input } from "@/components/ui/input";
-
-import { useToast } from "@/components/ui/use-toast";
-
+import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { PiCheckLight, PiSmiley } from "react-icons/pi";
+import { useToast } from "@/components/ui/use-toast";
 
 const FormSchema = z.object({
   first_name: z.string(),
@@ -43,7 +30,7 @@ const FormSchema = z.object({
   email: z.string().email(),
   job_title: z.string(),
   company_name: z.string(),
-  help: z.enum(["Learn More", "Get a Quote", "Other"]),
+  help: z.enum(["Learn More", "Get a Quote", "Other"]), // Ensure enum matches here
   services: z.enum([
     "Short video edits",
     "Thumbnail creation",
@@ -59,16 +46,14 @@ type FormValues = {
   email: string;
   job_title: string;
   company_name: string;
-  help: "Evaluate Bird for my company" | "Learn More" | "Get a Quote" | "Other";
+  help: "Learn More" | "Get a Quote" | "Other";
   services:
     | "Short video edits"
     | "Thumbnail creation"
     | "Graphic design"
-    | "Long form video edits";
+    | "Long form video edits"; 
   info: string;
-  terms: boolean;
 };
-
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
