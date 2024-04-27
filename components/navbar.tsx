@@ -44,17 +44,17 @@ const Navbar = () => {
               to bg-neutral-400 bg-opacity-50"
         >
           <div  className="hover:text-gray-50">
-            Website Design
+            Home
           </div>
           <div  className="hover:text-gray-50">
-            Graphic Design
+            About Us
           </div>
 
           <div  className="hover:text-gray-50">
-            Shopify Stores
+            Services
           </div>
           <div  className="hover:text-gray-50">
-            Brands
+            Portfolio
           </div>
 
           <Link href="/pricing" className="hover:text-gray-50">

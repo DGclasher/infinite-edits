@@ -105,13 +105,17 @@ export default function ContactForm() {
       });
 
       if (!res.ok) {
+        console.log("Error");
         throw new Error("Something went wrong");
       }
-
-      toast({
-        title: "Success",
-        description: "Your message has been sent",
-      });
+      if (res.ok) {
+        console.log("Success");
+        toast({
+          title: "Success",
+          description: "Your message has been sent",
+        });
+        setSubmitted(true);
+      }
     } catch (error) {
       toast({
         title: "Error",
