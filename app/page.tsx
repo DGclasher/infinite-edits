@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import { LampContainer} from "@/components/ui/lamp";
+import TeamSection from "@/components/team";
+import { InfiniteMovingCardsDemo } from "@/components/testimonials";
 
 export default function Home() {
   return (
@@ -13,7 +15,7 @@ export default function Home() {
         <div className="w-[500px] h-[350px]  rounded-full z-2 blur-3xl bg-gradient-to-br from-indigo-600/50 to-transparent "></div>
       </div>
  
-      <div className="min-h-[55rem] bg-grid-white/[0.03] flex-col overflow-hidden w-full bg-black   flex  items-center justify-center overflow-x-hidden">
+      <div className="min-h-[55rem] bg-grid-white/[0.05] flex-col overflow-hidden w-full bg-black   flex  items-center justify-center overflow-x-hidden">
         <div className="fixed pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
         <div className="p-20 z-10 flex flex-col w-full  h-full  items-center gap-16  z-1  pt-10 md:pt-40 ">
@@ -66,6 +68,8 @@ export default function Home() {
           <HeroScroll />
         </div>
       <AboutUs />
+      <TeamSection />
+      <InfiniteMovingCardsDemo />
       </div>
     </div>
   );
