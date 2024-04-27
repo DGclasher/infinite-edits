@@ -5,13 +5,13 @@ import { FaArrowRight } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <div className="overflow-x-hidden  antialiased  h-full max-w-screen flex flex-col justify-center items-center">
+    <div className="overflow-x-hidden relative   antialiased  h-full max-w-screen flex flex-col justify-center items-center">
 
       <div className='absolute -top-20 z-10 flex items-center '>
         <div className='w-[500px] h-[350px]  rounded-full z-2 blur-3xl bg-gradient-to-br from-indigo-600/50 to-transparent '></div>
 
       </div>
-      <div className="h-screen w-full bg-black bg-grid-white/[0.03]  flex  items-center justify-center overflow-x-hidden">
+      <div className="h-screen w-full bg-black bg-grid-white/[0.02] flex  items-center justify-center overflow-x-hidden">
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
 
@@ -45,11 +45,22 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-1/2">
-            <video autoPlay loop muted className="w-full  h-full object-cover">
-              <source src="/hero.mp4" type="video/mp4" />
-            </video>
-          </div>
+          <div className="w-1/2 relative">
+  <div className="relative rounded-2xl overflow-hidden">
+    <Image
+      priority
+      src="/laptop.png"
+      alt="logo"
+      width={500}
+      height={500}
+      className="z-10"
+    />
+    <video autoPlay loop muted className="absolute w-[380px] h-[232px] top-4 left-[60px] object-cover">
+      <source src="/hero.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
 
 
         </div>
