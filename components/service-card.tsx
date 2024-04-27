@@ -45,7 +45,16 @@ const cardData: ServiceCardProps[] = [
 export function ServiceCards() {
   return (
     <div className="py-20 text-center">
-    <h1 className="text-5xl text-white mb-8">Our Services</h1>
+    <div className="relative mb-16">
+  <span className="relative text-white inline-block text-5xl">
+    Our Services
+    <img
+      src={'curve.png'}
+      className="absolute top-full left-0 w-full mt-1"
+      alt="Curve"
+    />
+  </span>
+</div>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-center">  {/* Container to wrap the cards */}
       {cardData.map((card, index) => (  // Map through the card data to create multiple cards
         <CardContainer key={index} className="inter-var">

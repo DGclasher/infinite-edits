@@ -1,7 +1,16 @@
 const TeamSection = () => {
   return (
     <div className="w-full z-10 font-normal my-16 h-auto items-center text-center justify-center rounded-lg p-8 overflow-x-hidden">
-      <h1 className="text-5xl text-white mb-8">Meet Our Team</h1>
+      <div className="relative mb-16">
+  <span className="relative text-white inline-block text-5xl">
+    Our Team
+    <img
+      src={'curve.png'}
+      className="absolute top-full left-0 w-full mt-1"
+      alt="Curve"
+    />
+  </span>
+</div>
 
       <div className="flex flex-wrap  gap-8 justify-center items-center mx-auto">
         {/* Team Member Cards */}
