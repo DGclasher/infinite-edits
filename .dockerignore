@@ -1,0 +1,5 @@
+.git
+.next
+.env.local
+.gitignore
+node_modules
