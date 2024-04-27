@@ -10,7 +10,7 @@ export const Spotlight = ({ className, fill }: SpotlightProps) => {
   return (
     <svg
       className={cn(
-        "animate-spotlight pointer-events-none absolute z-[1]  h-[269%] w-[238%] lg:w-[384%] opacity-0 max-w-screen overflow-x-hidden",
+        "animate-spotlight pointer-events-none absolute z-[1]  h-[269%] w-[238%] lg:w-[284%] opacity-0 max-w-screen overflow-hidden",
         className
       )}
       xmlns="http://www.w3.org/2000/svg"
