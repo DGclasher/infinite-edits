@@ -34,10 +34,10 @@ const Portfolio = () => {
       {
         title: "Video",
         content: [
-          { video: "/cow.mp4", description: "Video 1" },
-          { video: "/cow.mp4", description: "Video 2" },
-          { video: "/cow.mp4", description: "Video 3" },
-          { video: "/cow.mp4", description: "Video 4" },
+          { video: "https://res.cloudinary.com/dltmqv10j/video/upload/v1714238836/sample-videos/t5nnjgrpgeqvns5gfurz.mp4", description: "Video 1" },
+          { video: "https://res.cloudinary.com/dltmqv10j/video/upload/v1714238828/sample-videos/isxopogxxtc3opzksu1x.mp4", description: "Video 2" },
+          { video: "https://res.cloudinary.com/dltmqv10j/video/upload/v1714238826/sample-videos/n14namkfpq0jlysw3ods.mp4", description: "Video 3" },
+          { video: "https://res.cloudinary.com/dltmqv10j/video/upload/v1714238820/sample-videos/lhwyrolgphehax4tvb4q.mp4", description: "Video 4" },
         ],
       },
       {
