@@ -9,6 +9,7 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({ onClose }) => {
   return (
     <motion.div
       className="
+      
     w-screen
     h-screen
     bg-gradient-to-b 
