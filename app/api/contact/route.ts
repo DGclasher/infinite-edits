@@ -21,7 +21,6 @@ export async function POST(req: Request) {
       last_name,
       email,
       company_name,
-      job_title,
       help,
       services,
       info,
@@ -34,7 +33,6 @@ export async function POST(req: Request) {
             <h2>Contact from ${first_name} ${last_name}</h2>
             <p>Email: ${email}</p>
             <p>Company: ${company_name}</p>
-            <p>Job Title: ${job_title}</p>
             <p>Service Request: ${services}</p>
             <p>Message: ${info}</p>
         `,

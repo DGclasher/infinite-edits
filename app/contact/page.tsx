@@ -24,7 +24,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/components/ui/use-toast";
+import { ToastAction } from "@/components/ui/toast"
+import { useToast } from "@/components/ui/use-toast"
 
 const FormSchema = z.object({
   first_name: z.string(),
@@ -53,7 +54,7 @@ type FormValues = {
     | "Short video edits"
     | "Thumbnail creation"
     | "Graphic design"
-    | "Long form video edits"; 
+    | "Long form video edits";
   info: string;
 };
 export default function ContactForm() {
@@ -67,7 +68,6 @@ export default function ContactForm() {
       first_name: "",
       last_name: "",
       email: "",
-      job_title: "",
       company_name: "",
       help: "Learn More",
       services: "Short video edits",
@@ -85,21 +85,22 @@ export default function ContactForm() {
       });
 
       if (!res.ok) {
-        console.log("Error");
         throw new Error("Something went wrong");
       }
       if (res.ok) {
-        console.log("Success");
         toast({
           title: "Success",
           description: "Your message has been sent",
+          variant: "success",
         });
         setSubmitted(true);
+        form.reset();
       }
     } catch (error) {
       toast({
         title: "Error",
         description: "Something went wrong",
+        variant: "error",
       });
     } finally {
       setLoading(false);
@@ -107,11 +108,12 @@ export default function ContactForm() {
   }
 
   return (
-    <div className=" w-full   md:items-center md:justify-center bg-grid-white/[0.08] bg-black antialiased  relative overflow-hidden ">
+    <div className=" w-full   md:items-center md:justify-center bg-grid-white/[0.08] bg-black  antialiased  relative overflow-hidden ">
       <div className=" flex md:flex-row gap-8 flex-col items-start justify-center pt-40 pb-20 px-6">
         <div className="">
-        <div className="text-5xl font-medium  w-full md:w-2/3  pb-5 md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+          <div className="text-5xl font-medium  w-full md:w-2/3  pb-5 md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
             Contact our team
+            
           </div>
           <div
             className="
@@ -123,7 +125,6 @@ export default function ContactForm() {
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.9440107860064!2d78.3500691746846!3d17.462393700640927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93b3f0000001%3A0x57dd07d512be374b!2sRaudra%20EduServices%20Pvt.Limited!5e0!3m2!1sen!2sin!4v1710615238946!5m2!1sen!2sin"
               className="rounded-xl w-[400px] h-[200px] md:h-[400px] max-w-full border-0"
-              
               allowFullScreen
               loading="lazy"
               title="Google Maps"
@@ -142,7 +143,6 @@ export default function ContactForm() {
             bg-gradient-to-b from-neutral-800 to-black 
             md:w-1/3"
           >
-
             <div className="md:flex items-center gap-6 ">
               <FormField
                 control={form.control}
@@ -153,7 +153,10 @@ export default function ContactForm() {
                       First name *
                     </FormLabel>
                     <FormControl>
-                      <Input {...field} className="bg-zinc-950 text-white border-neutral-500  rounded-xl" />
+                      <Input
+                        {...field}
+                        className="bg-zinc-950 text-white border-neutral-500  rounded-xl"
+                      />
                     </FormControl>
                   </FormItem>
                 )}
@@ -168,7 +171,10 @@ export default function ContactForm() {
                       Last name *
                     </FormLabel>
                     <FormControl>
-                      <Input {...field} className="bg-zinc-950 border-neutral-500  rounded-xl text-white" />
+                      <Input
+                        {...field}
+                        className="bg-zinc-950 border-neutral-500  rounded-xl text-white"
+                      />
                     </FormControl>
                   </FormItem>
                 )}
@@ -184,7 +190,10 @@ export default function ContactForm() {
                     Email *
                   </FormLabel>
                   <FormControl>
-                    <Input {...field} className="bg-zinc-950 border-neutral-500  rounded-xl text-white" />
+                    <Input
+                      {...field}
+                      className="bg-zinc-950 border-neutral-500  rounded-xl text-white"
+                    />
                   </FormControl>
                 </FormItem>
               )}
@@ -199,7 +208,10 @@ export default function ContactForm() {
                     Company name?
                   </FormLabel>
                   <FormControl>
-                    <Input {...field} className="bg-zinc-950 border-neutral-500  rounded-xl text-white" />
+                    <Input
+                      {...field}
+                      className="bg-zinc-950 border-neutral-500  rounded-xl text-white"
+                    />
                   </FormControl>
                 </FormItem>
               )}

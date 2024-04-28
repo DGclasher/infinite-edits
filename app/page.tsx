@@ -1,11 +1,9 @@
 import AboutUs from "@/components/aboutus";
 import { HeroScroll } from "@/components/hero-video";
-import Navbar from "@/components/navbar";
 import { ServiceCards } from "@/components/service-card";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
-import { LampContainer} from "@/components/ui/lamp";
 import TeamSection from "@/components/team";
 import { InfiniteMovingCardsDemo } from "@/components/testimonials";
 import PricingSection from "@/components/price-section";
