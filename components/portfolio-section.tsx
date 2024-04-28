@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Slider } from "./slider";
+import Link from "next/link";
 
 interface MediaItem {
   title: string;
@@ -60,6 +61,7 @@ const Portfolio: React.FC = () => {
             handle everything from basic cuts to complex compositions, ensuring
             your message is clear and impactful.
           </p>
+          <Link href="/videos" className="inline-flex bg-gradient-to-r from-rose-500 to bg-indigo-900 px-6 py-3 rounded-full text-white items-center gap-2" >See all</Link>
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="flex flex-col lg:flex-row gap-8  py-12">
               {medias.map((media, index) => (
@@ -99,7 +101,7 @@ const Portfolio: React.FC = () => {
               typography to maximize your video&apos;s appeal and click-through
               rate.
             </p>
-            <button className="bg-gradient-to-r from-rose-500 to bg-indigo-900 px-6 py-3 rounded-full text-white flex items-center gap-2">See all</button>
+            <Link href="/graphicdesign" className="inline-flex bg-gradient-to-r from-rose-500 to bg-indigo-900 px-6 py-3 rounded-full text-white items-center gap-2" >See all</Link>
           </div>
 
           <Slider />
