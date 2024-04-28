@@ -47,7 +47,7 @@ const Navbar = () => {
             Home
           </div>
           <div  className="hover:text-gray-50">
-            About Us
+            <Link href="#about">About Us</Link>
           </div>
 
           <div  className="hover:text-gray-50">
