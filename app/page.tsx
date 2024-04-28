@@ -45,7 +45,7 @@ export default function Home() {
 
             <div className="flex flex-col md:flex-row items-start gap-4 py-8">
               <Link
-                href="/contact"
+                href="/portfolio"
                 className="
             bg-gradient-to-l from-rose-500 to bg-indigo-900 px-6 py-3 rounded-full text-white flex items-center gap-2
             "

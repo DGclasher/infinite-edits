@@ -69,22 +69,21 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="text-white">
+    <div className="text-white bg-black bg-grid-white/[0.08] p-8">
       {/* Header Section */}
-      <div className="p-4 mx-auto relative z-10 w-full pt-10 md:pt-20 px-2">
-        <div className="text-4xl md:text-7xl text-center bg-clip-text text-transparent bg-gradient-to-b from-purple-500 to-sky-200 bg-opacity-50">
-          Website Design <br /> that works
+      <div className="p-4 mx-auto relative z-10 w-full pt-20 md:pt-40 px-2">
+        <div className="text-4xl md:text-7xl text-center bg-clip-text text-transparent bg-gradient-to-b from-indigo-500 to-indigo-800 bg-opacity-50">
+          Our Portfolio
         </div>
         <p className="mt-4 text-lg font-normal text-neutral-300 max-w-lg text-center mx-auto px-4">
-          Creating, designing, and developing websites that work for your
-          business.
+          Creating and editing videos that will help you get more leads, save your time and make you more money.
         </p>
       </div>
 
       {/* Sections */}
-      <div className="flex flex-col gap-8 py-10 px-4">
+      <div className="flex justify-center w-full flex-col gap-8 py-10 px-4">
         {/* Graphics Design Section */}
-        <div>
+        {/* <div>
           <h2 className="text-2xl font-bold text-center">
             {portfolioData.sections[0].title}
           </h2>
@@ -102,19 +101,27 @@ const Portfolio = () => {
               ) : null
             )}
           </div>
-        </div>
+        </div> */}
 
         {/* Video Section */}
         <div>
-          <h2 className="text-2xl font-bold text-center">
-            {portfolioData.sections[1].title}
-          </h2>
+        <div className="relative text-center mb-16">
+        <span className="relative text-white inline-block text-4xl">
+          Videos Edits
+          <img
+            src={'curve.png'}
+            className="absolute top-full left-0 w-full mt-1"
+            alt="Curve"
+          />
+        </span>
+      </div>
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-4">
             {portfolioData.sections[1].content.map((item, index) =>
               "video" in item ? (
                 <video
                   key={index}
-                  className="h-auto max-w-full rounded-lg object-cover"
+                  className="h-auto max-w-full rounded-xl object-cover"
                   autoPlay
                   loop
                   muted
@@ -128,9 +135,16 @@ const Portfolio = () => {
 
         {/* Thumbnail Section */}
         <div>
-          <h2 className="text-2xl font-bold text-center">
-            {portfolioData.sections[2].title}
-          </h2>
+        <div className="relative text-center mb-16">
+        <span className="relative text-white inline-block text-4xl">
+          Thumbnails
+          <img
+            src={'curve.png'}
+            className="absolute top-full left-0 w-full mt-1"
+            alt="Curve"
+          />
+        </span>
+      </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-4">
             {portfolioData.sections[2].content.map((item, index) =>
               "image" in item ? (
@@ -138,9 +152,9 @@ const Portfolio = () => {
                   key={index}
                   src={item.image}
                   alt={item.description}
-                  width={200}
-                  height={200}
-                  className="rounded-lg"
+                  width={400}
+                  height={300}
+                  className="rounded-xl"
                 />
               ) : null
             )}
