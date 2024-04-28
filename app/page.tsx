@@ -1,17 +1,15 @@
 import AboutUs from "@/components/aboutus";
 import { HeroScroll } from "@/components/hero-video";
-import Navbar from "@/components/navbar";
 import { ServiceCards } from "@/components/service-card";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
-import { LampContainer} from "@/components/ui/lamp";
 import TeamSection from "@/components/team";
 import { InfiniteMovingCardsDemo } from "@/components/testimonials";
 import PricingSection from "@/components/price-section";
 import FAQS from "@/components/faq";
+import Portfolio from "@/components/portfolio-section";
 import Footer from "@/components/footer";
-
 export default function Home() {
   return (
     <div className="overflow-x-hidden antialiased relative  min-h-screen max-w-screen flex flex-col justify-center items-center">
@@ -71,6 +69,7 @@ export default function Home() {
       <AboutUs />
       
       <ServiceCards />
+      <Portfolio />
       <TeamSection />
       <InfiniteMovingCardsDemo />
       <PricingSection />
