@@ -9,7 +9,7 @@ import {
 
 const FAQS = () => {
     return ( 
-        <div className=" mt-0 md:py-10 text-white w-3/4
+        <div className=" mt-0 z-10 md:py-10 text-white w-[100%]
         rounded-3xl
         
         ">

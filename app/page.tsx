@@ -18,10 +18,10 @@ export default function Home() {
         <div className="w-[500px] h-[1000px] -rotate-45  rounded-full z-2 blur-3xl bg-gradient-to-br from-indigo-600/50 to-transparent "></div>
       </div>
       
-      <div className="min-h-[55rem] px-4 bg-grid-white/[0.05] flex-col overflow-hidden w-full bg-black   flex  items-center justify-center overflow-x-hidden">
+      <div className="min-h-[55rem] px-2 pt-16 bg-grid-white/[0.05] flex-col overflow-hidden w-full bg-black   flex  items-center justify-center overflow-x-hidden">
         <div className="fixed pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
-        <div className="p-20 z-10 flex w-full flex-col lg:flex-row h-full justify-center items-center gap-16  z-1  pt-10  ">
+        <div className="  z-10 flex w-full flex-col lg:flex-row h-full justify-center items-center gap-16  z-1  pt-10  ">
           <div className=" w-full h-full flex flex-col justify-center items-start p-8 ">
             <div className="  ">
               <span className="text-xl text-white bg-zinc-200 bg-opacity-25 backdrop-blur-md border border-zinc-500 rounded-lg my-2 inline-block px-2">
@@ -43,7 +43,7 @@ export default function Home() {
               ready to captivate audiences{" "}
             </p>
 
-            <div className="flex items-center gap-8 py-8">
+            <div className="flex flex-col md:flex-row items-start gap-4 py-8">
               <Link
                 href="/contact"
                 className="
