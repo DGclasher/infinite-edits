@@ -4,6 +4,8 @@ import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+import { IoIosSend } from "react-icons/io";
+
 import {
   Form,
   FormControl,
@@ -105,10 +107,10 @@ export default function ContactForm() {
   }
 
   return (
-    <div className=" w-full   md:items-center md:justify-center bg-black/[0.96] antialiased  relative overflow-hidden ">
-      <div className="md:flex items-start justify-center md:py-40 px-6">
+    <div className=" w-full   md:items-center md:justify-center bg-grid-white/[0.08] bg-black antialiased  relative overflow-hidden ">
+      <div className=" flex md:flex-row gap-8 flex-col items-start justify-center pt-40 pb-20 px-6">
         <div className="">
-          <div className="text-5xl font-medium  w-full md:w-2/3  pb-5 md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+        <div className="text-5xl font-medium  w-full md:w-2/3  pb-5 md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
             Contact our team
           </div>
           <div
@@ -120,13 +122,8 @@ export default function ContactForm() {
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.9440107860064!2d78.3500691746846!3d17.462393700640927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93b3f0000001%3A0x57dd07d512be374b!2sRaudra%20EduServices%20Pvt.Limited!5e0!3m2!1sen!2sin!4v1710615238946!5m2!1sen!2sin"
-              className="rounded-xl"
-              style={{
-                border: "0",
-                width: "100%",
-                height: "500px",
-                maxWidth: "80%",
-              }}
+              className="rounded-xl w-[400px] h-[200px] md:h-[400px] max-w-full border-0"
+              
               allowFullScreen
               loading="lazy"
               title="Google Maps"
@@ -140,9 +137,12 @@ export default function ContactForm() {
             className="
             space-y-4
             h-full
-            border rounded-3xl p-10
+            w-full
+            border border-neutral-500 rounded-2xl p-10
+            bg-gradient-to-b from-neutral-800 to-black 
             md:w-1/3"
           >
+
             <div className="md:flex items-center gap-6 ">
               <FormField
                 control={form.control}
@@ -153,7 +153,7 @@ export default function ContactForm() {
                       First name *
                     </FormLabel>
                     <FormControl>
-                      <Input {...field} className="bg-zinc-900 text-white" />
+                      <Input {...field} className="bg-zinc-950 text-white border-neutral-500  rounded-xl" />
                     </FormControl>
                   </FormItem>
                 )}
@@ -168,7 +168,7 @@ export default function ContactForm() {
                       Last name *
                     </FormLabel>
                     <FormControl>
-                      <Input {...field} className="bg-zinc-900 text-white" />
+                      <Input {...field} className="bg-zinc-950 border-neutral-500  rounded-xl text-white" />
                     </FormControl>
                   </FormItem>
                 )}
@@ -184,7 +184,7 @@ export default function ContactForm() {
                     Email *
                   </FormLabel>
                   <FormControl>
-                    <Input {...field} className="bg-zinc-900 text-white" />
+                    <Input {...field} className="bg-zinc-950 border-neutral-500  rounded-xl text-white" />
                   </FormControl>
                 </FormItem>
               )}
@@ -199,7 +199,7 @@ export default function ContactForm() {
                     Company name?
                   </FormLabel>
                   <FormControl>
-                    <Input {...field} className="bg-zinc-900 text-white" />
+                    <Input {...field} className="bg-zinc-950 border-neutral-500  rounded-xl text-white" />
                   </FormControl>
                 </FormItem>
               )}
@@ -218,14 +218,14 @@ export default function ContactForm() {
                     defaultValue={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger className="bg-zinc-900 text-white">
+                      <SelectTrigger className="bg-zinc-950 border-neutral-500  rounded-xl text-white">
                         <SelectValue
                           placeholder="Select an option"
-                          className="bg-zinc-900 text-white"
+                          className="bg-zinc-950 border-neutral-500  rounded-xl text-white"
                         />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent className="bg-zinc-900 text-white">
+                    <SelectContent className="bg-zinc-950 border-neutral-500  rounded-xl text-white">
                       <div className="flex gap-4">
                         <SelectItem
                           value="Graphic design"
@@ -268,14 +268,14 @@ export default function ContactForm() {
                     defaultValue={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger className="bg-zinc-900 text-white">
+                      <SelectTrigger className="bg-zinc-950 border-neutral-500  rounded-xl text-white">
                         <SelectValue
                           placeholder="Select an option"
                           className="bg-zinc-900 text-white"
                         />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent className="bg-zinc-900 text-white">
+                    <SelectContent className="bg-zinc-950 border-neutral-500  rounded-xl text-white">
                       <SelectItem value="Learn More" className="text-white">
                         Learn More
                       </SelectItem>
@@ -303,7 +303,7 @@ export default function ContactForm() {
                     <Textarea
                       style={{ height: "100px" }}
                       {...field}
-                      className="bg-zinc-900 text-white"
+                      className="bg-zinc-950 text-white border-neutral-500  rounded-xl"
                     />
                   </FormControl>
                 </FormItem>
@@ -312,18 +312,23 @@ export default function ContactForm() {
 
             <div className="flex gap-4 items-center"></div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center w-full justify-center gap-4">
               <Button
                 type="submit"
                 className="
-                            text-sm
+                            text-lg
+                            flex
+                            gap-2
+                            items-center
                             font-light
-                        
+                            bg-indigo-800 rounded-xl text-white
+                            hover:bg-indigo-950
                             "
                 disabled={loading}
                 onClick={() => form.handleSubmit(onSubmit)}
               >
                 Submit
+                <IoIosSend className="" />
               </Button>
             </div>
           </form>
