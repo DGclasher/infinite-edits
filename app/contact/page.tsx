@@ -3,9 +3,8 @@
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import * as z from "zod";
 import { IoIosSend } from "react-icons/io";
-
+import * as z from "zod";
 import {
   Form,
   FormControl,
@@ -24,8 +23,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { ToastAction } from "@/components/ui/toast"
-import { useToast } from "@/components/ui/use-toast"
+import { useToast } from "@/components/ui/use-toast";
 
 const FormSchema = z.object({
   first_name: z.string(),
@@ -54,7 +52,7 @@ type FormValues = {
     | "Short video edits"
     | "Thumbnail creation"
     | "Graphic design"
-    | "Long form video edits";
+    | "Long form video edits"; 
   info: string;
 };
 export default function ContactForm() {
@@ -68,6 +66,7 @@ export default function ContactForm() {
       first_name: "",
       last_name: "",
       email: "",
+      job_title: "",
       company_name: "",
       help: "Learn More",
       services: "Short video edits",
@@ -85,16 +84,17 @@ export default function ContactForm() {
       });
 
       if (!res.ok) {
+        console.log("Error");
         throw new Error("Something went wrong");
       }
       if (res.ok) {
+        console.log("Success");
         toast({
           title: "Success",
           description: "Your message has been sent",
           variant: "success",
         });
         setSubmitted(true);
-        form.reset();
       }
     } catch (error) {
       toast({
@@ -108,12 +108,11 @@ export default function ContactForm() {
   }
 
   return (
-    <div className=" w-full   md:items-center md:justify-center bg-grid-white/[0.08] bg-black  antialiased  relative overflow-hidden ">
-      <div className=" flex md:flex-row gap-8 flex-col items-start justify-center pt-40 pb-20 px-6">
+    <div className=" w-full   md:items-center md:justify-center bg-black/[0.96] bg-grid-white/[0.08] antialiased  relative overflow-hidden ">
+      <div className="md:flex items-start justify-center md:py-40 px-6">
         <div className="">
           <div className="text-5xl font-medium  w-full md:w-2/3  pb-5 md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
             Contact our team
-            
           </div>
           <div
             className="
@@ -138,12 +137,12 @@ export default function ContactForm() {
             className="
             space-y-4
             h-full
-            w-full
-            border border-neutral-500 rounded-2xl p-10
-            bg-gradient-to-b from-neutral-800 to-black 
-            md:w-1/3"
+            
+            md:w-1/3
+            bg-gradient-to-b from-neutral-800 to-black backdrop-blur-md border border-neutral-600 rounded-2xl w-[350px] shadow-md p-6"
+            
           >
-            <div className="md:flex items-center gap-6 ">
+            <div className="md:flex items-center gap-6  ">
               <FormField
                 control={form.control}
                 name="first_name"
@@ -153,10 +152,7 @@ export default function ContactForm() {
                       First name *
                     </FormLabel>
                     <FormControl>
-                      <Input
-                        {...field}
-                        className="bg-zinc-950 text-white border-neutral-500  rounded-xl"
-                      />
+                      <Input {...field} className="bg-zinc-900 rounded-xl text-white" />
                     </FormControl>
                   </FormItem>
                 )}
@@ -171,10 +167,7 @@ export default function ContactForm() {
                       Last name *
                     </FormLabel>
                     <FormControl>
-                      <Input
-                        {...field}
-                        className="bg-zinc-950 border-neutral-500  rounded-xl text-white"
-                      />
+                      <Input {...field} className="bg-zinc-900 rounded-xl text-white" />
                     </FormControl>
                   </FormItem>
                 )}
@@ -190,10 +183,7 @@ export default function ContactForm() {
                     Email *
                   </FormLabel>
                   <FormControl>
-                    <Input
-                      {...field}
-                      className="bg-zinc-950 border-neutral-500  rounded-xl text-white"
-                    />
+                    <Input {...field} className="bg-zinc-900 rounded-xl text-white" />
                   </FormControl>
                 </FormItem>
               )}
@@ -208,10 +198,7 @@ export default function ContactForm() {
                     Company name?
                   </FormLabel>
                   <FormControl>
-                    <Input
-                      {...field}
-                      className="bg-zinc-950 border-neutral-500  rounded-xl text-white"
-                    />
+                    <Input {...field} className="bg-zinc-900 rounded-xl text-white" />
                   </FormControl>
                 </FormItem>
               )}
@@ -230,14 +217,14 @@ export default function ContactForm() {
                     defaultValue={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger className="bg-zinc-950 border-neutral-500  rounded-xl text-white">
+                      <SelectTrigger className="bg-zinc-900 rounded-xl text-white">
                         <SelectValue
                           placeholder="Select an option"
-                          className="bg-zinc-950 border-neutral-500  rounded-xl text-white"
+                          className="bg-zinc-900 text-white"
                         />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent className="bg-zinc-950 border-neutral-500  rounded-xl text-white">
+                    <SelectContent className="bg-zinc-900 rounded-xl text-white">
                       <div className="flex gap-4">
                         <SelectItem
                           value="Graphic design"
@@ -280,14 +267,14 @@ export default function ContactForm() {
                     defaultValue={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger className="bg-zinc-950 border-neutral-500  rounded-xl text-white">
+                      <SelectTrigger className="bg-zinc-900 rounded-xl text-white">
                         <SelectValue
                           placeholder="Select an option"
-                          className="bg-zinc-900 text-white"
+                          className="bg-zinc-900 rounded-xl text-white"
                         />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent className="bg-zinc-950 border-neutral-500  rounded-xl text-white">
+                    <SelectContent className="bg-zinc-900 rounded-xl text-white">
                       <SelectItem value="Learn More" className="text-white">
                         Learn More
                       </SelectItem>
@@ -315,7 +302,7 @@ export default function ContactForm() {
                     <Textarea
                       style={{ height: "100px" }}
                       {...field}
-                      className="bg-zinc-950 text-white border-neutral-500  rounded-xl"
+                      className="bg-zinc-900 rounded-xl text-white"
                     />
                   </FormControl>
                 </FormItem>
