@@ -29,7 +29,7 @@ export default function Home() {
               </span>
               <br />{" "}
               <span className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-400  to bg-indigo-800 ">
-                Infinity Edits
+                Infinite Edits
               </span>{" "}
               <br />
               <span className="text-2xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to bg-neutral-500  mt-2 block">
@@ -63,7 +63,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        <div className="w-[100%]">
+        <div className="w-[100%] hidden md:flex">
           <HeroScroll />
         </div>
         </div>

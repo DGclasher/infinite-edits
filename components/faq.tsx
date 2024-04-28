@@ -24,13 +24,13 @@ const FAQS = () => {
     <AccordionItem value="item-1">
       <AccordionTrigger>What is your turnaround time</AccordionTrigger>
       <AccordionContent>
-      Our standard turnaround time for video editing projects is typically 1-3 business days. However, the exact time may vary depending on the complexity and length of the project. We strive to deliver high-quality results within a reasonable timeframe to meet our clients' needs.
+      Our standard turnaround time for video editing projects is typically 1-3 business days. However, the exact time may vary depending on the complexity and length of the project. We strive to deliver high-quality results within a reasonable timeframe to meet our clients&apos; needs.
       </AccordionContent>
     </AccordionItem>
     <AccordionItem value="item-2">
       <AccordionTrigger>How do you handle revisions?</AccordionTrigger>
       <AccordionContent>
-       We offer a certain number of revisions as part of our editing packages to ensure that the final product meets your expectations. Once we deliver the initial draft, you can review it and request revisions based on specific changes or adjustments you'd like to make. 
+       We offer a certain number of revisions as part of our editing packages to ensure that the final product meets your expectations. Once we deliver the initial draft, you can review it and request revisions based on specific changes or adjustments you&apos;d like to make. 
       </AccordionContent>
     </AccordionItem>
     <AccordionItem value="item-3">

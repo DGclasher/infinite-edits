@@ -55,7 +55,7 @@ export function ServiceCards() {
     />
   </span>
 </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-center">  {/* Container to wrap the cards */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center items-center">  {/* Container to wrap the cards */}
       {cardData.map((card, index) => (  // Map through the card data to create multiple cards
         <CardContainer key={index} className="inter-var">
           <CardBody className="bg-gradient-to-b from-neutral-900 to-black border-neutral-700 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
