@@ -24,7 +24,7 @@ export default function Home() {
         <div className="  z-10 flex w-full flex-col lg:flex-row h-full justify-center items-center gap-16  z-1  pt-10  ">
           <div className=" w-full h-full flex flex-col justify-center items-start p-8 ">
             <div className="  ">
-              <span className="text-xl text-white bg-zinc-200 bg-opacity-25 backdrop-blur-md border border-zinc-500 rounded-lg my-2 inline-block px-2">
+              <span className="text-xl text-white bg-zinc-200 bg-opacity-25 backdrop-blur-md border border-zinc-500 rounded-xl my-2 inline-block px-2">
                 Welcome to
               </span>
               <br />{" "}
@@ -74,6 +74,10 @@ export default function Home() {
       <InfiniteMovingCardsDemo />
       <PricingSection />
       <FAQS />
+      <Link href={"https://wa.me/917780734983?text=hi"} className="bg-gradient-to-r from-indigo-950/40 to-neutral-500/20 border border-neutral-500  rounded-full z-50 shadow-2xl p-3 flex items-center gap-2 fixed bottom-4 right-4 backdrop-blur-md" target="_blank">
+        <Image src="/whatsapp.png" alt="whatsapp" width={100} height={100} className="w-8 h-8"/>
+      <p className="text-white text-lg">Chat with us</p>
+      </Link>
       </div>
     </div>
   );
