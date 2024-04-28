@@ -2,7 +2,7 @@ import { FaCheckCircle } from "react-icons/fa";
 
 const PricingSection = () => {
   return (
-    <div className="w-full z-10 font-normal my-16 h-auto items-center text-center justify-center rounded-lg p-8 overflow-x-hidden">
+    <div className="w-full z-10 font-normal my-16 h-auto items-center text-center justify-center rounded-xl p-8 overflow-x-hidden">
       <div className="relative mb-16">
         <span className="relative text-white inline-block text-5xl">
           Pricing
@@ -20,7 +20,7 @@ const PricingSection = () => {
           <h2 className="text-2xl  text-white font-semibold mb-1">Shorts</h2>
           <p className="text-neutral-300 mb-8">This package includes short video editing services.</p>
           <p className="text-5xl font-bold text-gray-200">₹ 500</p>
-          <button className="w-full justify-center text-center  bg-indigo-700 px-6 py-3 rounded-lg text-white flex items-center gap-2 mt-4">Get Started </button>
+          <button className="w-full justify-center text-center  bg-indigo-700 px-6 py-3 rounded-xl text-white flex items-center gap-2 mt-4">Get Started </button>
           <ul className="mt-4 text-start text-gray-300  space-y-4">
             <li className="flex items-center gap-2 border-b py-4"><FaCheckCircle className="text-green-500"/>Up to 30 seconds of video</li>
             <li className="flex items-center gap-2 border-b py-4"><FaCheckCircle className="text-green-500"/>Basic editing and transitions</li>
@@ -32,7 +32,7 @@ const PricingSection = () => {
           <h2 className="text-2xl  text-white font-semibold mb-1">Reels video edit</h2>
           <p className="text-neutral-300 mb-8"> Includes comprehensive video editing services.</p>
           <p className="text-5xl font-bold text-gray-200">₹ 3000</p>
-          <button className="w-full justify-center text-center  bg-indigo-700 px-6 py-3 rounded-lg text-white flex items-center gap-2 mt-4">Get Started </button>
+          <button className="w-full justify-center text-center  bg-indigo-700 px-6 py-3 rounded-xl text-white flex items-center gap-2 mt-4">Get Started </button>
           <ul className="mt-4 text-start text-gray-300 text space-y-4">
             <li className="flex items-center gap-2 border-b py-4"><FaCheckCircle className="text-green-500"/>Up to 5 minutes of video</li>
             <li className="flex items-center gap-2 border-b py-4"><FaCheckCircle className="text-green-500"/>Advanced editing and effects</li>
@@ -45,7 +45,7 @@ const PricingSection = () => {
           <h2 className="text-2xl  text-white font-semibold mb-1">Long video edits</h2>
           <p className="text-neutral-300 mb-8">Get a custom quote for your specific video editing needs.</p>
           <p className="text-5xl font-bold text-gray-200">₹ 5000</p>
-          <button className="w-full justify-center text-center  bg-indigo-700 px-6 py-3 rounded-lg text-white flex items-center gap-2 mt-4">Get Started </button>
+          <button className="w-full justify-center text-center  bg-indigo-700 px-6 py-3 rounded-xl text-white flex items-center gap-2 mt-4">Get Started </button>
           <ul className="mt-4 text-start text-gray-300  space-y-4">
             <li className="flex items-center gap-2 border-b py-4"><FaCheckCircle className="text-green-500"/>Customized video editing solutions</li>
             <li className="flex items-center gap-2 border-b py-4"><FaCheckCircle className="text-green-500"/>Highly detailed and personalized editing</li>
