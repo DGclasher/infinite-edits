@@ -6,7 +6,16 @@ import { InfiniteMovingCards } from "./ui/infinite-cards";
 export function InfiniteMovingCardsDemo() {
   return (
     <div className="h-[40rem] rounded-md flex flex-col antialiased    items-center justify-center relative overflow-hidden">
-        <h1 className="text-5xl text-white  mb-8">Testimonials</h1>
+      <div className="relative mb-16">
+        <span className="relative text-white inline-block text-5xl">
+          Testimonials
+          <img
+            src={"curve.png"}
+            className="absolute top-full left-0 w-full mt-1"
+            alt="Curve"
+          />
+        </span>
+      </div>
 
       <InfiniteMovingCards
         items={testimonials}
