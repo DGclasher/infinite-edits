@@ -7,8 +7,6 @@ import Image from "next/image";
 import Link from "next/link";
 import DropDownMenu from "./drop-down-menu";
 
-
-
 const Navbar = () => {
   const [isDropDownVisible, setIsDropDownVisible] = useState(false);
 
@@ -21,8 +19,8 @@ const Navbar = () => {
   };
 
   return (
-    <div>
-      <div className="p-4 md:p-5 flex items-center justify-between z-20">
+    <div className="sticky top-0">
+      <div className="p-6 md:p-8 flex items-center justify-between z-50 top-0">
         <div>
           <Link className="cursor-pointer" href="/">
             <Image
@@ -43,22 +41,27 @@ const Navbar = () => {
              bg-gradient-to-b from-neutral-50
               to bg-neutral-400 bg-opacity-50"
         >
-          <div  className="hover:text-gray-50">
-            Home
-          </div>
-          <div  className="hover:text-gray-50">
-            <Link href="#about">About Us</Link>
-          </div>
-
-          <div  className="hover:text-gray-50">
+          <Link href="/#about" scroll={true}>
+            About
+          </Link>
+          <Link href="/#services" scroll={true}>
             Services
-          </div>
-          <div  className="hover:text-gray-50">
-            Portfolio
-          </div>
+          </Link>
 
-          <Link href="/pricing" className="hover:text-gray-50">
+          <Link href="/#portfolio" scroll={true}>
+            Portfolio
+          </Link>
+          <Link href="/#team" scroll={true}>
+            Team
+          </Link>
+          <Link href="/#testimonials" scroll={true}>
+            Testimonials
+          </Link>
+          <Link href="/#pricing" scroll={true}>
             Pricing
+          </Link>
+          <Link href="/#faq" scroll={true}>
+            FAQ
           </Link>
         </div>
 
@@ -70,10 +73,7 @@ const Navbar = () => {
               className="w-8 h-8 text-slate-300 cursor-pointer"
             >
               <X />
-              <DropDownMenu
-                onClose={closeDropDown}
-                
-              />
+              <DropDownMenu onClose={closeDropDown} />
             </div>
           ) : (
             <AlignJustify
@@ -92,6 +92,7 @@ const Navbar = () => {
             bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors
              focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2
               focus:ring-offset-slate-50
+
             "
           >
             Contact

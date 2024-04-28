@@ -3,13 +3,13 @@ import Link from "next/link";
 
 interface DropDownMenuProps {
   onClose: () => void;
+
 }
 
 const DropDownMenu: React.FC<DropDownMenuProps> = ({ onClose }) => {
   return (
     <motion.div
       className="
-      
     w-screen
     h-screen
     bg-gradient-to-b 
@@ -31,22 +31,33 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({ onClose }) => {
       exit={{ opacity: 0, y: "-100%" }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex-col flex space-y-10">
-        <Link href="/pricing" className="text-black text-2xl">
-          Pricing
-        </Link>
-        <Link href="/contact" className="text-black text-2xl">
-          Contact
-        </Link>
+      <div className="flex-col flex space-y-10 text-black text-xl">
+      <Link href="/#about" scroll={true}>
+            About
+          </Link>
+          <Link href="/#services" scroll={true}>
+            Services
+          </Link>
 
-        <Link href="/book" className="text-black text-2xl">
-          Book a call
-        </Link>
+          <Link href="/#portfolio" scroll={true}>
+            Portfolio
+          </Link>
+          <Link href="/#team" scroll={true}>
+            Team
+          </Link>
+          <Link href="/#testimonials" scroll={true}>
+            Testimonials
+          </Link>
+          <Link href="/#pricing" scroll={true}>
+            Pricing
+          </Link>
+          <Link href="/#faq" scroll={true}>
+            FAQ
+          </Link>
+          <Link href="/contact" >
+            Contact
+          </Link>
 
-        {/* Add onClick handler to Services link */}
-        <Link href='/#services'  className="cursor-pointer text-black text-2xl">
-          Services
-        </Link>
       </div>
     </motion.div>
   );

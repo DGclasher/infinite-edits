@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { InfiniteMovingCards } from "./ui/infinite-cards";
 
-export function InfiniteMovingCardsDemo() {
+export function Testimonials() {
   return (
     <div className="h-[40rem] rounded-md flex flex-col antialiased    items-center justify-center relative overflow-hidden">
       <div className="relative mb-16">
