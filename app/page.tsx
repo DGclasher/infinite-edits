@@ -8,6 +8,7 @@ import TeamSection from "@/components/team";
 import { InfiniteMovingCardsDemo } from "@/components/testimonials";
 import PricingSection from "@/components/price-section";
 import FAQS from "@/components/faq";
+import Portfolio from "@/components/portfolio-section";
 
 export default function Home() {
   return (
@@ -68,6 +69,7 @@ export default function Home() {
       <AboutUs />
       
       <ServiceCards />
+      <Portfolio />
       <TeamSection />
       <InfiniteMovingCardsDemo />
       <PricingSection />
