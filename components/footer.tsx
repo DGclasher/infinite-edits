@@ -8,17 +8,17 @@ const Footer = () => {
       
       <div className="flex gap-8 mb-6">
         {/* Footer navigation links */}
-        <Link href="/about" className="hover:text-indigo-400 transition">About</Link>
+        <Link href="/#about" className="hover:text-indigo-400 transition">About</Link>
         <Link href="/contact" className="hover:text-indigo-400 transition">Contact</Link>
-        <Link href="/services" className="hover:text-indigo-400 transition">Services</Link>
-        <Link href="/portfolio" className="hover:text-indigo-400 transition">Portfolio</Link>
+        <Link href="/#services" className="hover:text-indigo-400 transition">Services</Link>
+        <Link href="/#portfolio" className="hover:text-indigo-400 transition">Portfolio</Link>
       </div>
       
       {/* Social media icons */}
       <div className="flex gap-6">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+        <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer">
           <FaFacebook className="w-6 h-6 hover:text-indigo-400 transition" />
-        </a>
+        </Link>
         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
           <FaTwitter className="w-6 h-6 hover:text-indigo-400 transition" />
         </a>

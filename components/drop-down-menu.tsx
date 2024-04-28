@@ -3,13 +3,13 @@ import Link from "next/link";
 
 interface DropDownMenuProps {
   onClose: () => void;
+  scrollToServices: () => void; // Add scrollToServices function to props
 }
 
-const DropDownMenu: React.FC<DropDownMenuProps> = ({ onClose }) => {
+const DropDownMenu: React.FC<DropDownMenuProps> = ({ onClose, scrollToServices }) => {
   return (
     <motion.div
       className="
-      
     w-screen
     h-screen
     bg-gradient-to-b 

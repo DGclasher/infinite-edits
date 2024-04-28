@@ -66,7 +66,7 @@
   height: 100%;
   background: rgba(0,0,0,0.2);
   backdrop-filter: blur(10px);
-  z-index: 999;
+  z-index: 9999;
 
 }
 
@@ -91,4 +91,5 @@
   cursor: pointer;
   z-index: 9999;
   user-select: none;
+
 }

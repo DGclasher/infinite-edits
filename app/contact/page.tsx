@@ -24,7 +24,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-
+import Navbar from "@/components/navbar";
+import { useRef } from "react";
 const FormSchema = z.object({
   first_name: z.string(),
   last_name: z.string(),
@@ -56,6 +57,7 @@ type FormValues = {
   info: string;
 };
 export default function ContactForm() {
+  
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const { toast } = useToast();
@@ -73,7 +75,15 @@ export default function ContactForm() {
       info: "",
     },
   });
+  const aboutRef = useRef<HTMLDivElement>(null);
+  // const graphicDesignRef = useRef<HTMLDivElement>(null);
+  // const shopifyStoresRef = useRef<HTMLDivElement>(null);
+  // const brandsRef = useRef<HTMLDivElement>(null);
+  // const servicesRef = useRef<HTMLDivElement>(null);
 
+  const scrollToAbout = () => {
+    aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     try {
       setLoading(true);
@@ -107,7 +117,7 @@ export default function ContactForm() {
       setLoading(false);
     }
   }
-
+  
   return (
     <div className=" w-full   md:items-center md:justify-center bg-black/[0.96] bg-grid-white/[0.08] antialiased  relative overflow-hidden ">
       <div className="fixed pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
