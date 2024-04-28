@@ -53,8 +53,6 @@ alt="Curve"
 </span>
 </div>
 
-php
-Copy code
   <div>
     <h2>Shorts/Reels</h2>
     <p>Check out some of our latest short films and reels</p>

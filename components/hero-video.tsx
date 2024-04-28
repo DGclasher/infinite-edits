@@ -11,7 +11,7 @@ export function HeroScroll() {
         }
       >
         <video
-          src="/hero.mp4" 
+          src="https://res.cloudinary.com/dpzciuywe/video/upload/v1714321127/shorts/yb8bylruv5mctx32flyt.mp4" 
           autoPlay
           loop
           muted

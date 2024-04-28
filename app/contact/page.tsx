@@ -52,7 +52,7 @@ type FormValues = {
     | "Short video edits"
     | "Thumbnail creation"
     | "Graphic design"
-    | "Long form video edits"; 
+    | "Long form video edits";
   info: string;
 };
 export default function ContactForm() {
@@ -110,8 +110,9 @@ export default function ContactForm() {
 
   return (
     <div className=" w-full   md:items-center md:justify-center bg-black/[0.96] bg-grid-white/[0.08] antialiased  relative overflow-hidden ">
-      <div className="md:flex items-start justify-center md:py-40 px-6">
-        <div className="">
+      <div className="fixed pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+      <div className="md:flex items-start z-10 justify-center md:py-40 px-6">
+        <div className="z-10">
           <div className="text-5xl font-medium  w-full md:w-2/3  pb-5 md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
             Contact our team
           </div>
@@ -141,7 +142,6 @@ export default function ContactForm() {
             
             md:w-1/3
             bg-gradient-to-b from-neutral-800 to-black backdrop-blur-md border border-neutral-600 rounded-2xl w-[350px] shadow-md p-6"
-            
           >
             <div className="md:flex items-center gap-6  ">
               <FormField
@@ -153,7 +153,10 @@ export default function ContactForm() {
                       First name *
                     </FormLabel>
                     <FormControl>
-                      <Input {...field} className="bg-zinc-900 rounded-xl text-white" />
+                      <Input
+                        {...field}
+                        className="bg-zinc-900 rounded-xl text-white"
+                      />
                     </FormControl>
                   </FormItem>
                 )}
@@ -168,7 +171,10 @@ export default function ContactForm() {
                       Last name *
                     </FormLabel>
                     <FormControl>
-                      <Input {...field} className="bg-zinc-900 rounded-xl text-white" />
+                      <Input
+                        {...field}
+                        className="bg-zinc-900 rounded-xl text-white"
+                      />
                     </FormControl>
                   </FormItem>
                 )}
@@ -184,7 +190,10 @@ export default function ContactForm() {
                     Email *
                   </FormLabel>
                   <FormControl>
-                    <Input {...field} className="bg-zinc-900 rounded-xl text-white" />
+                    <Input
+                      {...field}
+                      className="bg-zinc-900 rounded-xl text-white"
+                    />
                   </FormControl>
                 </FormItem>
               )}
@@ -199,7 +208,10 @@ export default function ContactForm() {
                     Company name?
                   </FormLabel>
                   <FormControl>
-                    <Input {...field} className="bg-zinc-900 rounded-xl text-white" />
+                    <Input
+                      {...field}
+                      className="bg-zinc-900 rounded-xl text-white"
+                    />
                   </FormControl>
                 </FormItem>
               )}

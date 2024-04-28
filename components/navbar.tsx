@@ -1,23 +1,54 @@
 "use client";
-import { useState } from "react";
+
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { AlignJustify, X } from "lucide-react";
-
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
 import Image from "next/image";
 import Link from "next/link";
-import DropDownMenu from "./drop-down-menu";
+import { cn } from "@/lib/utils";
 
-
+// Define a reusable ListItem component
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  );
+});
+ListItem.displayName = "ListItem";
 
 const Navbar = () => {
   const [isDropDownVisible, setIsDropDownVisible] = useState(false);
 
   const toggleDropDown = () => {
-    setIsDropDownVisible(!isDropDownVisible);
-  };
-
-  const closeDropDown = () => {
-    setIsDropDownVisible(false);
+    setIsDropDownVisible((prev) => !prev);
   };
 
   return (
@@ -35,46 +66,33 @@ const Navbar = () => {
             />
           </Link>
         </div>
-        <div
-          className="cursor-pointer hidden 
-            md:flex space-x-10 items-center
-             text-slate-300 text-center 
-             bg-clip-text text-transparent 
-             bg-gradient-to-b from-neutral-50
-              to bg-neutral-400 bg-opacity-50"
-        >
-          <div  className="hover:text-gray-50">
+
+        {/* Main Navigation Links */}
+        <div className="cursor-pointer hidden md:flex space-x-10 items-center text-slate-300 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+          <Link href="/" className="hover:text-gray-50">
             Home
-          </div>
-          <div  className="hover:text-gray-50">
-            <Link href="#about">About Us</Link>
-          </div>
-
-          <div  className="hover:text-gray-50">
+          </Link>
+          <Link href="#about" className="hover:text-gray-50">
+            About Us
+          </Link>
+          <Link href="#services" className="hover:text-gray-50">
             Services
-          </div>
-          <div  className="hover:text-gray-50">
+          </Link>
+          <Link href="#portfolio" className="hover:text-gray-50">
             Portfolio
-          </div>
-
+          </Link>
           <Link href="/pricing" className="hover:text-gray-50">
             Pricing
           </Link>
         </div>
 
+        {/* Mobile Navigation Toggle */}
         <div className="flex md:hidden">
           {isDropDownVisible ? (
-            // display an x icon when the drop is visible
-            <div
+            <X
               onClick={toggleDropDown}
               className="w-8 h-8 text-slate-300 cursor-pointer"
-            >
-              <X />
-              <DropDownMenu
-                onClose={closeDropDown}
-                
-              />
-            </div>
+            />
           ) : (
             <AlignJustify
               onClick={toggleDropDown}
@@ -83,16 +101,54 @@ const Navbar = () => {
           )}
         </div>
 
+        {/* Mobile Drop Down */}
+        {isDropDownVisible && (
+          <div className="absolute top-16 w-full bg-black flex flex-col p-4 z-50">
+            <Link
+              href="/"
+              className="hover:text-gray-50"
+              onClick={toggleDropDown}
+            >
+              Home
+            </Link>
+            <Link
+              href="#about"
+              className="hover:text-gray-50"
+              onClick={toggleDropDown}
+            >
+              About Us
+            </Link>
+            <Link
+              href="#services"
+              className="hover:text-gray-50"
+              onClick={toggleDropDown}
+            >
+              Services
+            </Link>
+            <Link
+              href="#portfolio"
+              className="hover:text-gray-50"
+              onClick={toggleDropDown}
+            >
+              Portfolio
+            </Link>
+            <Link
+              href="/pricing"
+              className="hover:text-gray-50"
+              onClick={toggleDropDown}
+            >
+              Pricing
+            </Link>
+          </div>
+        )}
+
+        {/* Contact Button */}
         <div className="hidden md:flex">
           <Link
             href="/contact"
-            className="
-            inline-flex h-12 animate-shimmer items-center justify-center 
-            rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] 
-            bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors
-             focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2
-              focus:ring-offset-slate-50
-            "
+            className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] 
+              bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 
+              focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
           >
             Contact
           </Link>
