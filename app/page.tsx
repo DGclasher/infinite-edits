@@ -9,6 +9,7 @@ import { InfiniteMovingCardsDemo } from "@/components/testimonials";
 import PricingSection from "@/components/price-section";
 import FAQS from "@/components/faq";
 import Portfolio from "@/components/portfolio-section";
+import { Slider } from "@/components/slider";
 
 export default function Home() {
   return (

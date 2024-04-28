@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="p-4 md:p-5 flex items-center justify-between z-50">
+      <div className="p-4 md:p-5 flex items-center justify-between z-20">
         <div>
           <Link className="cursor-pointer" href="/">
             <Image
