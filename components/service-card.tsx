@@ -44,7 +44,7 @@ export function ServiceCards()  {
   ];
 
   return (
-    <div className="py-20 text-center">
+    <div className="py-20 text-center px-4">
       <div className="relative mb-16">
         <span className="relative text-white inline-block text-5xl">
           Our Services

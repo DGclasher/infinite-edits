@@ -103,7 +103,7 @@ const Portfolio: React.FC = () => {
   };
 
   return (
-    <div className="text-white w-[100vw] flex flex-col justify-center px-0 md:px-16 items-center ">
+    <div className="text-white w-[100vw] flex flex-col justify-center px-4 md:px-16 items-center ">
       <div className=" text-center relative mb-16 z-10">
         <span className="relative text-white inline-block text-5xl">
           Portfolio
@@ -116,7 +116,7 @@ const Portfolio: React.FC = () => {
           />
         </span>
       </div>
-      <div className="flex flex-col gap-20 justify-center items-center w-[80%] z-10">
+      <div className="flex flex-col gap-20 justify-center items-center w-[100%] md:w-[90%] lg:w-[80%] z-10">
         <div className="">
           <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
             Shorts & Reels
@@ -127,9 +127,9 @@ const Portfolio: React.FC = () => {
             handle everything from basic cuts to complex compositions, ensuring
             your message is clear and impactful.
           </p>
-          <Link href="/videos" className="inline-flex bg-gradient-to-r from-indigo-500/20 to bg-indigo-900/20 backdrop-blur-md border border-indigo-500 px-4 py-2 rounded-full text-white items-center gap-2" >See all works</Link>
+          <Link href="/videos" className="inline-flex bg-gradient-to-r from-indigo-500/20 to bg-indigo-900/20 backdrop-blur-md border border-indigo-500  py-2 rounded-full text-white items-center gap-2" >See all works</Link>
           <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="flex flex-col lg:flex-row gap-8  py-12">
+            <div className="flex flex-col lg:flex-row gap-8  py-8">
               {medias.map((media, index) => (
                 <div key={index}>
                   <div
@@ -157,11 +157,11 @@ const Portfolio: React.FC = () => {
             
           </div>
         </div>
-        <div className=" w-[100%]  relative h-auto flex gap-16 bg-gradient-to-b from-neutral-900 to-neutral-950 rounded-xl p-8 justify-between items-center flex-col border border-neutral-700 ">
+        <div className=" w-[100%]  relative h-auto flex gap-16 bg-gradient-to-b from-neutral-900 to-neutral-950 rounded-xl p-4 md:p-8 justify-between items-center flex-col border border-neutral-700 ">
         <div className="absolute top-20 z-0 flex left-0 items-center">
         <div className="w-[400px] h-[400px] -rotate-45  rounded-full z-2 blur-3xl bg-gradient-to-br from-indigo-600/50 to-transparent "></div>
       </div>
-          <div className=" flex items-center z-10 justify-between">
+          <div className=" flex flex-col md:flex-row gap-8 items-center z-10 justify-between">
             <div>
             <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-300 to-blue-300 bg-clip-text text-transparent">
               Thumbnail Designs
