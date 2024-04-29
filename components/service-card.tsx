@@ -21,7 +21,7 @@ export function ServiceCards()  {
       title: "Catchy Thumbnails",
       description: "Catch your audience's attention with custom-designed thumbnails that stand out.",
       imageSrc: "https://res.cloudinary.com/dpzciuywe/image/upload/v1714333407/shorts/wgfeaslh1hn2utujdnwg.webp",
-      onClick: () => router.push("#"), // Navigate to /thumbnails
+      onClick: () => router.push("/thumbnails"), // Navigate to /thumbnails
     },
     {
       title: "Creative Videos",
@@ -48,10 +48,12 @@ export function ServiceCards()  {
       <div className="relative mb-16">
         <span className="relative text-white inline-block text-5xl">
           Our Services
-          <img
+          <Image
             src={"/curve.png"}
             className="absolute top-full left-0 w-full mt-1"
             alt="Curve"
+            width={100}
+            height={100}
           />
         </span>
       </div>

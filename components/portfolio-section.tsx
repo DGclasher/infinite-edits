@@ -79,10 +79,12 @@ const Portfolio: React.FC = () => {
       <div className=" text-center relative mb-16 z-10">
         <span className="relative text-white inline-block text-5xl">
           Portfolio
-          <img
+          <Image
             src={"/curve.png"}
             className="absolute top-full left-0 w-full mt-1"
             alt="Curve"
+            width={100}
+            height={100}
           />
         </span>
       </div>
@@ -229,15 +231,25 @@ const Portfolio: React.FC = () => {
       <div className="popup-media" style={{ display: file ? "block" : "none" }}>
         <span onClick={() => setFile(null)}>&times;</span>
 
-        {file?.type === "video" ? (
-          <video src={file?.url} autoPlay controls className="w-full h-full" />
+        {file ? (
+        file.type === "video" ? (
+          <video src={file.url} autoPlay controls className="w-full h-full" />
         ) : (
-          <img
-            src={file?.url}
-            alt="Image"
-            className="w-full h-full object-cover"
-          />
-        )}
+          file.url ? (
+            <Image
+              src={file.url}
+              alt="Media content"
+              className="w-full h-full object-cover"
+              width={500}
+              height={500}
+            />
+          ) : (
+            <div className="text-center">No Image Available</div>
+          )
+        )
+      ) : (
+        <div className="text-center">No Content to Display</div>
+      )}
       </div>
     </div>
   );
