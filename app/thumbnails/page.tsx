@@ -11,12 +11,62 @@ interface ImageData {
 
 const imageData: ImageData[] = [
   {
-    src: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/6a8505193865991.65f2b131db88e.png",
+    src: "https://res.cloudinary.com/dpzciuywe/image/upload/v1714371381/thumbnails/hdkng6mnvqgeabqyjdwq.png",
     alt: "Design 1",
     type: "image",
   },
   {
-    src: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/e2a67e193775429.65f16d1a841a5.jpg",
+    src: "https://res.cloudinary.com/dpzciuywe/image/upload/v1714371360/thumbnails/oo7dbybqyp6rzkttynya.png",
+    alt: "Design 2",
+    type: "image",
+  },
+  {
+    src: "https://res.cloudinary.com/dpzciuywe/image/upload/v1714371344/thumbnails/hpxawsqpuenv1zqtqbyu.png",
+    alt: "Design 2",
+    type: "image",
+  },
+  {
+    src: "https://res.cloudinary.com/dpzciuywe/image/upload/v1714371323/thumbnails/ynrclc9eydtgfdqlc5lj.png",
+    alt: "Design 2",
+    type: "image",
+  },
+  {
+    src: "https://res.cloudinary.com/dpzciuywe/image/upload/v1714371303/thumbnails/uham1hoe6i5hyxuzdibe.png",
+    alt: "Design 2",
+    type: "image",
+  },
+  {
+    src: "https://res.cloudinary.com/dpzciuywe/image/upload/v1714371277/thumbnails/gvboxfv9brzc1jpfsrec.png",
+    alt: "Design 2",
+    type: "image",
+  },
+  {
+    src: "https://res.cloudinary.com/dpzciuywe/image/upload/v1714371245/thumbnails/b8zfhjz6duyngfkvqv5f.png",
+    alt: "Design 2",
+    type: "image",
+  },
+  {
+    src: "https://res.cloudinary.com/dpzciuywe/image/upload/v1714371208/thumbnails/ofvirq1t82elhx3u9eei.png",
+    alt: "Design 2",
+    type: "image",
+  },
+  {
+    src: "https://res.cloudinary.com/dpzciuywe/image/upload/v1714371190/thumbnails/ieatv9skzaaqzvkzdxcr.png",
+    alt: "Design 2",
+    type: "image",
+  },
+  {
+    src: "https://res.cloudinary.com/dpzciuywe/image/upload/v1714371168/thumbnails/b90l2mhkjjyokr2lmr23.png",
+    alt: "Design 2",
+    type: "image",
+  },
+  {
+    src: "https://res.cloudinary.com/dpzciuywe/image/upload/v1714371140/thumbnails/ube5oat5qqjpvaw6jlof.png",
+    alt: "Design 2",
+    type: "image",
+  },
+  {
+    src: "https://res.cloudinary.com/dpzciuywe/image/upload/v1714371121/thumbnails/u4c1mbwgxvbcsnb4dplr.png",
     alt: "Design 2",
     type: "image",
   },
@@ -74,15 +124,25 @@ const Thumbnails = () => {
       <div className="popup-media" style={{ display: file ? "block" : "none" }}>
         <span onClick={() => setFile(null)}>&times;</span>
 
-        {file?.type === "video" ? (
-          <video src={file?.src} autoPlay controls className="w-full h-full" />
+        {file ? (
+        file.type === "video" ? (
+          <video src={file.src} autoPlay controls className="w-full h-full" />
         ) : (
-          <img
-            src={file?.src}
-            alt="Image"
-            className="w-full h-full object-cover"
-          />
-        )}
+          file.src ? (
+            <Image
+              src={file.src}
+              alt="Media content"
+              className="w-full h-full object-cover"
+              width={500}
+              height={500}
+            />
+          ) : (
+            <div className="text-center">No Image Available</div> // Default message or image
+          )
+        )
+      ) : (
+        <div className="text-center">No Content to Display</div> // If no file is set
+      )}
       </div>
     </div>
   );

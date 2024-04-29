@@ -4,7 +4,7 @@ import { HeroScroll } from "@/components/hero-video";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
-import TeamSection from "@/components/team";
+import {TeamSection} from "@/components/team";
 import { Testimonials } from "@/components/testimonials";
 import PricingSection from "@/components/price-section";
 import FAQS from "@/components/faq";

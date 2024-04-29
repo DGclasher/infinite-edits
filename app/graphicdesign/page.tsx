@@ -60,7 +60,6 @@ const imageData: ImageData[] = [
     alt: "Design 10",
     type: "image",
   },
-  
 ];
 
 const GraphicDesign = () => {
@@ -114,14 +113,22 @@ const GraphicDesign = () => {
       <div className="popup-media" style={{ display: file ? "block" : "none" }}>
         <span onClick={() => setFile(null)}>&times;</span>
 
-        {file?.type === "video" ? (
-          <video src={file?.src} autoPlay controls className="w-full h-full" />
+        {file ? (
+          file.type === "video" ? (
+            <video src={file.src} autoPlay controls className="w-full h-full" />
+          ) : file.src ? (
+            <Image
+              src={file.src}
+              alt="Media content"
+              className="w-full h-full object-cover"
+              width={500}
+              height={500}
+            />
+          ) : (
+            <div className="text-center">No Image Available</div>
+          )
         ) : (
-          <img
-            src={file?.src}
-            alt="Image"
-            className="w-full h-full object-cover"
-          />
+          <div className="text-center">No Content to Display</div>
         )}
       </div>
     </div>
