@@ -25,7 +25,7 @@ const Footer = () => {
         
       </div>
       
-      <div className="mt-6 text-sm text-gray-400">© 2024 Infinity Media. All rights reserved.</div>
+      <div className="mt-6 text-sm text-gray-400">© 2024 Infinite Media. All rights reserved.</div>
     </footer>
   );
 };

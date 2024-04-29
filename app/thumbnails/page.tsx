@@ -91,7 +91,7 @@ const Thumbnails = () => {
     setFile(null);
   };
   return (
-    <div className="bg-black px-4 md:px-8 lg:px-16 relative bg-grid-white/[0.08] text-center pt-10">
+    <div className="bg-black px-4 md:px-8 lg:px-16 relative bg-grid-white/[0.08] text-center pt-10 overflow-x-hidden">
       <div className="absolute -top-80 z-10 flex left-0 items-center">
         <div className="w-[500px] h-[1000px] -rotate-45  rounded-full z-2 blur-3xl bg-gradient-to-br from-indigo-600/50 to-transparent "></div>
       </div>
@@ -99,7 +99,7 @@ const Thumbnails = () => {
       <div className="p-4 mx-auto relative z-10 w-full pt-10 md:pt-20 px-2">
 
       <div className="relative mb-12">
-            <span className="relative text-white inline-block text-5xl">
+            <span className="relative text-white inline-block text-4xl md:text-5xl">
               Thumbnails
               <Image
                 src={"/curve.png"}
