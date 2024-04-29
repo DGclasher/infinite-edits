@@ -23,6 +23,12 @@ const medias: MediaItem[] = [
     url: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714333114/shorts/w2ugziuwgd24smkln97g.mp4",
     poster: "/thumbnail_video_2.png"
   },
+  {
+    title: "Reel 2",
+    type: "video",
+    url: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714333114/shorts/w2ugziuwgd24smkln97g.mp4",
+    poster: "/thumbnail_video_2.png"
+  },
 ];
 
   const GraphicDesignMedias: MediaItem[] = [
@@ -79,10 +85,12 @@ const Portfolio: React.FC = () => {
       <div className=" text-center relative mb-16 z-10">
         <span className="relative text-white inline-block text-5xl">
           Portfolio
-          <img
+          <Image
             src={"/curve.png"}
             className="absolute top-full left-0 w-full mt-1"
             alt="Curve"
+            width={100}
+            height={100}
           />
         </span>
       </div>
@@ -97,7 +105,7 @@ const Portfolio: React.FC = () => {
             handle everything from basic cuts to complex compositions, ensuring
             your message is clear and impactful.
           </p>
-          <Link href="/graphicdesign" className="inline-flex bg-gradient-to-r from-indigo-500/20 to bg-indigo-900/20 backdrop-blur-md border border-indigo-500 px-4 py-2 rounded-full text-white items-center gap-2" >See all works</Link>
+          <Link href="/videos" className="inline-flex bg-gradient-to-r from-indigo-500/20 to bg-indigo-900/20 backdrop-blur-md border border-indigo-500 px-4 py-2 rounded-full text-white items-center gap-2" >See all works</Link>
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="flex flex-col lg:flex-row gap-8  py-12">
               {medias.map((media, index) => (
@@ -124,14 +132,7 @@ const Portfolio: React.FC = () => {
                 </div>
               ))}
             </div>
-            <div className="text-neutral-400 w-full md:w-1/4 bg-neutral-900 rounded-xl border border-neutral-600 p-8">
-              <h3 className="text-xl font-bold">Process</h3>
-              <p className="text-lg">
-                Our process is straightforward yet thorough: consultation,
-                storyboard approval, editing, client feedback, final touches,
-                and delivery.
-              </p>
-            </div>
+            
           </div>
         </div>
         <div className=" w-[100%] h-auto flex gap-16 justify-between items-center flex-col md:flex-row">
@@ -146,7 +147,7 @@ const Portfolio: React.FC = () => {
               typography to maximize your video&apos;s appeal and click-through
               rate.
             </p>
-            <Link href="/graphicdesign" className="inline-flex bg-gradient-to-r from-indigo-500/20 to bg-indigo-900/20 backdrop-blur-md border border-indigo-500 px-4 py-2 rounded-full text-white items-center gap-2" >See all works</Link>
+            <Link href="/thumbnails" className="inline-flex bg-gradient-to-r from-indigo-500/20 to bg-indigo-900/20 backdrop-blur-md border border-indigo-500 px-4 py-2 rounded-full text-white items-center gap-2" >See all works</Link>
           </div>
 
           <Slider />
@@ -190,7 +191,7 @@ const Portfolio: React.FC = () => {
             <p className="py-4 text-sm md:text-lg text-neutral-400">
             Elevate your content with engaging motion graphics. Ideal for intros, advertisements, and educational videos, our motion designs are crafted to keep your audience engaged.
             </p>
-            <Link href="/graphicdesign" className="inline-flex bg-gradient-to-r from-indigo-500/20 to bg-indigo-900/20 backdrop-blur-md border border-indigo-500 px-4 py-2 rounded-full text-white items-center gap-2" >See all works</Link>
+            <Link href="/motion-graphics" className="inline-flex bg-gradient-to-r from-indigo-500/20 to bg-indigo-900/20 backdrop-blur-md border border-indigo-500 px-4 py-2 rounded-full text-white items-center gap-2" >See all works</Link>
           </div>
 
             <div className="w-full lg:w-1/2">
@@ -229,15 +230,25 @@ const Portfolio: React.FC = () => {
       <div className="popup-media" style={{ display: file ? "block" : "none" }}>
         <span onClick={() => setFile(null)}>&times;</span>
 
-        {file?.type === "video" ? (
-          <video src={file?.url} autoPlay controls className="w-full h-full" />
+        {file ? (
+        file.type === "video" ? (
+          <video src={file.url} autoPlay controls className="w-full h-full" />
         ) : (
-          <img
-            src={file?.url}
-            alt="Image"
-            className="w-full h-full object-cover"
-          />
-        )}
+          file.url ? (
+            <Image
+              src={file.url}
+              alt="Media content"
+              className="w-full h-full object-cover"
+              width={500}
+              height={500}
+            />
+          ) : (
+            <div className="text-center">No Image Available</div>
+          )
+        )
+      ) : (
+        <div className="text-center">No Content to Display</div>
+      )}
       </div>
     </div>
   );

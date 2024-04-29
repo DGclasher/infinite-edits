@@ -4,7 +4,7 @@ import { HeroScroll } from "@/components/hero-video";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
-import TeamSection from "@/components/team";
+import {TeamSection} from "@/components/team";
 import { Testimonials } from "@/components/testimonials";
 import PricingSection from "@/components/price-section";
 import FAQS from "@/components/faq";
@@ -21,7 +21,7 @@ export default function Home() {
       <div className="min-h-[55rem] px-2 md:px-12 lg:px-24 pt-16 bg-grid-white/[0.05] flex-col overflow-hidden w-full bg-black   flex  items-center justify-center overflow-x-hidden">
         <div className="fixed pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
-        <div className="  z-10 flex w-full flex-col lg:flex-row h-full justify-center items-center gap-16  z-1  pt-10  ">
+        <div className="  z-10 flex w-full flex-col lg:flex-row h-full justify-center items-center gap-16  z-1  pt-  ">
           <div className=" w-full h-full flex flex-col justify-center items-start p-8 ">
             <div className="  ">
               <span className="text-xl text-white bg-zinc-200 bg-opacity-25 backdrop-blur-md border border-zinc-500 rounded-xl my-2 inline-block px-2">
@@ -29,7 +29,7 @@ export default function Home() {
               </span>
               <br />{" "}
               <span className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-400  to bg-indigo-800 ">
-                Infinite Medias
+                Infinite Media
               </span>{" "}
               <br />
               <span className="text-2xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to bg-neutral-500  mt-2 block">
@@ -44,9 +44,14 @@ export default function Home() {
               <Image className="hidden lg:block absolute top-10 -right-40" src="/curved-arrow.png" width={100} height={100} alt="logo" />
             </p>
 
+            <p className="mt-4 text font-normal text-neutral-300 max-w-lg relative">
+            We can edit Videos that help you get more leads, save your time and make you more money.”
+            </p>
+
             <div className="flex flex-col md:flex-row items-start gap-4 py-8">
               <Link
-                href="/portfolio"
+                href="#portfolio"
+                scroll={true}
                 className="
             bg-gradient-to-l from-rose-500 to bg-indigo-900 px-6 py-3 rounded-full text-white flex items-center gap-2
             "

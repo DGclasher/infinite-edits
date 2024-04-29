@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <div className="sticky top-0">
-      <div className="p-6 md:p-8 flex items-center justify-between z-50 top-0">
+      <div className="p-4 flex items-center justify-between z-50 top-0">
         <div>
           <Link className="cursor-pointer" href="/">
             <Image
