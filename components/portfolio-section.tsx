@@ -14,7 +14,7 @@ const medias: MediaItem[] = [
   {
     title: "Reel 1",
     type: "video",
-    url: "https://res.cloudinary.com/dltmqv10j/video/upload/v1714302673/sample-videos/osmkliskp1ygnwqvm4se.mp4",
+    url: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714303094/shorts/mmlthduxthnprfkpp1ym.mp4",
     poster: "/thumbnail_video_1.png"
   },
   {
@@ -24,6 +24,27 @@ const medias: MediaItem[] = [
     poster: "/thumbnail_video_2.png"
   },
 ];
+
+  const GraphicDesignMedias: MediaItem[] = [
+    {
+      title: "Design 1",
+      type: "image",
+      url: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/6a8505193865991.65f2b131db88e.png",
+      poster: ""
+    },
+    {
+      title: "Design 2",
+      type: "image",
+      url: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/e2a67e193775429.65f16d1a841a5.jpg",
+      poster: ""
+    },
+    {
+      title: "Design 3",
+      type: "image",
+      url: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/fed94b131335151.61933f893efb5.png",
+      poster: ""
+    }
+  ];
 
 const Portfolio: React.FC = () => {
   const [file, setFile] = useState<{
@@ -57,16 +78,16 @@ const Portfolio: React.FC = () => {
       </div>
       <div className="flex flex-col gap-8 justify-center items-center w-[80%] z-10">
         <div className="">
-        <div className="font-bold text-4xl  bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
-          Shorts & Reels
-        </div>
-          <p className="py-4 text-sm md:text-xl text-neutral-400">
+          <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
+            Shorts & Reels
+          </div>
+          <p className="py-4 text-sm md:text-lg text-neutral-400">
             From YouTube videos to corporate documentaries, our team offers
             comprehensive video editing services tailored to meet your needs. We
             handle everything from basic cuts to complex compositions, ensuring
             your message is clear and impactful.
           </p>
-          <Link href="/videos" className="inline-flex bg-gradient-to-r from-rose-500 to bg-indigo-900 px-6 py-3 rounded-full text-white items-center gap-2" >See all</Link>
+          <Link href="/graphicdesign" className="inline-flex bg-gradient-to-r from-indigo-500/20 to bg-indigo-900/20 backdrop-blur-md border border-indigo-500 px-4 py-2 rounded-full text-white items-center gap-2" >See all works</Link>
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="flex flex-col lg:flex-row gap-8  py-12">
               {medias.map((media, index) => (
@@ -76,16 +97,16 @@ const Portfolio: React.FC = () => {
                     style={{ cursor: "pointer" }}
                   >
                     <video
-                     
+
                       className="w-80 rounded-xl h-80 object-cover"
                       muted
                       autoPlay
                       loop
                       playsInline
-                      preload = "none"
+                      preload="none"
                       poster={media.poster}
                     >
-                      <source  src={`${media.url}#t=0.001`} type="video/mp4" />
+                      <source src={`${media.url}#t=0.001`} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
 
@@ -105,20 +126,50 @@ const Portfolio: React.FC = () => {
         </div>
         <div className=" w-[100%] h-auto flex gap-16 justify-between items-center flex-col md:flex-row">
           <div className="">
-          <div className="font-bold text-4xl  bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
-          Thumbnail Designs
-        </div>
+            <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
+              Thumbnail Designs
+            </div>
 
-            <p className="py-4 text-sm md:text-xl text-neutral-400">
+            <p className="py-4 text-sm md:text-lg text-neutral-400">
               Catch your audience&apos;s attention with custom-designed
               thumbnails that stand out. We combine striking visuals and
               typography to maximize your video&apos;s appeal and click-through
               rate.
             </p>
-            <Link href="/graphicdesign" className="inline-flex bg-gradient-to-r from-rose-500 to bg-indigo-900 px-6 py-3 rounded-full text-white items-center gap-2" >See all</Link>
+            <Link href="/graphicdesign" className="inline-flex bg-gradient-to-r from-indigo-500/20 to bg-indigo-900/20 backdrop-blur-md border border-indigo-500 px-4 py-2 rounded-full text-white items-center gap-2" >See all works</Link>
           </div>
-        
+
           <Slider />
+        </div>
+        <div className=" w-[100%] h-auto flex gap-12 py-12 justify-between items-center flex-col ">
+          <div className="">
+            <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
+              Graphic Designes
+            </div>
+
+            <p className="py-4 text-sm md:text-lg text-neutral-400">
+              Our graphic design services cover everything from brand identity to digital marketing materials. We craft visuals that resonate with your target audience and communicate your brand message clearly.
+
+            </p>
+            <Link href="/graphicdesign" className="inline-flex bg-gradient-to-r from-indigo-500/20 to bg-indigo-900/20 backdrop-blur-md border border-indigo-500 px-4 py-2 rounded-full text-white items-center gap-2" >See all works</Link>
+          </div>
+
+          <div className="flex w-full flex-wrap gap-8">
+            {
+              GraphicDesignMedias.map((media, index) => (
+                <div key={index} onClick={() => openModal(media)} className="overflow-hidden rounded-xl p-2">
+                  <Image
+                    key={index}
+                    className="rounded-xl overflow-hidden object-cover  cursor-pointer h-full  shadow-lg"
+                    src={media.url}
+                    alt="Porfolio_img"
+                    width={300}
+                    height={300}
+                  />
+                </div>
+              ))
+            } 
+          </div>
         </div>
       </div>
 
