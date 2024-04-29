@@ -26,7 +26,7 @@ const medias: MediaItem[] = [
   {
     title: "Reel 2",
     type: "video",
-    url: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714333114/shorts/w2ugziuwgd24smkln97g.mp4",
+    url: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714390286/shorts/dbylhlpzgsalwgg4fsif.mp4",
     poster: "/thumbnail_video_2.png"
   },
 ];
@@ -94,7 +94,7 @@ const Portfolio: React.FC = () => {
           />
         </span>
       </div>
-      <div className="flex flex-col gap-8 justify-center items-center w-[80%] z-10">
+      <div className="flex flex-col gap-20 justify-center items-center w-[80%] z-10">
         <div className="">
           <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
             Shorts & Reels
@@ -135,7 +135,7 @@ const Portfolio: React.FC = () => {
             
           </div>
         </div>
-        <div className=" w-[100%] h-auto flex gap-16 justify-between items-center flex-col md:flex-row">
+        <div className=" w-[100%] h-auto flex gap-16 bg-gradient-to-r from-neutral-900 to-transparent rounded-xl p-8 justify-between items-center flex-col md:flex-row">
           <div className="">
             <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
               Thumbnail Designs
@@ -182,7 +182,7 @@ const Portfolio: React.FC = () => {
             } 
           </div>
         </div>
-        <div className=" w-[100%] h-auto flex gap-12 py-12 justify-between items-center flex-col lg:flex-row ">
+        <div className=" w-[100%] h-auto flex gap-12 py-12 bg-gradient-to-r from-neutral-900 to-transparent p-8 rounded-xl justify-between items-center flex-col lg:flex-row ">
           <div className="w-full lg:w-1/2">
             <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
               Motion Graphics

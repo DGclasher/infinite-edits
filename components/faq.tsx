@@ -66,8 +66,8 @@ const faqs: FAQ[] = [
 
 const FAQS = () => {
   return (
-    <div className="mt-0 z-10 md:py-10 text-white w-[100%] rounded-3xl">
-      <div className="p-10 md:p-4 md:px-20">
+    <div className="mt-0 z-10 md:py-10 text-white min-w-[100vw] rounded-3xl">
+      <div className="p-10 md:p-4 md:px-20 w-full">
         <div className="text-3xl md:text-7xl font-bold text-black">
           Have questions?
         </div>
@@ -75,7 +75,7 @@ const FAQS = () => {
           Get answers.
         </div>
 
-        <Accordion type="single" collapsible>
+        <Accordion type="single" className="w-full" collapsible>
           {faqs.map((faq, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
               <AccordionTrigger>{faq.question}</AccordionTrigger>

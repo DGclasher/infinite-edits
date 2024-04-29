@@ -41,11 +41,10 @@ export default function Home() {
               Specialising in high-quality video editing, graphic design, and
               motion graphics, we turn your raw footage into polished stories
               ready to captivate audiences{" "}
-              <Image className="hidden lg:block absolute top-10 -right-40" src="/curved-arrow.png" width={100} height={100} alt="logo" />
             </p>
 
             <p className="mt-4 text font-normal text-neutral-300 max-w-lg relative">
-            We can edit Videos that help you get more leads, save your time and make you more money.”
+            We edit videos that help you het more leads, save your time and make you more money”
             </p>
 
             <div className="flex flex-col md:flex-row items-start gap-4 py-8">
