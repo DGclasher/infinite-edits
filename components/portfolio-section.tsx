@@ -46,6 +46,16 @@ const medias: MediaItem[] = [
     }
   ];
 
+  const MotionMedias: MediaItem[] = [
+    {
+      title: "Motion 1",
+      type: "video",
+      url: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714372415/motion-graphics/fnt14kq1q5bgxypk7xud.mp4",
+      poster: ""
+    },
+    
+  ];
+
 const Portfolio: React.FC = () => {
   const [file, setFile] = useState<{
     title: string;
@@ -171,6 +181,47 @@ const Portfolio: React.FC = () => {
             } 
           </div>
         </div>
+        <div className=" w-[100%] h-auto flex gap-12 py-12 justify-between items-center flex-col lg:flex-row ">
+          <div className="w-full lg:w-1/2">
+            <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
+              Motion Graphics
+            </div>
+
+            <p className="py-4 text-sm md:text-lg text-neutral-400">
+            Elevate your content with engaging motion graphics. Ideal for intros, advertisements, and educational videos, our motion designs are crafted to keep your audience engaged.
+            </p>
+            <Link href="/graphicdesign" className="inline-flex bg-gradient-to-r from-indigo-500/20 to bg-indigo-900/20 backdrop-blur-md border border-indigo-500 px-4 py-2 rounded-full text-white items-center gap-2" >See all works</Link>
+          </div>
+
+            <div className="w-full lg:w-1/2">
+              {MotionMedias.map((media, index) => (
+                <div key={index}>
+                  <div
+                    onClick={() => openModal(media)}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <video
+
+                      className="w-full rounded-2xl h-auto object-contain"
+                      muted
+                      autoPlay
+                      loop
+                      playsInline
+                      preload="none"
+                      poster={media.poster}
+                    >
+                      <source src={`${media.url}#t=0.001`} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+
+                  </div>
+                </div>
+              ))}
+            </div>
+           
+         
+        </div>
+        
       </div>
 
       {/* Modal for displaying the selected media */}
