@@ -127,7 +127,7 @@ const Portfolio: React.FC = () => {
             handle everything from basic cuts to complex compositions, ensuring
             your message is clear and impactful.
           </p>
-          <Link href="/videos" className="inline-flex bg-gradient-to-r from-indigo-500/20 to bg-indigo-900/20 backdrop-blur-md border border-indigo-500  py-2 rounded-full text-white items-center gap-2" >See all works</Link>
+          <Link href="/videos" className="inline-flex bg-gradient-to-r from-indigo-500/20 to bg-indigo-900/20 backdrop-blur-md border border-indigo-500 px-4 py-2 rounded-full text-white items-center gap-2" >See all works</Link>
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="flex flex-col lg:flex-row gap-8  py-8">
               {medias.map((media, index) => (
