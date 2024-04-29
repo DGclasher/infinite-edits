@@ -39,12 +39,12 @@ export default function AboutUs() {
           </div>
         </div>
         <video
-          className="w-80 h-[400px] object-cover hidden md:flex  mt-8"
+          className="w-80 h-[400px] object-cover hidden md:flex rounded-xl  mt-8"
           autoPlay
           loop
           muted
           playsInline
-          src="https://assets-global.website-files.com/63dbade4088853317febd383/63dbd0efdb6f3820df325f16_Compilation-transcode.mp4"
+          src="https://res.cloudinary.com/dpzciuywe/video/upload/v1714333114/shorts/w2ugziuwgd24smkln97g.mp4"
         ></video>
       </div>
     </div>

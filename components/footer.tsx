@@ -17,15 +17,15 @@ const Footer = () => {
       {/* Social media icons */}
       <div className="flex gap-6">
         <Link href="https://Youtube.com" target="_blank" rel="noopener noreferrer">
-          <FaYoutube className="w-6 h-6 text-rose-600 hover:text-rose-800 transition" />
+          <FaYoutube className="w-6 h-6 text-rose-400 hover:text-rose-800 transition" />
         </Link>
         <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-          <FaLinkedinIn className="w-6 h-6 text-blue-600 hover:text-blue-800 transition" />
+          <FaLinkedinIn className="w-6 h-6 text-blue-400 hover:text-blue-800 transition" />
         </a>
         
       </div>
       
-      <div className="mt-6 text-sm text-gray-400">© 2024 Infinity Medias. All rights reserved.</div>
+      <div className="mt-6 text-sm text-gray-400">© 2024 Infinite Media. All rights reserved.</div>
     </footer>
   );
 };

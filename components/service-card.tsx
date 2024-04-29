@@ -19,25 +19,25 @@ export function ServiceCards()  {
   const cardData: ServiceCardProps[] = [
     {
       title: "Catchy Thumbnails",
-      description: "Catch your audience's attention with custom-designed thumbnails that stand out.",
+      description: "Catch your audience's attention with custom-designed thumbnails that stand out. We combine striking visuals and typography to maximize your video's appeal and click-through rate.",
       imageSrc: "https://res.cloudinary.com/dpzciuywe/image/upload/v1714333407/shorts/wgfeaslh1hn2utujdnwg.webp",
       onClick: () => router.push("/thumbnails"), // Navigate to /thumbnails
     },
     {
       title: "Creative Videos",
-      description: "From YouTube videos to corporate documentaries, our team offers comprehensive video editing services tailored to meet your needs.",
+      description: "From YouTube videos to corporate documentaries, our team offers comprehensive video editing services tailored to meet your needs. We handle everything from basic cuts to complex compositions, ensuring your message is clear and impactful.",
       imageSrc: "https://assets-global.website-files.com/646e2eaef4ea8c90fde6a519/64d32b9df6c651a09a133902_How%20to%20use%20motion%20graphics%20in%20your%20marketing.webp",
       onClick: () => router.push("/videos"),
     },
     {
       title: "Motion Graphics",
-      description: "Elevate your content with engaging motion graphics.",
+      description: "Elevate your content with engaging motion graphics. Ideal for intros, advertisements, and educational videos, our motion designs are crafted to keep your audience engaged.",
       imageSrc: "https://verbit.ai/wp-content/uploads/2023/12/an-impressive-looking-computer.jpg",
       onClick: () => router.push("/motion-graphics"),
     },
     {
       title: "Graphic Design",
-      description: "Our graphic design services cover everything from brand identity to digital marketing materials. ",
+      description: "Our graphic design services cover everything from brand identity to digital marketing materials. We craft visuals that resonate with your target audience and communicate your brand message clearly.",
       imageSrc: "https://inspiria.edu.in/wp-content/uploads/Career-in.-graphic-designers.webp",
       onClick: () => router.push("/graphicdesign"), // Navigate to /graphic-design
     },
