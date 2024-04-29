@@ -62,16 +62,16 @@ export function ServiceCards()  {
           <CardContainer key={index}>
             <CardBody
               className="bg-gradient-to-b from-neutral-900 to-black border-neutral-700 relative group/card 
-                dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] w-auto sm:w-[30rem] h-auto 
+                hover:shadow-2xl hover:shadow-emerald-500/[0.1] w-auto sm:w-[30rem] h-[460px] 
                 rounded-xl p-6 border"
             >
               <CardItem translateZ="50" className="text-xl font-bold text-white">
                 {card.title}
               </CardItem>
-              <CardItem as="p" translateZ="60" className="text-neutral-300 text-sm max-w-sm mt-2 text-left">
+              <CardItem as="p" translateZ="60" className="text-neutral-300 h-[60px] text-xs max-w-md mt-2 text-left">
                 {card.description}
               </CardItem>
-              <CardItem translateZ="100" className="w-full mt-4">
+              <CardItem translateZ="100" className="w-full mt-6">
                 <Image
                   src={card.imageSrc}
                   height={1000}
@@ -80,16 +80,8 @@ export function ServiceCards()  {
                   alt={card.title}
                 />
               </CardItem>
-              <div className="flex justify-between items-center mt-20">
-                <CardItem
-                  translateZ={20}
-                  as={Link}
-                  href=""
-                  target="__blank"
-                  className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-                >
-                  Try now →
-                </CardItem>
+              <div className="flex justify-end items-right mt-6">
+                
                 <CardItem
                   translateZ={20}
                   as="button"

@@ -24,10 +24,10 @@ const medias: MediaItem[] = [
     poster: "/thumbnail_video_2.png"
   },
   {
-    title: "Reel 2",
+    title: "Reel 3",
     type: "video",
     url: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714390286/shorts/dbylhlpzgsalwgg4fsif.mp4",
-    poster: "/thumbnail_video_2.png"
+    poster: "/thumbnail_video_3.png"
   },
 ];
 
@@ -62,6 +62,28 @@ const medias: MediaItem[] = [
     
   ];
 
+  const imageData: MediaItem[] = [
+    {
+      url: "https://res.cloudinary.com/dpzciuywe/image/upload/v1714371381/thumbnails/hdkng6mnvqgeabqyjdwq.png",
+      title: "Design 1",
+      type: "image",
+      poster: ""
+    },
+    {
+      url: "https://res.cloudinary.com/dpzciuywe/image/upload/v1714371360/thumbnails/oo7dbybqyp6rzkttynya.png",
+      title: "Design 2",
+      type: "image",
+      poster: ""
+    },
+    {
+      url: "https://res.cloudinary.com/dpzciuywe/image/upload/v1714371344/thumbnails/hpxawsqpuenv1zqtqbyu.png",
+      title: "Design 2",
+      type: "image",
+      poster: ""
+    },
+
+  ];
+
 const Portfolio: React.FC = () => {
   const [file, setFile] = useState<{
     title: string;
@@ -81,7 +103,7 @@ const Portfolio: React.FC = () => {
   };
 
   return (
-    <div className="text-white w-[100vw] flex flex-col justify-center px-4 md:px-16 items-center ">
+    <div className="text-white w-[100vw] flex flex-col justify-center px-0 md:px-16 items-center ">
       <div className=" text-center relative mb-16 z-10">
         <span className="relative text-white inline-block text-5xl">
           Portfolio
@@ -135,30 +157,50 @@ const Portfolio: React.FC = () => {
             
           </div>
         </div>
-        <div className=" w-[100%] h-auto flex gap-16 bg-gradient-to-r from-neutral-900 to-transparent rounded-xl p-8 justify-between items-center flex-col md:flex-row">
-          <div className="">
-            <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
+        <div className=" w-[100%]  relative h-auto flex gap-16 bg-gradient-to-b from-neutral-900 to-neutral-950 rounded-xl p-8 justify-between items-center flex-col border border-neutral-700 ">
+        <div className="absolute top-20 z-0 flex left-0 items-center">
+        <div className="w-[400px] h-[400px] -rotate-45  rounded-full z-2 blur-3xl bg-gradient-to-br from-indigo-600/50 to-transparent "></div>
+      </div>
+          <div className=" flex items-center z-10 justify-between">
+            <div>
+            <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-300 to-blue-300 bg-clip-text text-transparent">
               Thumbnail Designs
             </div>
 
-            <p className="py-4 text-sm md:text-lg text-neutral-400">
+            <p className="py-4 text-sm md:text-lg text-neutral-200">
               Catch your audience&apos;s attention with custom-designed
               thumbnails that stand out. We combine striking visuals and
               typography to maximize your video&apos;s appeal and click-through
               rate.
             </p>
             <Link href="/thumbnails" className="inline-flex bg-gradient-to-r from-indigo-500/20 to bg-indigo-900/20 backdrop-blur-md border border-indigo-500 px-4 py-2 rounded-full text-white items-center gap-2" >See all works</Link>
-          </div>
-
+            </div>
           <Slider />
+          </div>
+          <div className="flex items-center flex-wrap z-10">
+          {
+            imageData.map((data, index) => (
+              <div key={index} onClick={() => openModal(data)} className="overflow-hidden rounded-xl p-2">
+                <Image
+                  key={index}
+                  className="rounded-xl overflow-hidden object-cover  cursor-pointer h-full  shadow-2xl"
+                  src={data.url}
+                  alt="Porfolio_img"
+                  width={300}
+                  height={300}
+                />
+              </div>
+            ))
+          }
+          </div>
         </div>
         <div className=" w-[100%] h-auto flex gap-12 py-12 justify-between items-center flex-col ">
           <div className="">
-            <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
+            <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-300 to-blue-300 bg-clip-text text-transparent">
               Graphic Designes
             </div>
 
-            <p className="py-4 text-sm md:text-lg text-neutral-400">
+            <p className="py-4 text-sm md:text-lg text-neutral-200">
               Our graphic design services cover everything from brand identity to digital marketing materials. We craft visuals that resonate with your target audience and communicate your brand message clearly.
 
             </p>
@@ -182,13 +224,16 @@ const Portfolio: React.FC = () => {
             } 
           </div>
         </div>
-        <div className=" w-[100%] h-auto flex gap-12 py-12 bg-gradient-to-r from-neutral-900 to-transparent p-8 rounded-xl justify-between items-center flex-col lg:flex-row ">
-          <div className="w-full lg:w-1/2">
-            <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
+        <div className=" w-full h-auto relative z-10 overflow-hidden flex gap-12 py-12 border border-neutral-700 bg-gradient-to-br from-neutral-900 to-neutral-950 p-8 rounded-xl justify-between items-center flex-col lg:flex-row ">
+           <div className="absolute top-0 z-0 flex left-0 items-center">
+        <div className="w-[300px] h-[300px] -rotate-45  rounded-full z-2 blur-3xl bg-gradient-to-br from-indigo-600/50 to-transparent "></div>
+      </div>
+          <div className="w-full lg:w-1/2 z-10">
+            <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-300 to-blue-300 bg-clip-text text-transparent">
               Motion Graphics
             </div>
 
-            <p className="py-4 text-sm md:text-lg text-neutral-400">
+            <p className="py-4 text-sm md:text-lg text-neutral-200">
             Elevate your content with engaging motion graphics. Ideal for intros, advertisements, and educational videos, our motion designs are crafted to keep your audience engaged.
             </p>
             <Link href="/motion-graphics" className="inline-flex bg-gradient-to-r from-indigo-500/20 to bg-indigo-900/20 backdrop-blur-md border border-indigo-500 px-4 py-2 rounded-full text-white items-center gap-2" >See all works</Link>

@@ -18,7 +18,7 @@ const PricingSection = () => {
         {/* Pricing Cards */}
         <div className="bg-gradient-to-b h-[650px] py-8 from-neutral-800 to-black backdrop-blur-md border border-neutral-600 rounded-xl w-[350px] shadow-md p-6">
           <h2 className="text-2xl  text-white font-semibold mb-1">Thumbnail</h2>
-          <p className="text-neutral-300 mb-8">This package includes short video editing services.</p>
+          <p className="text-neutral-300 mb-8">This package includes high quality thumbnail design.</p>
           <p className="text- text-gray-400">starting at</p>
           <p className="text-5xl font-bold text-gray-200">₹ 200</p>
           <button className="w-full justify-center text-center  bg-indigo-700 px-6 py-3 rounded-xl text-white flex items-center gap-2 mt-4">Get Started </button>
@@ -50,7 +50,7 @@ const PricingSection = () => {
           <p className="text-5xl font-bold text-gray-200">₹ 3000</p>
           <button className="w-full justify-center text-center  bg-indigo-700 px-6 py-3 rounded-xl text-white flex items-center gap-2 mt-4">Get Started </button>
           <ul className="mt-4 text-start text-gray-300 text space-y-4">
-            <li className="flex items-center gap-2 border-b py-4"><FaCheckCircle className="text-green-500" />Up to 5 minutes of video</li>
+            <li className="flex items-center gap-2 border-b py-4"><FaCheckCircle className="text-green-500" />Up to 10 minutes of video</li>
             <li className="flex items-center gap-2 border-b py-4"><FaCheckCircle className="text-green-500" />Advanced editing and effects</li>
             <li className="flex items-center gap-2 border-b py-4"><FaCheckCircle className="text-green-500" />High-resolution output</li>
             <li className="flex items-center gap-2 py-4"><FaCheckCircle className="text-green-500" />Customized transitions and animations</li>
