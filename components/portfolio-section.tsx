@@ -2,11 +2,12 @@
 import React, { useState } from "react";
 import { Slider } from "./slider";
 import Link from "next/link";
-
+import Image from "next/image";
 interface MediaItem {
   title: string;
   type: "video" | "image";
   url: string;
+  poster: string;
 }
 
 const medias: MediaItem[] = [
@@ -14,11 +15,13 @@ const medias: MediaItem[] = [
     title: "Reel 1",
     type: "video",
     url: "https://res.cloudinary.com/dltmqv10j/video/upload/v1714302673/sample-videos/osmkliskp1ygnwqvm4se.mp4",
+    poster: "/thumbnail_video_1.png"
   },
   {
     title: "Reel 2",
     type: "video",
     url: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714333114/shorts/w2ugziuwgd24smkln97g.mp4",
+    poster: "/thumbnail_video_2.png"
   },
 ];
 
@@ -54,7 +57,9 @@ const Portfolio: React.FC = () => {
       </div>
       <div className="flex flex-col gap-8 justify-center items-center w-[80%] z-10">
         <div className="">
-          <h2 className="text-3xl text-white font-bold">Shorts/Reels</h2>
+        <div className="font-bold text-4xl  bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
+          Shorts & Reels
+        </div>
           <p className="py-4 text-sm md:text-xl text-neutral-400">
             From YouTube videos to corporate documentaries, our team offers
             comprehensive video editing services tailored to meet your needs. We
@@ -71,13 +76,19 @@ const Portfolio: React.FC = () => {
                     style={{ cursor: "pointer" }}
                   >
                     <video
-                      src={`${media.url}#t=0.001`}
-                      preload="metadata"
+                     
                       className="w-80 rounded-xl h-80 object-cover"
                       muted
                       autoPlay
                       loop
-                    />
+                      playsInline
+                      preload = "none"
+                      poster={media.poster}
+                    >
+                      <source  src={`${media.url}#t=0.001`} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+
                   </div>
                 </div>
               ))}
@@ -94,7 +105,10 @@ const Portfolio: React.FC = () => {
         </div>
         <div className=" w-[100%] h-auto flex gap-16 justify-between items-center flex-col md:flex-row">
           <div className="">
-            <h2 className="text-4xl text-white font-bold">Thumbnail Designs</h2>
+          <div className="font-bold text-4xl  bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
+          Thumbnail Designs
+        </div>
+
             <p className="py-4 text-sm md:text-xl text-neutral-400">
               Catch your audience&apos;s attention with custom-designed
               thumbnails that stand out. We combine striking visuals and
@@ -103,7 +117,7 @@ const Portfolio: React.FC = () => {
             </p>
             <Link href="/graphicdesign" className="inline-flex bg-gradient-to-r from-rose-500 to bg-indigo-900 px-6 py-3 rounded-full text-white items-center gap-2" >See all</Link>
           </div>
-
+        
           <Slider />
         </div>
       </div>

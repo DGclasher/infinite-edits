@@ -37,10 +37,11 @@ export default function Home() {
               </span>
             </div>
 
-            <p className="mt-12 text font-normal text-neutral-300 max-w-lg  ">
+            <p className="mt-12 text font-normal text-neutral-300 max-w-lg relative ">
               Specialising in high-quality video editing, graphic design, and
               motion graphics, we turn your raw footage into polished stories
               ready to captivate audiences{" "}
+              <Image className="hidden lg:block absolute top-10 -right-40" src="/curved-arrow.png" width={100} height={100} alt="logo" />
             </p>
 
             <div className="flex flex-col md:flex-row items-start gap-4 py-8">
