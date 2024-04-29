@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <div className="sticky top-0">
       <div className="p-4 flex items-center justify-between z-50 top-0">
-        <div>
+        <div className="flex gap-4 items-center text-white text-xl">
           <Link className="cursor-pointer" href="/">
             <Image
               priority
@@ -32,6 +32,7 @@ const Navbar = () => {
               className="w-10 h-10 md:w-14 md:h-14"
             />
           </Link>
+          <h1>Infinite Media</h1>
         </div>
         <div
           className="cursor-pointer hidden 
