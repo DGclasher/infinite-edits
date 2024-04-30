@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   
   return (
-    <html lang="en">
+    <html lang="en" >
       <body className={font.className}>
         <>
           <div className="w-full sticky top-0 md:items-center md:justify-center backdrop-filter backdrop-blur-md bg-zinc-950 bg-opacity-60 border-b border-indigo-800 antialiased z-50">

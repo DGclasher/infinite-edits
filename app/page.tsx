@@ -19,7 +19,7 @@ export default function Home() {
       </div>
 
       <div className="min-h-[55rem] px-2 md:px-12 lg:px-24 pt-16 bg-grid-white/[0.05] flex-col overflow-hidden w-full bg-black   flex  items-center justify-center overflow-x-hidden">
-        <div className="fixed pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+        <div className="fixed pointer-events-none max-w-full inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
         <div className="  z-10 flex w-full flex-col lg:flex-row h-full justify-center items-center gap-16  z-1  pt-  ">
           <div className=" w-full h-full flex flex-col justify-center items-start p-8 ">
