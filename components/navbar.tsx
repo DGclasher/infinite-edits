@@ -64,6 +64,9 @@ const Navbar = () => {
           <Link href="/#faq" scroll={true}>
             FAQ
           </Link>
+          <Link href="/media-school" scroll={true}>
+            Media School
+          </Link>
         </div>
 
         <div className="flex lg:hidden">

@@ -31,7 +31,7 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({ onClose }) => {
       exit={{ opacity: 0, y: "-100%" }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex-col flex space-y-10 text-black text-xl">
+      <div className="flex-col flex space-y-6  text-black text-xl">
       <Link href="/#about" scroll={true}>
             About
           </Link>
@@ -53,6 +53,9 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({ onClose }) => {
           </Link>
           <Link href="/#faq" scroll={true}>
             FAQ
+          </Link>
+          <Link href='/media-school'>
+            Media School
           </Link>
           <Link href="/contact" >
             Contact
