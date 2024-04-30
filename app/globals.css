@@ -55,9 +55,14 @@
   body {
     @apply bg-background text-foreground;
     background-color: black;
+    overscroll-behavior: none;
+    -webkit-overscroll-behavior: none;
   }
 }
 
+.school{
+  line-height: auto;
+}
 
 .popup-media{
   position: fixed;
@@ -94,3 +99,4 @@
   user-select: none;
 
 }
+
