@@ -4,7 +4,7 @@ const PricingSection = () => {
   return (
     <div className="w-full z-10 font-normal my-16 h-auto items-center text-center justify-center rounded-xl p-8 overflow-x-hidden">
       <div className="relative mb-16">
-        <span className="relative text-white inline-block text-5xl">
+        <span className="relative text-white inline-block text-4xl md:text-5xl">
           Pricing
           <img
             src={'curve.png'}

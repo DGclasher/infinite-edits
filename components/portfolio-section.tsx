@@ -49,6 +49,12 @@ const medias: MediaItem[] = [
       type: "image",
       url: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/fed94b131335151.61933f893efb5.png",
       poster: ""
+    },
+    {
+      title: "Design 4",
+      type: "image",
+      url: "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/195b1b119483967.609e6044359f8.jpg",
+      poster: ""
     }
   ];
 
@@ -105,7 +111,7 @@ const Portfolio: React.FC = () => {
   return (
     <div className="text-white w-[100vw] flex flex-col justify-center px-4 md:px-16 items-center ">
       <div className=" text-center relative mb-16 z-10">
-        <span className="relative text-white inline-block text-5xl">
+        <span className="relative text-white inline-block text-4xl md:text-5xl">
           Portfolio
           <Image
             src={"/curve.png"}
@@ -116,8 +122,8 @@ const Portfolio: React.FC = () => {
           />
         </span>
       </div>
-      <div className="flex flex-col gap-20 justify-center items-center w-[100%] md:w-[90%] lg:w-[80%] z-10">
-        <div className="">
+      <div className="flex flex-col gap-20 justify-center items-center  w-[100%] md:w-[90%] lg:w-[80%] z-10">
+        <div className="bg-gradient-to-b from-neutral-900 border border-neutral-700 to-neutral-950 rounded-xl p-4 md:p-8">
           <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
             Shorts & Reels
           </div>
@@ -158,9 +164,7 @@ const Portfolio: React.FC = () => {
           </div>
         </div>
         <div className=" w-[100%]  relative h-auto flex gap-16 bg-gradient-to-b from-neutral-900 to-neutral-950 rounded-xl p-4 md:p-8 justify-between items-center flex-col border border-neutral-700 ">
-        <div className="absolute top-20 z-0 flex left-0 items-center">
-        <div className="w-[400px] h-[400px] -rotate-45  rounded-full z-2 blur-3xl bg-gradient-to-br from-indigo-600/50 to-transparent "></div>
-      </div>
+        
           <div className=" flex flex-col md:flex-row gap-8 items-center z-10 justify-between">
             <div>
             <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-300 to-blue-300 bg-clip-text text-transparent">
@@ -194,7 +198,7 @@ const Portfolio: React.FC = () => {
           }
           </div>
         </div>
-        <div className=" w-[100%] h-auto flex gap-12 py-12 justify-between items-center flex-col ">
+        <div className=" w-[100%] h-auto flex gap-12 py-12 justify-between items-center flex-col bg-gradient-to-b from-neutral-900 border border-neutral-700 to-neutral-950 rounded-xl p-4 md:p-8">
           <div className="">
             <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-300 to-blue-300 bg-clip-text text-transparent">
               Graphic Designes
@@ -225,9 +229,7 @@ const Portfolio: React.FC = () => {
           </div>
         </div>
         <div className=" w-full h-auto relative z-10 overflow-hidden flex gap-12 py-12 border border-neutral-700 bg-gradient-to-br from-neutral-900 to-neutral-950 p-8 rounded-xl justify-between items-center flex-col lg:flex-row ">
-           <div className="absolute top-0 z-0 flex left-0 items-center">
-        <div className="w-[300px] h-[300px] -rotate-45  rounded-full z-2 blur-3xl bg-gradient-to-br from-indigo-600/50 to-transparent "></div>
-      </div>
+           
           <div className="w-full lg:w-1/2 z-10">
             <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-300 to-blue-300 bg-clip-text text-transparent">
               Motion Graphics
