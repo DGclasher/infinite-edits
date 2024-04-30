@@ -12,6 +12,7 @@ import { TracingBeam } from '@/components/ui/tracing-beam';
 import { TracingBeamDemo } from '@/components/tracingbeam';
 import { GlowingStarsBackgroundCard, GlowingStarsDescription, GlowingStarsTitle } from '@/components/ui/glowing-cards';
 import { FaArrowRight } from 'react-icons/fa';
+import { AnimatedPinDemo } from '@/components/enrollment-steps';
 
 
 const CourseRegistration: FC = () => {
@@ -52,7 +53,15 @@ const CourseRegistration: FC = () => {
        <button className="bg-gradient-to-r text-xl from-indigo-800/20 to bg-black px-6 py-3 rounded-full text-white flex items-center gap-2 mt-4 border border-indigo-500">
                     Register Now <FaArrowRight />
                 </button>
-
+                <div className="relative w-full max-w-4xl mx-auto mt-10 flex justify-between items-center">
+      
+      <AnimatedPinDemo />
+      
+    
+    </div>
+    <button className="bg-gradient-to-r text-xl from-indigo-800/20 to bg-black px-6 py-3 rounded-full text-white flex items-center gap-2 mt-4 border border-indigo-500">
+                    Register Now <FaArrowRight />
+      </button>
       </div>
       
     </div>

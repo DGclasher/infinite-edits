@@ -5,13 +5,14 @@ import Image from "next/image";
 
 export function BackgroundBeamsDemo() {
     return (
-        <div className="h-[40rem] px-4 md:px-8 lg:px-12 w-full rounded-md bg-gradient-to-b from-neutral-950  relative flex lg:flex-row flex-col items-center justify-center antialiased">
-            <div className="flex flex-col w-1/2 items-center justify-center text-center p-4 gap-6">
-                <h1 className="relative school leading-loose z-10 text-lg  md:text-6xl font-bold">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-br from-indigo-400 to-indigo-900">
+        <div className="h-[40rem] px-4 md:px-8 lg:px-12 w-full overflow-x-hidden  rounded-md bg-gradient-to-b from-neutral-950  relative flex lg:flex-row flex-col items-center justify-center antialiased">
+           
+            <div className="flex flex-col w-full md:w-3/4 lg:w-1/2 items-center justify-center text-center p-4 gap-6">
+                <h1 className="relative school  z-10 text-4xl text  md:text-6xl font-bold">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-br from-indigo-50 to">
                         Comprehensive Video Editing Course
                     </span>
-                    <span className="text-3xl text-neutral-400 block py-4">
+                    <span className="text-2xl md:text-3xl text-neutral-400 block py-4">
                         From basics to advanced
                     </span>
                 </h1>
