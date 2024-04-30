@@ -1,8 +1,10 @@
 import dotenv from "dotenv";
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
-
+import sheets from "@/lib/gsheet";
 dotenv.config();
+
+const SERVICE_SHEET_ID = process.env.SERVICE_SHEET_ID;
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -38,6 +40,22 @@ export async function POST(req: Request) {
         `,
     };
     await transporter.sendMail(mailOptions);
+    await sheets.spreadsheets.values.append({
+      spreadsheetId: SERVICE_SHEET_ID,
+      range: "Sheet1!A2:F2",
+      insertDataOption: "INSERT_ROWS",
+      valueInputOption: "RAW",
+      requestBody: {
+        values: [[
+          first_name + " " + last_name,
+          email,
+          company_name,
+          help,
+          services,
+          info,
+        ]]
+      }
+    })
     console.log("Email sent");
     return NextResponse.json({ message: "Email sent" }, { status: 200 });
   } catch (error) {

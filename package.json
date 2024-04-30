@@ -24,6 +24,7 @@
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.0.2",
     "framer-motion": "^11.1.7",
+    "googleapis": "^135.0.0",
     "lucide-react": "^0.374.0",
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.1.4",

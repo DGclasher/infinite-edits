@@ -1,11 +1,11 @@
-FROM node:21-alpine as builder
+FROM node:21-slim as builder
 WORKDIR /app
 COPY package.json .
 RUN npm install
 COPY . .
 RUN npm run build
 
-FROM node:21-alpine as runner
+FROM node:21-slim as runner
 WORKDIR /app
 COPY --from=builder /app/package.json .
 COPY --from=builder /app/package-lock.json .
