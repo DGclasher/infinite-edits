@@ -50,12 +50,7 @@ const medias: MediaItem[] = [
       url: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/fed94b131335151.61933f893efb5.png",
       poster: ""
     },
-    {
-      title: "Design 4",
-      type: "image",
-      url: "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/195b1b119483967.609e6044359f8.jpg",
-      poster: ""
-    }
+    
   ];
 
   const MotionMedias: MediaItem[] = [
@@ -134,8 +129,7 @@ const Portfolio: React.FC = () => {
             your message is clear and impactful.
           </p>
           <Link href="/videos" className="inline-flex bg-gradient-to-r from-indigo-500/20 to bg-indigo-900/20 backdrop-blur-md border border-indigo-500 px-4 py-2 rounded-full text-white items-center gap-2" >See all works</Link>
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="flex flex-col lg:flex-row gap-8  py-8">
+            <div className="flex flex-col justify-center items-center lg:flex-row gap-8  py-8">
               {medias.map((media, index) => (
                 <div key={index}>
                   <div
@@ -161,7 +155,6 @@ const Portfolio: React.FC = () => {
               ))}
             </div>
             
-          </div>
         </div>
         <div className=" w-[100%]  relative h-auto flex gap-16 bg-gradient-to-b from-neutral-900 to-neutral-950 rounded-xl p-4 md:p-8 justify-between items-center flex-col border border-neutral-700 ">
         
@@ -211,13 +204,13 @@ const Portfolio: React.FC = () => {
             <Link href="/graphicdesign" className="inline-flex bg-gradient-to-r from-indigo-500/20 to bg-indigo-900/20 backdrop-blur-md border border-indigo-500 px-4 py-2 rounded-full text-white items-center gap-2" >See all works</Link>
           </div>
 
-          <div className="flex w-full flex-wrap gap-8">
+          <div className="flex w-full justify-center items-center flex-wrap gap-8">
             {
               GraphicDesignMedias.map((media, index) => (
                 <div key={index} onClick={() => openModal(media)} className="overflow-hidden rounded-xl p-2">
                   <Image
                     key={index}
-                    className="rounded-xl overflow-hidden object-cover  cursor-pointer h-full  shadow-lg"
+                    className="rounded-xl overflow-hidden object-cover h-80  cursor-pointer   shadow-lg"
                     src={media.url}
                     alt="Porfolio_img"
                     width={300}
