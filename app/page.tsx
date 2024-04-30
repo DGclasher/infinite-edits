@@ -44,7 +44,7 @@ export default function Home() {
             </p>
 
             <p className="mt-4 text font-normal text-neutral-300 max-w-lg relative">
-            We edit videos that help you get more leads, save your time and make you more money”
+            We edit videos that help you get more leads, save your time and make you more money.
             </p>
 
             <div className="flex flex-col md:flex-row items-start gap-4 py-8">

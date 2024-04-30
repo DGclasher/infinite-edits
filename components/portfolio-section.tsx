@@ -71,7 +71,7 @@ const medias: MediaItem[] = [
       poster: ""
     },
     {
-      url: "https://res.cloudinary.com/dpzciuywe/image/upload/v1714371360/thumbnails/oo7dbybqyp6rzkttynya.png",
+      url: "https://res.cloudinary.com/dpzciuywe/image/upload/v1714371323/thumbnails/ynrclc9eydtgfdqlc5lj.png",
       title: "Design 2",
       type: "image",
       poster: ""
@@ -118,7 +118,7 @@ const Portfolio: React.FC = () => {
         </span>
       </div>
       <div className="flex flex-col gap-20 justify-center items-center  w-[100%] md:w-[90%] lg:w-[80%] z-10">
-        <div className="bg-gradient-to-b from-neutral-900 border border-neutral-700 to-neutral-950 rounded-xl p-4 md:p-8">
+        <div className="bg-gradient-to-b from-neutral-950 border border-neutral-800 rounded-xl p-4 md:p-8">
           <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
             Shorts & Reels
           </div>
@@ -156,7 +156,7 @@ const Portfolio: React.FC = () => {
             </div>
             
         </div>
-        <div className=" w-[100%]  relative h-auto flex gap-16 bg-gradient-to-b from-neutral-900 to-neutral-950 rounded-xl p-4 md:p-8 justify-between items-center flex-col border border-neutral-700 ">
+        <div className=" w-[100%]  relative h-auto flex gap-16 bg-gradient-to-b from-neutral-950 rounded-xl p-4 md:p-8 justify-between items-center flex-col border border-neutral-800 ">
         
           <div className=" flex flex-col md:flex-row gap-8 items-center z-10 justify-between">
             <div>
@@ -191,10 +191,10 @@ const Portfolio: React.FC = () => {
           }
           </div>
         </div>
-        <div className=" w-[100%] h-auto flex gap-12 py-12 justify-between items-center flex-col bg-gradient-to-b from-neutral-900 border border-neutral-700 to-neutral-950 rounded-xl p-4 md:p-8">
+        <div className=" w-[100%] h-auto flex gap-12 py-12 justify-between items-center flex-col bg-gradient-to-b from-neutral-950 border border-neutral-800 rounded-xl p-4 md:p-8">
           <div className="">
             <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-300 to-blue-300 bg-clip-text text-transparent">
-              Graphic Designes
+              Graphic Designs
             </div>
 
             <p className="py-4 text-sm md:text-lg text-neutral-200">
@@ -221,7 +221,7 @@ const Portfolio: React.FC = () => {
             } 
           </div>
         </div>
-        <div className=" w-full h-auto relative z-10 overflow-hidden flex gap-12 py-12 border border-neutral-700 bg-gradient-to-br from-neutral-900 to-neutral-950 p-8 rounded-xl justify-between items-center flex-col lg:flex-row ">
+        <div className=" w-full h-auto relative z-10 overflow-hidden flex gap-12 py-12 border border-neutral-800 bg-gradient-to-br from-neutral-950 p-8 rounded-xl justify-between items-center flex-col lg:flex-row ">
            
           <div className="w-full lg:w-1/2 z-10">
             <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-300 to-blue-300 bg-clip-text text-transparent">

@@ -70,7 +70,7 @@ const Videos = () => {
     setFile(null);
   };
   return (
-    <div className="bg-black px-4 md:px-8 lg:px-16 relative bg-grid-white/[0.08] text-center overflow-x-hidden pt-10">
+    <div className="bg-black px-4 md:px-8 lg:px-16 relative bg-grid-white/[0.08] text-center overflow-x-hidden">
       <div className="absolute -top-80 z-10 flex left-0 items-center">
         <div className="w-[500px] h-[1000px] -rotate-45  rounded-full z-2 blur-3xl bg-gradient-to-br from-indigo-600/50 to-transparent "></div>
       </div>

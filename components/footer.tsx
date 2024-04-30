@@ -3,10 +3,10 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa"; // Social m
 import { FaLinkedinIn, FaYoutube } from "react-icons/fa";
 const Footer = () => {
   return (
-    <footer className="w-full bg-gradient-to-t from-black to-zinc-900 text-white py-8 flex flex-col items-center">
+    <footer className="w-full bg-gradient-to-t from-black to-zinc-900 text-white py-16 flex flex-col items-center">
       <div className="mb-4 text-xl font-bold">Infinite Media</div>
 
-      <div className="flex gap-8 mb-6">
+      <div className="flex gap-8 mb-6 z-10">
         {/* Footer navigation links */}
         <Link href="/#about" className="hover:text-indigo-400 transition">
           About
@@ -23,7 +23,7 @@ const Footer = () => {
       </div>
 
       {/* Social media icons */}
-      <div className="flex gap-6">
+      <div className="flex gap-6 z-10">
         <Link
           href="https://youtube.com"
           target="_blank"
@@ -57,7 +57,7 @@ const Footer = () => {
         </a>
       </div>
 
-      <div className="mt-6 text-sm text-gray-400">
+      <div className="mt-6 text-sm text-gray-400 z-10">
         © 2024 Infinite Media. All rights reserved.
       </div>
     </footer>

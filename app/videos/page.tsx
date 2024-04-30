@@ -58,7 +58,7 @@ const Videos = () => {
     setFile(null);
   };
   return (
-    <div className="bg-black relative bg-grid-white/[0.08] text-center pt-16 overflow-x-hidden">
+    <div className="bg-black relative bg-grid-white/[0.08] text-center overflow-x-hidden mx-auto max-w-screen">
       <div className="absolute -top-80 z-10 flex left-0 items-center">
         <div className="w-[500px] h-[1000px] -rotate-45  rounded-full z-2 blur-3xl bg-gradient-to-br from-indigo-600/50 to-transparent "></div>
       </div>
@@ -80,7 +80,7 @@ const Videos = () => {
         </p>
       </div>
 
-      <div className="w-full columns-1 z-10 relative md:columns-2 lg:columns-3 space-y-5 gap-5 p-5 ">
+      <div className="w-full flex flex-wrap justify-center items-center z-10 relative space-y-5 gap-5 p-5 ">
         {imageData.map((data, index) => {
           return (
             <div
