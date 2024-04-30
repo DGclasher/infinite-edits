@@ -86,7 +86,7 @@ export function ServiceCards() {
           <CardContainer key={index}>
             <CardBody
               className="bg-gradient-to-b from-neutral-900 to-black border-neutral-700 relative group/card 
-                hover:shadow-2xl hover:shadow-emerald-500/[0.1] w-auto sm:w-[30rem] h-[480px] 
+                hover:shadow-2xl hover:shadow-emerald-500/[0.1] w-auto sm:w-[30rem] md:w-[400px] h-[490px] 
                 rounded-xl p-6 border"
             >
               <CardItem
@@ -95,34 +95,36 @@ export function ServiceCards() {
               >
                 {card.title}
               </CardItem>
+              <div className="flex flex-col  gap-4 h-[30%] pt-4">
               <CardItem
                 as="p"
                 translateZ="60"
-                className="text-neutral-300 h-[30px] text-xs max-w-md mt-2 text-left"
+                className="text-neutral-300  text-xs max-w-full  text-left"
               >
                 {card.description1}
               </CardItem>
               <CardItem
                 as="p"
                 translateZ="60"
-                className="text-neutral-300 h-[30px] text-xs max-w-md mt-2 text-left"
+                className="text-neutral-300  text-xs w-full  text-left"
               >
                 {card.description2}
               </CardItem>
-              <CardItem translateZ="100" className="w-full mt-6">
+              </div>
+              <CardItem translateZ="100" className="w-full  mt-8">
                 {card.type === "image" ? (
                   <Image
                     src={card.imageSrc}
                     height={1000}
                     width={1000}
-                    className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                    className="h-52 w-full object-cover rounded-xl group-hover/card:shadow-xl"
                     alt={card.title}
                   />
                 ) : (
                   <video
                     src={card.imageSrc}
                     poster={card.thumbnailSrc}
-                    className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                    className="h-52 w-full object-cover rounded-xl group-hover/card:shadow-xl"
                     autoPlay
                     loop
                     muted
@@ -130,7 +132,7 @@ export function ServiceCards() {
                   />
                 )}
               </CardItem>
-              <div className="flex justify-end items-right mt-6">
+              <div className="flex justify-end items-right mt-4">
                 <CardItem
                   translateZ={20}
                   as="button"

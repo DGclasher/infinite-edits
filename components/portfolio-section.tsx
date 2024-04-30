@@ -50,12 +50,7 @@ const medias: MediaItem[] = [
       url: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/fed94b131335151.61933f893efb5.png",
       poster: ""
     },
-    {
-      title: "Design 4",
-      type: "image",
-      url: "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/195b1b119483967.609e6044359f8.jpg",
-      poster: ""
-    }
+    
   ];
 
   const MotionMedias: MediaItem[] = [
@@ -76,7 +71,7 @@ const medias: MediaItem[] = [
       poster: ""
     },
     {
-      url: "https://res.cloudinary.com/dpzciuywe/image/upload/v1714371360/thumbnails/oo7dbybqyp6rzkttynya.png",
+      url: "https://res.cloudinary.com/dpzciuywe/image/upload/v1714371323/thumbnails/ynrclc9eydtgfdqlc5lj.png",
       title: "Design 2",
       type: "image",
       poster: ""
@@ -123,7 +118,7 @@ const Portfolio: React.FC = () => {
         </span>
       </div>
       <div className="flex flex-col gap-20 justify-center items-center  w-[100%] md:w-[90%] lg:w-[80%] z-10">
-        <div className="bg-gradient-to-b from-neutral-900 border border-neutral-700 to-neutral-950 rounded-xl p-4 md:p-8">
+        <div className="bg-gradient-to-b from-neutral-950 border border-neutral-800 rounded-xl p-4 md:p-8">
           <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
             Shorts & Reels
           </div>
@@ -134,8 +129,7 @@ const Portfolio: React.FC = () => {
             your message is clear and impactful.
           </p>
           <Link href="/videos" className="inline-flex bg-gradient-to-r from-indigo-500/20 to bg-indigo-900/20 backdrop-blur-md border border-indigo-500 px-4 py-2 rounded-full text-white items-center gap-2" >See all works</Link>
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="flex flex-col lg:flex-row gap-8  py-8">
+            <div className="flex flex-col justify-center items-center lg:flex-row gap-8  py-8">
               {medias.map((media, index) => (
                 <div key={index}>
                   <div
@@ -161,9 +155,8 @@ const Portfolio: React.FC = () => {
               ))}
             </div>
             
-          </div>
         </div>
-        <div className=" w-[100%]  relative h-auto flex gap-16 bg-gradient-to-b from-neutral-900 to-neutral-950 rounded-xl p-4 md:p-8 justify-between items-center flex-col border border-neutral-700 ">
+        <div className=" w-[100%]  relative h-auto flex gap-16 bg-gradient-to-b from-neutral-950 rounded-xl p-4 md:p-8 justify-between items-center flex-col border border-neutral-800 ">
         
           <div className=" flex flex-col md:flex-row gap-8 items-center z-10 justify-between">
             <div>
@@ -198,10 +191,10 @@ const Portfolio: React.FC = () => {
           }
           </div>
         </div>
-        <div className=" w-[100%] h-auto flex gap-12 py-12 justify-between items-center flex-col bg-gradient-to-b from-neutral-900 border border-neutral-700 to-neutral-950 rounded-xl p-4 md:p-8">
+        <div className=" w-[100%] h-auto flex gap-12 py-12 justify-between items-center flex-col bg-gradient-to-b from-neutral-950 border border-neutral-800 rounded-xl p-4 md:p-8">
           <div className="">
             <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-300 to-blue-300 bg-clip-text text-transparent">
-              Graphic Designes
+              Graphic Designs
             </div>
 
             <p className="py-4 text-sm md:text-lg text-neutral-200">
@@ -211,13 +204,13 @@ const Portfolio: React.FC = () => {
             <Link href="/graphicdesign" className="inline-flex bg-gradient-to-r from-indigo-500/20 to bg-indigo-900/20 backdrop-blur-md border border-indigo-500 px-4 py-2 rounded-full text-white items-center gap-2" >See all works</Link>
           </div>
 
-          <div className="flex w-full flex-wrap gap-8">
+          <div className="flex w-full justify-center items-center flex-wrap gap-8">
             {
               GraphicDesignMedias.map((media, index) => (
                 <div key={index} onClick={() => openModal(media)} className="overflow-hidden rounded-xl p-2">
                   <Image
                     key={index}
-                    className="rounded-xl overflow-hidden object-cover  cursor-pointer h-full  shadow-lg"
+                    className="rounded-xl overflow-hidden object-cover h-80  cursor-pointer   shadow-lg"
                     src={media.url}
                     alt="Porfolio_img"
                     width={300}
@@ -228,7 +221,7 @@ const Portfolio: React.FC = () => {
             } 
           </div>
         </div>
-        <div className=" w-full h-auto relative z-10 overflow-hidden flex gap-12 py-12 border border-neutral-700 bg-gradient-to-br from-neutral-900 to-neutral-950 p-8 rounded-xl justify-between items-center flex-col lg:flex-row ">
+        <div className=" w-full h-auto relative z-10 overflow-hidden flex gap-12 py-12 border border-neutral-800 bg-gradient-to-br from-neutral-950 p-8 rounded-xl justify-between items-center flex-col lg:flex-row ">
            
           <div className="w-full lg:w-1/2 z-10">
             <div className="font-bold text-3xl  bg-gradient-to-r from-emerald-300 to-blue-300 bg-clip-text text-transparent">
