@@ -95,7 +95,7 @@ const GraphicDesign = () => {
     setFile(null);
   };
   return (
-    <div className="bg-black relative bg-grid-white/[0.08] overflow-x-hidden pt-10 text-center">
+    <div className="bg-black relative bg-grid-white/[0.08] overflow-x-hidden text-center">
       <div className="absolute -top-80 z-10 flex left-0 items-center">
         <div className="w-[500px] h-[1000px] -rotate-45  rounded-full z-2 blur-3xl bg-gradient-to-br from-indigo-600/50 to-transparent "></div>
       </div>
