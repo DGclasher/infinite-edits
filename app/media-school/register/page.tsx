@@ -13,7 +13,7 @@ const FormSchema = z.object({
   last_name: z.string().min(1, "Last name is required"),
   email: z.string().email("Invalid email"),
   phone: z.string().min(10, "Invalid phone number"),
-  previous_experience: z.string().optional(),
+  previous_experience: z.enum(["None","Beginner", "Intermediate", "Advanced"]).optional(),
   notes: z.string().optional(),
 });
 
@@ -77,7 +77,7 @@ const CourseRegistrationForm: FC = () => {
             id="first_name"
             {...register("first_name")}
             className="w-full p-4 border border-neutral-700 bg-black text-white rounded-xl"
-            placeholder="First Name"
+            placeholder="First Name *"
           />
           {errors.first_name && (
             <span className="text-red-500">{errors.first_name.message}</span>
@@ -88,7 +88,7 @@ const CourseRegistrationForm: FC = () => {
             id="last_name"
             {...register("last_name")}
             className="w-full p-4 border border-neutral-700 bg-black text-white rounded-xl"
-            placeholder="Last Name"
+            placeholder="Last Name *"
           />
           {errors.last_name && (
             <span className="text-red-500">{errors.last_name.message}</span>
@@ -99,7 +99,7 @@ const CourseRegistrationForm: FC = () => {
             id="email"
             {...register("email")}
             className="w-full p-4 border border-neutral-700 bg-black text-white rounded-xl"
-            placeholder="Email"
+            placeholder="Email *"
           />
           {errors.email && (
             <span className="text-red-500">{errors.email.message}</span>
@@ -110,19 +110,23 @@ const CourseRegistrationForm: FC = () => {
             id="phone"
             {...register("phone")}
             className="w-full p-4 border border-neutral-700 bg-black text-white rounded-xl"
-            placeholder="Phone Number"
+            placeholder="Phone Number *"
           />
           {errors.phone && (
             <span className="text-red-500">{errors.phone.message}</span>
           )}
         </div>
         <div className="mb-4">
-          <input
+          <select
             id="previous_experience"
             {...register("previous_experience")}
             className="w-full p-4 border border-neutral-700 bg-black text-white rounded-xl"
-            placeholder="Previous Experience"
-          />
+          >
+            <option value="None">Previous Experience</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+            </select>
           {errors.previous_experience && (
             <span className="text-red-500">
               {errors.previous_experience.message}

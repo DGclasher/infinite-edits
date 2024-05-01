@@ -154,7 +154,7 @@ const Portfolio: React.FC = () => {
                 Thumbnail Designs
               </div>
               <p className="py-4 text-sm md:text-lg w-full text-neutral-200">
-                Catch your audience's attention with custom-designed thumbnails that stand out. We combine striking visuals and typography to maximize your video's appeal and click-through rate.
+                Catch your audience&apos;s attention with custom-designed thumbnails that stand out. We combine striking visuals and typography to maximize your video&apos;s appeal and click-through rate.
               </p>
               <Link href="/thumbnails" className="inline-flex bg-gradient-to-r from-indigo-500/20 to bg-indigo-900/20 backdrop-blur-md border border-indigo-500 px-4 py-2 rounded-full text-white items-center gap-2">
                 See all works
