@@ -3,7 +3,7 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa"; // Social m
 import { FaLinkedinIn, FaYoutube } from "react-icons/fa";
 const Footer = () => {
   return (
-    <footer className="w-full bg-gradient-to-t from-black to-zinc-900 text-white py-16 flex flex-col items-center">
+    <footer className="w-full bg-gradient-to-b from-black to-zinc-950 border-t border-neutral-800 text-white py-16 flex flex-col items-center">
       <div className="mb-4 text-xl font-bold">Infinite Media</div>
 
       <div className="flex gap-8 mb-6 z-10">
