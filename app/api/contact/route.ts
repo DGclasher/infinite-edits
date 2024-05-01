@@ -1,7 +1,9 @@
 import dotenv from "dotenv";
+import sheets from "@/lib/gsheet";
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
-import sheets from "@/lib/gsheet";
+import { validateEmail } from "@/lib/utils";
+
 dotenv.config();
 
 const SERVICE_SHEET_ID = process.env.SERVICE_SHEET_ID;
@@ -27,6 +29,10 @@ export async function POST(req: Request) {
       services,
       info,
     } = await req.json();
+    const isValidEmail = await validateEmail(email);
+    if (!isValidEmail) {
+      return NextResponse.json({ message: "Invalid email" }, { status: 400 });
+    }
     const mailOptions = {
       from: email,
       to: process.env.MAIL_TO?.split(","),

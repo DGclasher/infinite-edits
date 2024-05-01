@@ -13,20 +13,9 @@ const FormSchema = z.object({
   last_name: z.string().min(1, "Last name is required"),
   email: z.string().email("Invalid email"),
   phone: z.string().min(10, "Invalid phone number"),
-  previous_experience: z
-    .string()
-    .min(1, "Please describe your previous experience"),
-  starting_session: z.string().min(1, "Starting session is required"),
+  previous_experience: z.string().optional(),
   notes: z.string().optional(),
-  education: z.array(
-    z.object({
-      degree: z.string().min(1, "Degree is required"),
-      field: z.string().min(1, "Field is required"),
-      institution: z.string().min(1, "Institution is required"),
-    })
-  ),
 });
-
 
 type FormData = z.infer<typeof FormSchema>;
 
@@ -58,13 +47,14 @@ const CourseRegistrationForm: FC = () => {
           description: "We will contact you soon",
         });
       } else {
-        throw new Error("Failed to submit");
+        const res = await response.json();
+        throw new Error(res.message);
       }
-    } catch (error) {
+    } catch (error: any) {
       toast({
         variant: "error",
         title: "Error submitting form",
-        description: "Please try again",
+        description: error.message,
       });
     }
   };
@@ -139,64 +129,10 @@ const CourseRegistrationForm: FC = () => {
             </span>
           )}
         </div>
-        <div className="mb-4">
-          <input
-            id="starting_session"
-            {...register("starting_session")}
-            className="w-full p-4 border border-neutral-700 bg-black text-white rounded-xl"
-            placeholder="Starting Session"
-          />
-          {errors.starting_session && (
-            <span className="text-red-500">
-              {errors.starting_session.message}
-            </span>
-          )}
-        </div>
+       
 
         {/* Additional form fields with similar validation */}
-        <div>
-          <p className="text-lg text-white mb-4">Education</p>
-          <div className="mb-4">
-            <input
-              id="education-0-degree"
-              {...register("education.0.degree")}
-              className="w-full p-4 border border-neutral-700 bg-black text-white rounded-xl"
-              placeholder="Degree"
-            />
-            {errors.education && errors.education[0]?.degree && (
-              <span className="text-red-500">
-                {errors.education[0].degree.message}
-              </span>
-            )}
-          </div>
-
-          <div className="mb-4">
-            <input
-              id="education-0-field"
-              {...register("education.0.field")}
-              className="w-full p-4 border border-neutral-700 bg-black text-white rounded-xl"
-              placeholder="Field"
-            />
-            {errors.education && errors.education[0]?.field && (
-              <span className="text-red-500">
-                {errors.education[0].field.message}
-              </span>
-            )}
-          </div>
-          <div className="mb-4">
-            <input
-              id="education-0-institution"
-              {...register("education.0.institution")}
-              className="w-full p-4 border border-neutral-700 bg-black text-white rounded-xl"
-              placeholder="Institution"
-            />
-            {errors.education && errors.education[0]?.institution && (
-              <span className="text-red-500">
-                {errors.education[0].institution.message}
-              </span>
-            )}
-          </div>
-        </div>
+        
         <div className="mb-4">
           <textarea
             id="notes"
