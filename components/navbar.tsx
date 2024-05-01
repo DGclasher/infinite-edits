@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { AlignJustify, X } from "lucide-react";
 
 import Image from "next/image";
@@ -29,7 +28,7 @@ const Navbar = () => {
               alt="Logo"
               width={500}
               height={500}
-              className="w-full h-12 "
+              className="w-12 h-12 "
             />
           </Link>
          

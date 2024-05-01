@@ -11,9 +11,8 @@ export async function POST(req: Request) {
   try {
     console.log("Request received");
     
-    const { first_name, last_name, email, phone, previous_experience, notes } =
+    const { name, email, phone, previous_experience, notes } =
       await req.json();
-    const full_name = first_name + " " + last_name;
     const isValidEmail = await validateEmail(email);
     if (!isValidEmail) {
       return NextResponse.json({ message: "Invalid email" }, { status: 400 });
@@ -24,7 +23,7 @@ export async function POST(req: Request) {
       insertDataOption: "INSERT_ROWS",
       valueInputOption: "RAW",
       requestBody: {
-        values: [[full_name, email, phone, previous_experience, notes]],
+        values: [[name, email, phone, previous_experience, notes]],
       },
     });
     return NextResponse.json({ message: "Submitted Successfully" }, { status: 200 });

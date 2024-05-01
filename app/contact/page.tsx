@@ -11,7 +11,6 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
 } from "@/components/ui/form";
 import {
   Select,
@@ -24,27 +23,28 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import Navbar from "@/components/navbar";
-import { useRef } from "react";
+import { LoaderIcon } from "lucide-react";
+import { BackgroundBeams } from "@/components/ui/background-beams";
+
 const FormSchema = z.object({
-  first_name: z.string(),
-  last_name: z.string(),
+  name: z.string(),
   email: z.string().email(),
   job_title: z.string(),
   company_name: z.string(),
-  help: z.enum(["Learn More", "Get a Quote", "Other"]), // Ensure enum matches here
+  help: z.enum(["Learn More", "Get a Quote", "Other"]), 
   services: z.enum([
     "Short video edits",
     "Thumbnail creation",
     "Graphic design",
     "Long form video edits",
+    "Digital Marketing",
+    "Web Development",
   ]),
   info: z.string(),
 });
 
 type FormValues = {
-  first_name: string;
-  last_name: string;
+  name: string;
   email: string;
   job_title: string;
   company_name: string;
@@ -53,11 +53,12 @@ type FormValues = {
     | "Short video edits"
     | "Thumbnail creation"
     | "Graphic design"
-    | "Long form video edits";
+    | "Long form video edits"
+    | "Digital Marketing"
+    | "Web Development";
   info: string;
 };
 export default function ContactForm() {
-  
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const { toast } = useToast();
@@ -65,8 +66,7 @@ export default function ContactForm() {
   const form = useForm<FormValues>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      first_name: "",
-      last_name: "",
+      name: "",
       email: "",
       job_title: "",
       company_name: "",
@@ -75,15 +75,7 @@ export default function ContactForm() {
       info: "",
     },
   });
-  const aboutRef = useRef<HTMLDivElement>(null);
-  // const graphicDesignRef = useRef<HTMLDivElement>(null);
-  // const shopifyStoresRef = useRef<HTMLDivElement>(null);
-  // const brandsRef = useRef<HTMLDivElement>(null);
-  // const servicesRef = useRef<HTMLDivElement>(null);
 
-  const scrollToAbout = () => {
-    aboutRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     try {
       setLoading(true);
@@ -95,7 +87,8 @@ export default function ContactForm() {
 
       if (!res.ok) {
         console.log("Error");
-        throw new Error("Something went wrong");
+        const response = await res.json();
+        throw new Error(response.message);
       }
       if (res.ok) {
         console.log("Success");
@@ -107,23 +100,23 @@ export default function ContactForm() {
         setSubmitted(true);
         form.reset();
       }
-    } catch (error) {
+    } catch (error: any) {
       toast({
         title: "Error",
-        description: "Something went wrong",
+        description: error.message,
         variant: "error",
       });
     } finally {
       setLoading(false);
     }
   }
-  
+
   return (
-    <div className=" w-full   md:items-center md:justify-center bg-black/[0.96] bg-grid-white/[0.08] antialiased  relative overflow-hidden ">
-      <div className="fixed pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-      <div className="md:flex items-start z-10 justify-center md:py-40 px-6">
+    <div className=" bg-gradient-to-b  from-neutral-950  max-w-screen  overflow-x-hidden">
+      <BackgroundBeams />
+      <div className="flex flex-col md:flex-row gap-8 items-start z-10 justify-center md:py-40 px-6">
         <div className="z-10">
-          <div className="text-5xl font-medium  w-full md:w-2/3  pb-5 md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+          <div className="text-4xl font-medium  w-full md:w-2/3  pb-5 md:text-6xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 mt-4">
             Contact our team
           </div>
           <div
@@ -151,34 +144,16 @@ export default function ContactForm() {
             h-full
             
             md:w-1/3
-            bg-gradient-to-b from-neutral-800 to-black backdrop-blur-md border border-neutral-600 rounded-2xl w-[350px] shadow-md p-6"
+            bg-gradient-to-b from-neutral-800 to-black backdrop-blur-md border border-neutral-600 rounded-2xl w-full shadow-md p-6"
           >
             <div className="md:flex items-center gap-6  ">
               <FormField
                 control={form.control}
-                name="first_name"
+                name="name"
                 render={({ field }) => (
                   <FormItem className="items-center justify-center  w-full">
                     <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                      First name *
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        {...field}
-                        className="bg-zinc-900 rounded-xl text-white"
-                      />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="last_name"
-                render={({ field }) => (
-                  <FormItem className="items-center justify-center  w-full">
-                    <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                      Last name *
+                      Full Name *
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -268,7 +243,18 @@ export default function ContactForm() {
                       >
                         Thumbnail creation
                       </SelectItem>
-                      
+                      <SelectItem
+                        value="Digital Marketing"
+                        className="text-white"
+                      >
+                        Digital Marketing
+                      </SelectItem>
+                      <SelectItem
+                        value="Web Development"
+                        className="text-white"
+                      >
+                        Web Development
+                      </SelectItem>
                     </SelectContent>
                   </Select>
                 </FormItem>
@@ -347,8 +333,16 @@ export default function ContactForm() {
                 disabled={loading}
                 onClick={() => form.handleSubmit(onSubmit)}
               >
-                Submit
-                <IoIosSend className="" />
+                {loading ? (
+                  <>
+                    Submit
+                    <LoaderIcon className="animate-spin w-5 h-5" />
+                  </>
+                ) : (
+                  <>
+                    Submit <IoIosSend />
+                  </>
+                )}
               </Button>
             </div>
           </form>

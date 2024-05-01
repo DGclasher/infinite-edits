@@ -14,7 +14,7 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export default function Home() {
   return (
-    <div className="overflow-x-hidden overscroll-none antialiased relative  min-h-screen max-w-screen flex flex-col justify-center items-center">
+    <div className="overflow-x-hidden overscroll-content antialiased relative  min-h-screen max-w-screen flex flex-col justify-center items-center">
       <div className="absolute -top-80 z-10 flex left-0 items-center ">
         <div className="w-[500px] h-[1000px] -rotate-45  rounded-full z-2 blur-3xl bg-gradient-to-br from-indigo-600/20 to-transparent "></div>
       </div>
@@ -29,7 +29,7 @@ export default function Home() {
                 Welcome to
               </span>
               <br />{" "}
-              <span className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-600 via-orange-500 to-indigo-600 ">
+              <span className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-indigo-600 ">
                 Infinite Media
               </span>{" "}
               <br />

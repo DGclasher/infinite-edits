@@ -1,7 +1,10 @@
 "use client";
 
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
+import { FaArrowRight } from "react-icons/fa";
 
 interface ImageData {
   src: string;
@@ -91,14 +94,12 @@ const Thumbnails = () => {
     setFile(null);
   };
   return (
-    <div className="bg-black px-4 md:px-8 lg:px-16 relative bg-grid-white/[0.08] text-center overflow-x-hidden">
-      <div className="absolute -top-80 z-10 flex left-0 items-center">
-        <div className="w-[500px] h-[1000px] -rotate-45  rounded-full z-2 blur-3xl bg-gradient-to-br from-indigo-600/50 to-transparent "></div>
-      </div>
+    <div className="bg-gradient-to-b  from-neutral-950  max-w-screen  overflow-x-hidden text-center px-4 md:px-8 lg:px-16">
+      <BackgroundBeams />
       <div className="fixed pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       <div className="p-4 mx-auto relative z-10 w-full pt-10 md:pt-20 px-2">
 
-      <div className="relative mb-12">
+      <div className="relative mb-12 flex flex-col justify-center items-center w-full">
             <span className="relative text-white inline-block text-4xl md:text-5xl">
               Thumbnails
               <Image
@@ -109,10 +110,17 @@ const Thumbnails = () => {
                 height={100}
               />
             </span>
-          </div>
-        <p className="mt-4 text-lg font-normal mb-8 text-neutral-300 max-w-lg text-center mx-auto px-4">
+          
+        <p className="pt-16 text-white text-lg font-normaltext-neutral-300 max-w-lg text-center mx-auto px-4">
           Explore our creative and attractive thumbnails.
         </p>
+        <Link
+          href={"/contact"}
+          className="bg-gradient-to-r w-48 text-xl from-indigo-800/20 z-20 to bg-black px-6 py-3 rounded-full text-white flex items-center gap-2 mt-4 border border-indigo-500"
+        >
+          Contact us <FaArrowRight />
+        </Link>
+        </div>
       </div>
 
       <div className="w-full columns-1 relative z-20 md:columns-2 lg:columns-3 space-y-5 gap-5 p-5 ">
@@ -158,6 +166,12 @@ const Thumbnails = () => {
         <div className="text-center">No Content to Display</div> // If no file is set
       )}
       </div>
+      <Link
+          href={"/contact"}
+          className="bg-gradient-to-r w-48 md:hidden mx-auto my-8  text-xl from-indigo-800/20 z-20 to bg-black px-6 py-3 rounded-full text-white flex items-center gap-2 mt-4 border border-indigo-500"
+        >
+          Contact us <FaArrowRight />
+        </Link>
     </div>
   );
 };

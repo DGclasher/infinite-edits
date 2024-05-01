@@ -1,4 +1,5 @@
-"use client";
+"use client"
+import { useState } from "react";
 import * as z from "zod";
 import { FC } from "react";
 import { useRouter } from "next/navigation";
@@ -6,20 +7,21 @@ import { FaArrowRight } from "react-icons/fa";
 import { useToast } from "@/components/ui/use-toast";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { LoaderIcon } from "lucide-react";
 
 // Define Zod schema
 const FormSchema = z.object({
-  first_name: z.string().min(1, "First name is required"),
-  last_name: z.string().min(1, "Last name is required"),
+  name: z.string().min(1, "Name required"),
   email: z.string().email("Invalid email"),
   phone: z.string().min(10, "Invalid phone number"),
-  previous_experience: z.enum(["None","Beginner", "Intermediate", "Advanced"]).optional(),
+  previous_experience: z.enum(["None", "Beginner", "Intermediate", "Advanced"]).optional(),
   notes: z.string().optional(),
 });
 
 type FormData = z.infer<typeof FormSchema>;
 
 const CourseRegistrationForm: FC = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false); // Loading state
   const { toast } = useToast();
   const router = useRouter();
   const {
@@ -31,6 +33,7 @@ const CourseRegistrationForm: FC = () => {
   });
 
   const onSubmit = async (data: FormData) => {
+    setIsSubmitting(true); 
     try {
       const response = await fetch("/api/register", {
         method: "POST",
@@ -56,44 +59,32 @@ const CourseRegistrationForm: FC = () => {
         title: "Error submitting form",
         description: error.message,
       });
+    } finally {
+      setIsSubmitting(false); 
     }
   };
 
   return (
     <div className="bg-grid-white/[0.08] min-h-screen flex flex-col justify-center items-center p-8">
-      <h2 className="text-4xl font-semibold text-indigo-500 mb-8">
-        Register for the Course
-      </h2>
+      <h2 className="text-4xl font-semibold text-indigo-500 mb-8">Register for the Course</h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="bg-gradient-to-b from-neutral-900 to-black rounded-xl border border-neutral-800 p-8 max-w-xl w-full"
       >
-        {/* Form fields with Zod validation and error handling */}
-
         <p className="text-lg text-white mb-4">Personal Information</p>
 
+        {/* Form fields (Name, Email, Phone, Previous Experience, Notes) */}
+        
         <div className="mb-4">
           <input
-            id="first_name"
-            {...register("first_name")}
+            id="name"
+            {...register("name")}
             className="w-full p-4 border border-neutral-700 bg-black text-white rounded-xl"
-            placeholder="First Name *"
+            placeholder="Full Name *"
           />
-          {errors.first_name && (
-            <span className="text-red-500">{errors.first_name.message}</span>
-          )}
+          {errors.name && <span className="text-red-500">{errors.name.message}</span>}
         </div>
-        <div className="mb-4">
-          <input
-            id="last_name"
-            {...register("last_name")}
-            className="w-full p-4 border border-neutral-700 bg-black text-white rounded-xl"
-            placeholder="Last Name *"
-          />
-          {errors.last_name && (
-            <span className="text-red-500">{errors.last_name.message}</span>
-          )}
-        </div>
+        
         <div className="mb-4">
           <input
             id="email"
@@ -101,10 +92,9 @@ const CourseRegistrationForm: FC = () => {
             className="w-full p-4 border border-neutral-700 bg-black text-white rounded-xl"
             placeholder="Email *"
           />
-          {errors.email && (
-            <span className="text-red-500">{errors.email.message}</span>
-          )}
+          {errors.email && <span className="text-red-500">{errors.email.message}</span>}
         </div>
+        
         <div className="mb-4">
           <input
             id="phone"
@@ -112,10 +102,9 @@ const CourseRegistrationForm: FC = () => {
             className="w-full p-4 border border-neutral-700 bg-black text-white rounded-xl"
             placeholder="Phone Number *"
           />
-          {errors.phone && (
-            <span className="text-red-500">{errors.phone.message}</span>
-          )}
+          {errors.phone && <span className="text-red-500">{errors.phone.message}</span>}
         </div>
+        
         <div className="mb-4">
           <select
             id="previous_experience"
@@ -126,16 +115,11 @@ const CourseRegistrationForm: FC = () => {
             <option value="Beginner">Beginner</option>
             <option value="Intermediate">Intermediate</option>
             <option value="Advanced">Advanced</option>
-            </select>
+          </select>
           {errors.previous_experience && (
-            <span className="text-red-500">
-              {errors.previous_experience.message}
-            </span>
+            <span className="text-red-500">{errors.previous_experience.message}</span>
           )}
         </div>
-       
-
-        {/* Additional form fields with similar validation */}
         
         <div className="mb-4">
           <textarea
@@ -149,11 +133,17 @@ const CourseRegistrationForm: FC = () => {
           )}
         </div>
 
+        {/* Submit button with a loading spinner */}
         <button
           type="submit"
-          className="bg-gradient-to-r text-xl border border-indigo-500 from-indigo-800/20 to bg-black px-6 py-3 rounded-full text-white flex items-center gap-4"
+          className="bg-gradient-to-r from-indigo-800/20 to bg-black px-6 py-3 rounded-full text-white flex items-center gap-4"
+          disabled={isSubmitting} 
         >
-          Register Now <FaArrowRight />
+          {isSubmitting ? (
+            <>Register Now<LoaderIcon className="animate-spin w-5 h-5" /></>
+          ) : (
+            <>Register Now <FaArrowRight /></>
+          )}
         </button>
       </form>
     </div>
