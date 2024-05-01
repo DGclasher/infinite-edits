@@ -9,7 +9,6 @@
     /* Light Theme Colors */
     --background: #ffffff;
     --foreground: #222222;
-
     /* Dark Theme Colors */
     --dark-background: #222222;
     --dark-foreground: #ffffff;
@@ -56,7 +55,6 @@
     @apply bg-background text-foreground;
     background-color: black;
     overscroll-behavior: none;
-    -webkit-overscroll-behavior: none;
   }
 }
 

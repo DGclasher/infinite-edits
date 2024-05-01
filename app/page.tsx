@@ -10,6 +10,7 @@ import PricingSection from "@/components/price-section";
 import FAQS from "@/components/faq";
 import Portfolio from "@/components/portfolio-section";
 import {ServiceCards} from "@/components/service-card"
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
       <div className="min-h-[55rem] px-2 md:px-12 lg:px-24 pt-16 bg-grid-white/[0.05] flex-col overflow-hidden w-full bg-black   flex  items-center justify-center overflow-x-hidden">
         <div className="fixed pointer-events-none max-w-full inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
-        <div className="  z-10 flex w-full flex-col lg:flex-row h-full justify-center items-center gap-16  z-1  pt-  ">
+        <div className="px-4 md:px-8 lg:px-12 w-full overflow-x-hidden  rounded-md bg-gradient-to-b from-neutral-950  relative flex lg:flex-row flex-col items-center justify-center antialiased">
           <div className=" w-full h-full flex flex-col justify-center items-start p-8 ">
             <div className="  ">
               <span className="text-xl text-white bg-zinc-200 bg-opacity-25 backdrop-blur-md border border-zinc-500 rounded-xl my-2 inline-block px-2">
@@ -71,7 +72,9 @@ export default function Home() {
           <div className="w-[100%] hidden md:flex">
             <HeroScroll />
           </div>
+          <BackgroundBeams />
         </div>
+        
         <div id="aboutWrapper" className="relative">
           <AboutUs />
           <div id="about" className="absolute -top-[120px] left-0"></div>

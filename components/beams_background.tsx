@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
 import { BackgroundBeams } from "./ui/background-beams";
-import Image from "next/image";
 
 export function BackgroundBeamsDemo() {
     return (
@@ -17,17 +18,25 @@ export function BackgroundBeamsDemo() {
                     </span>
                 </h1>
 
-                <p></p>
-                <p className="text-neutral-400  text-sm  relative z-10">
-                    Join our immersive offline course designed for aspiring video editors who want to master the art of editing from the ground up. This comprehensive program not only equips you with fundamental and advanced editing skills but also offers real-world experience through internships and job assistance. Whether you're a beginner looking to start a career or an enthusiast wanting to polish your skills, this course will set you on the right path.
-                    
-                </p>
-                <button className="text-white bg-gradient-to-r from-indigo-800/20 to-black border border-indigo-500 px-6 py-2 rounded-xl">
-                    Register Now
-                </button>
-            </div>
-           
-            <BackgroundBeams />
-        </div>
-    );
+        <p></p>
+        <p className="text-neutral-400  text-sm  relative z-10">
+          Join our immersive offline course designed for aspiring video editors
+          who want to master the art of editing from the ground up. This
+          comprehensive program not only equips you with fundamental and
+          advanced editing skills but also offers real-world experience through
+          internships and job assistance. Whether you&apos;re a beginner looking
+          to start a career or an enthusiast wanting to polish your skills, this
+          course will set you on the right path.
+        </p>
+        <Link
+          href={"/media-school/register"}
+          className="bg-gradient-to-r text-xl from-indigo-800/20 z-20 to bg-black px-6 py-3 rounded-full text-white flex items-center gap-2 mt-4 border border-indigo-500"
+        >
+          Register Now <FaArrowRight />
+        </Link>
+      </div>
+
+      <BackgroundBeams />
+    </div>
+  );
 }
