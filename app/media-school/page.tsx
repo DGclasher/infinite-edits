@@ -36,7 +36,7 @@ const CourseRegistration: FC = () => {
                 </li>
                 <li className="flex flex-col  ">
                   <p className="text-lg flex font-bold  items-center gap-2">
-                    <IoInformationCircleOutline /> Fomarmat
+                    <IoInformationCircleOutline /> Format
                   </p>{" "}
                   In-person sessions at Infinite Media School
                 </li>
