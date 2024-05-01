@@ -1,11 +1,8 @@
-import Navbar from "@/components/navbar";
 import Image from "next/image";
-import Link from "next/link";
-import { FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 
 export default function AboutUs() {
   return (
-    <div className="w-full z-10 font-normal h-auto items-center   rounded-lg  p-2 overflow-x-hidden">
+    <div className="w-full z-10 font-normal h-auto items-center   rounded-lg  p-6 overflow-x-hidden">
       <div className="flex flex-col items-center justify-center gap-16">
         <div className="flex flex-col w-full md:w-1/2 ">
           <div className="relative text-center">

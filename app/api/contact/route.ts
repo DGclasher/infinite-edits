@@ -21,8 +21,7 @@ const transporter = nodemailer.createTransport({
 export async function POST(req: Request) {
   try {
     const {
-      first_name,
-      last_name,
+      name,
       email,
       company_name,
       help,
@@ -38,7 +37,7 @@ export async function POST(req: Request) {
       to: process.env.MAIL_TO?.split(","),
       subject: help,
       html: `
-            <h2>Contact from ${first_name} ${last_name}</h2>
+            <h2>Contact from ${name}</h2>
             <p>Email: ${email}</p>
             <p>Company: ${company_name}</p>
             <p>Service Request: ${services}</p>
@@ -53,7 +52,7 @@ export async function POST(req: Request) {
       valueInputOption: "RAW",
       requestBody: {
         values: [[
-          first_name + " " + last_name,
+          name,
           email,
           company_name,
           help,

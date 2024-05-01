@@ -6,33 +6,31 @@ import { MdCampaign } from "react-icons/md";
 import { MdAutoGraph } from "react-icons/md";
 import Image from "next/image";
 
-const DigitalMarketing = () => {
+const WebDevelopment = () => {
   return (
     <div className="bg-gradient-to-b  from-neutral-900 min-h-screen flex max-w-screen pb-16 flex-col justify-center items-center">
       <div className="p-8 flex flex-col h-[40rem] items-center py-16 justify-center text-center">
         <h1 className="text-5xl text-white font-bold">
           <span className="bg-clip-text  text-transparent bg-gradient-to-br from-indigo-50 to">
-            Digital Marketing Services
+            Create Your Digital Home With Us
           </span>
           <span className="text-2xl text-neutral-400 block py-4">
-            Unleash Your Brand&apos; Potential!
+            At Infinite Media, we build more than websites. <br />We craft digital
+            experiences that captivate and convert.
           </span>
         </h1>
         <p className="text-neutral-400  text-sm  relative z-10">
           <span className="block py-1">
-            In today&apos;s digital-first world, visibility is everything. Let
-            us catapult your brand into the spotlight with our expert Digital
-            Marketing services.
+            Your website is the heart of your digital identity, a central hub
+            where your brand comes to life.
           </span>
           <span className="block py-1">
-            Our tailored strategies in SEO, social media marketing, and targeted
-            ad campaigns are designed to attract, engage, and convert your
-            audience into loyal customers.
+            Our team of skilled designers and developers are experts at creating
+            visually stunning and highly functional websites tailored to your
+            business needs.<br /> Whether you&apos;re looking to create an e-commerce
+            platform, a professional portfolio, or a complex enterprise site, we
+            provide seamless solutions that drive results.
           </span>{" "}
-          <span className="block py-1">
-            Experience an unprecedented increase in engagement and ROI as we
-            turn your brand into a digital powerhouse.
-          </span>
         </p>
         <Link
           href={"/contact"}
@@ -53,12 +51,12 @@ const DigitalMarketing = () => {
               </div>
               <div>
                 <p className="text-neutral-200 text-xl font-bold">
-                  Data-Driven Strategies
+                  Tailored Design
                 </p>
                 <p className="text-neutral-400">
                   {" "}
-                  Our approaches are fueled by analytics to ensure maximum
-                  impact.
+                  Every design element is chosen to enhance your brand&apos;s
+                  uniqueness.
                 </p>
               </div>
             </div>
@@ -70,11 +68,11 @@ const DigitalMarketing = () => {
               </div>
               <div>
                 <p className="text-neutral-200 text-xl font-bold">
-                  Customised Campaigns
+                  Scalable Solutions
                 </p>
                 <p className="text-neutral-400">
-                  We craft marketing efforts that resonate deeply with your
-                  target demographic.
+                  From small startups to large enterprises, our platforms grow
+                  with your business.
                 </p>
               </div>
             </div>
@@ -86,10 +84,10 @@ const DigitalMarketing = () => {
               </div>
               <div>
                 <p className="text-neutral-200 text-xl font-bold">
-                  ROI-Focused
+                Comprehensive Support
                 </p>
                 <p className="text-neutral-400">
-                  Every dollar you spend is an investment in substantial growth.
+                Our team is with you every step of the way, ensuring your site remains optimized.
                 </p>
               </div>
             </div>
@@ -116,4 +114,4 @@ const DigitalMarketing = () => {
   );
 };
 
-export default DigitalMarketing;
+export default WebDevelopment;
