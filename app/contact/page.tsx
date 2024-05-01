@@ -268,9 +268,7 @@ export default function ContactForm() {
                       >
                         Thumbnail creation
                       </SelectItem>
-                      <SelectItem value="Graphic Design" className="text-white">
-                        Graphic Design
-                      </SelectItem>
+                      
                     </SelectContent>
                   </Select>
                 </FormItem>
