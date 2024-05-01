@@ -165,6 +165,12 @@ const GraphicDesign = () => {
           <div className="text-center">No Content to Display</div>
         )}
       </div>
+      <Link
+          href={"/contact"}
+          className="bg-gradient-to-r w-48 md:hidden mx-auto my-8  text-xl from-indigo-800/20 z-20 to bg-black px-6 py-3 rounded-full text-white flex items-center gap-2 mt-4 border border-indigo-500"
+        >
+          Contact us <FaArrowRight />
+        </Link>
     </div>
   );
 };
