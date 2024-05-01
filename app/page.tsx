@@ -16,20 +16,20 @@ export default function Home() {
   return (
     <div className="overflow-x-hidden antialiased relative  min-h-screen max-w-screen flex flex-col justify-center items-center">
       <div className="absolute -top-80 z-10 flex left-0 items-center ">
-        <div className="w-[500px] h-[1000px] -rotate-45  rounded-full z-2 blur-3xl bg-gradient-to-br from-indigo-600/50 to-transparent "></div>
+        <div className="w-[500px] h-[1000px] -rotate-45  rounded-full z-2 blur-3xl bg-gradient-to-br from-indigo-600/20 to-transparent "></div>
       </div>
 
-      <div className="min-h-[55rem] px-2 md:px-12 lg:px-24 pt-16 bg-grid-white/[0.05] flex-col overflow-hidden w-full bg-black   flex  items-center justify-center overflow-x-hidden">
+      <div className="min-h-[55rem]    flex-col overflow-hidden w-full bg-black   flex  items-center justify-center overflow-x-hidden">
         <div className="fixed pointer-events-none max-w-full inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
-        <div className="px-4 md:px-8 lg:px-12 w-full overflow-x-hidden  rounded-md bg-gradient-to-b from-neutral-950  relative flex lg:flex-row flex-col items-center justify-center antialiased">
-          <div className=" w-full h-full flex flex-col justify-center items-start p-8 ">
+        <div className=" w-full overflow-x-hidden p-2 md:p-4 lg:p-8 bg-gradient-to-b from-neutral-600/20 to-black relative flex lg:flex-row flex-col items-center justify-center antialiased">
+          <div className=" w-full h-full flex flex-col z-40 justify-center items-start p-8 ">
             <div className="  ">
               <span className="text-xl text-white bg-zinc-200 bg-opacity-25 backdrop-blur-md border border-zinc-500 rounded-xl my-2 inline-block px-2">
                 Welcome to
               </span>
               <br />{" "}
-              <span className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-400  to bg-indigo-800 ">
+              <span className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-400  to bg-indigo-500 ">
                 Infinite Media
               </span>{" "}
               <br />
@@ -53,7 +53,7 @@ export default function Home() {
                 href="#portfolio"
                 scroll={true}
                 className="
-            bg-gradient-to-l from-rose-500 to bg-indigo-900 px-6 py-3 rounded-full text-white flex items-center gap-2
+            bg-gradient-to-l from-rose-500 to bg-indigo-800 px-6 py-3 rounded-full text-white flex items-center gap-2
             "
               >
                 Explore our works <FaArrowRight />
@@ -69,7 +69,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="w-[100%] hidden md:flex">
+          <div className="w-[100%] z-20 hidden md:flex ">
             <HeroScroll />
           </div>
           <BackgroundBeams />

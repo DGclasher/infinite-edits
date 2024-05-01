@@ -25,31 +25,31 @@ const Footer = () => {
       {/* Social media icons */}
       <div className="flex gap-6 z-10">
         <Link
-          href="https://youtube.com"
+          href="https://www.youtube.com/channel/UCgqUbNoq2l2HVnqSfIICA3g"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaYoutube className="w-6 h-6 text-red-600 hover:text-red-800 transition" />
         </Link>
         <a
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/in/infinitemedia/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaLinkedinIn className="w-6 h-6 text-blue-600 hover:text-blue-800 transition" />
         </a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+        {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
           <FaTwitter className="w-6 h-6 text-sky-500 hover:text-sky-700 transition" />
-        </a>
-        <a
+        </a> */}
+        {/* <a
           href="https://facebook.com"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaFacebook className="w-6 h-6 text-blue-600 hover:text-blue-800 transition" />
-        </a>
+        </a> */}
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/infintemedias.in/"
           target="_blank"
           rel="noopener noreferrer"
         >

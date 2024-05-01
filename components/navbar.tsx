@@ -25,14 +25,14 @@ const Navbar = () => {
           <Link className="cursor-pointer" href="/">
             <Image
               priority
-              src="/logo/logo.svg"
+              src="/logo_infinite_media.png"
               alt="Logo"
-              width={100}
-              height={100}
-              className="w-10 h-10 md:w-14 md:h-14"
+              width={200}
+              height={200}
+              className="w-12 h-12 md:w-16 md:h-16"
             />
           </Link>
-          <h1>Infinite Media</h1>
+         
         </div>
         <div
           className="cursor-pointer hidden 

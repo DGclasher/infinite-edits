@@ -6,7 +6,7 @@ import { FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 export default function AboutUs() {
   return (
     <div className="w-full z-10 font-normal h-auto items-center   rounded-lg  p-2 overflow-x-hidden">
-      <div className="flex flex-row-reverse justify-center gap-16">
+      <div className="flex flex-col items-center justify-center gap-16">
         <div className="flex flex-col w-full md:w-1/2 ">
           <div className="relative text-center">
             <span className="relative text-white inline-block text-4xl md:text-5xl">
@@ -40,15 +40,7 @@ export default function AboutUs() {
             </p>
           </div>
         </div>
-        <video
-          className="w-80 h-[400px] object-cover hidden md:flex rounded-xl  mt-8"
-          autoPlay
-          loop
-          muted
-          playsInline
-          src="https://res.cloudinary.com/dpzciuywe/video/upload/v1714333114/shorts/w2ugziuwgd24smkln97g.mp4"
-          poster="/thumbnail_video_2.jpg"
-        ></video>
+        
       </div>
     </div>
   );
