@@ -29,7 +29,7 @@ export default function Home() {
                 Welcome to
               </span>
               <br />{" "}
-              <span className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-400  to bg-indigo-500 ">
+              <span className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-600 via-orange-500 to-indigo-600 ">
                 Infinite Media
               </span>{" "}
               <br />

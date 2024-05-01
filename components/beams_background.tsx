@@ -20,13 +20,13 @@ export function BackgroundBeamsDemo() {
 
         <p></p>
         <p className="text-neutral-400  text-sm  relative z-10">
-          Join our immersive offline course designed for aspiring video editors
-          who want to master the art of editing from the ground up. This
+          <span className="block py-1">Join our immersive offline course designed for aspiring video editors
+          who want to master the art of editing from the ground up. </span><span className="block py-1">This
           comprehensive program not only equips you with fundamental and
           advanced editing skills but also offers real-world experience through
-          internships and job assistance. Whether you&apos;re a beginner looking
+          internships and job assistance. </span> <span className="block py-1">Whether you&apos;re a beginner looking
           to start a career or an enthusiast wanting to polish your skills, this
-          course will set you on the right path.
+          course will set you on the right path.</span>
         </p>
         <Link
           href={"/media-school/register"}
