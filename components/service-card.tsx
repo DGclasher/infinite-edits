@@ -65,6 +65,29 @@ export function ServiceCards() {
       type: "image",
       onClick: () => router.push("/graphicdesign"), // Navigate to /graphic-design
     },
+    {
+      title: "Digital Marketing Services",
+      description1:
+        "Unleash Your Brand’s Potential!",
+      description2:
+        
+        "At Infinite Media, we don't just amplify your voice; we ensure it echoes across the digital landscape. ",
+      imageSrc:
+
+        "/digital_marketing.webp",
+      type: "image",
+      onClick: () => router.push("/digital-marketing"),
+    },
+    {
+      title: "Website Development",
+      description1:
+        "Create Your Digital Home With Us",
+      description2:"At Infinite Media, we build more than websites; we craft digital experiences that captivate and convert. ",
+      imageSrc:
+        "/web_development.jpg",
+      type: "image",
+      onClick: () => router.push("/web-development"),
+    }
   ];
 
   return (
