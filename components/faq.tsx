@@ -68,11 +68,9 @@ const FAQS = () => {
   return (
     <div className="mt-0 z-10 md:py-10 text-white min-w-[100vw] rounded-3xl">
       <div className="p-10 md:p-4 md:px-20 w-full">
-        <div className="text-3xl md:text-7xl font-bold text-black">
-          Have questions?
-        </div>
+       
         <div className="font-semibold text-3xl md:text-6xl bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
-          Get answers.
+          FAQs
         </div>
 
         <Accordion type="single" className="w-full" collapsible>

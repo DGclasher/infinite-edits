@@ -56,7 +56,7 @@ export function TeamSection() {
     <div className="mx-auto w-[100vw] md:w-[80vw] lg:w-[70vw] px-4 flex flex-col items-center py-20 justify-center">
       <div className="relative mb-20">
         <span className="relative text-white inline-block text-4xl md:text-5xl">
-          Meet our Teams
+          Meet our Team
           <img
             src={"/curve.png"}
             className="absolute top-full left-0 w-full mt-1"

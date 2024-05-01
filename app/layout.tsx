@@ -7,6 +7,10 @@ const font = Poppins({ subsets: ["latin"], weight: "400" });
 export const metadata: Metadata = {
   title: "Infinite Medias",
   description: "Infinite Medias is a creative agency that specializes in video editing, graphic design, thumbnail design and motion graphics. We provide high-quality services at affordable prices. Contact us now to get started on your project",
+  icons:{
+    icon: "/logo_infinite_media.png",
+  }
+  
 };
 
 import { Toaster } from "@/components/ui/toaster";

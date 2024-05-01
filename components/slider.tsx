@@ -34,14 +34,14 @@ export const Slider = () => {
   return (
     <div className="w-full relative rounded-xl" onMouseUp={handleInteractionEnd} onTouchEnd={handleInteractionEnd}>
       <div
-        className="relative w-full rounded-xl max-w-[700px] aspect-[70/45] m-auto overflow-hidden select-none"
+        className="relative w-full rounded-xl max-w-[600px] aspect-[70/45] m-auto overflow-hidden select-none"
         onMouseMove={handleMouseMove}
         onTouchMove={handleTouchMove}
         onMouseDown={handleInteractionStart}
         onTouchStart={handleInteractionStart}
       >
         <Image
-          alt=""
+          alt="after image"
           fill
           priority
           src="/after.png"
@@ -54,7 +54,7 @@ export const Slider = () => {
           <Image
             fill
             priority
-            alt=""
+            alt="before image"
             src="/before.png"
             className="filter object-cover grayscale-[50%] "
           />

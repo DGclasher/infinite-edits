@@ -27,9 +27,9 @@ const Navbar = () => {
               priority
               src="/logo_infinite_media.png"
               alt="Logo"
-              width={200}
-              height={200}
-              className="w-12 h-12 md:w-16 md:h-16"
+              width={500}
+              height={500}
+              className="w-full h-12 "
             />
           </Link>
          
@@ -52,18 +52,11 @@ const Navbar = () => {
           <Link href="/#portfolio" scroll={true}>
             Portfolio
           </Link>
-          <Link href="/#team" scroll={true}>
-            Team
-          </Link>
-          <Link href="/#testimonials" scroll={true}>
-            Testimonials
-          </Link>
+          
           <Link href="/#pricing" scroll={true}>
             Pricing
           </Link>
-          <Link href="/#faq" scroll={true}>
-            FAQ
-          </Link>
+          
           <Link href="/media-school" scroll={true}>
             Media School
           </Link>
