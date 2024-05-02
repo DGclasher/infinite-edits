@@ -56,7 +56,7 @@ export const Slider = () => {
             priority
             alt="before image"
             src="/before.png"
-            className="filter object-cover grayscale-[50%] "
+            className="filter object-cover pointer-events-none grayscale-[50%] "
           />
         </div>
         <div

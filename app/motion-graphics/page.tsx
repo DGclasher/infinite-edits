@@ -5,53 +5,64 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
+import { FaPlayCircle } from "react-icons/fa";
+
 
 interface VideoData {
   src: string;
   alt: string;
   type: string;
+  poster?: string;
 }
 
 const videoData: VideoData[] = [
   {
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714373536/motion-graphics/mh44ehw0qzhfabr0t01h.mp4",
-    alt: "Design 1",
+    alt: "video 1",
     type: "video",
+    poster: "/motion-graphics/thumbnail_1.png"
   },
   {
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714373505/motion-graphics/llgbzr0cjomlkwbpejbb.mp4",
-    alt: "Design 2",
+    alt: "video 2",
     type: "video",
+    poster: "/motion-graphics/thumbnail_2.png"
   },
   {
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714373484/motion-graphics/hxconbgg6zm19om6jttw.mp4",
-    alt: "Design 2",
+    alt: "video 3",
     type: "video",
+    poster: "/motion-graphics/thumbnail_3.png"
   },
   {
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714373457/motion-graphics/iqfww08fxlwz4swpstm9.mp4",
-    alt: "Design 2",
+    alt: "video 4",
     type: "video",
+    poster: "/motion-graphics/thumbnail_4.png"
   },
   {
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714373409/motion-graphics/b3gzfqu30gkffdjlzx1d.mp4",
-    alt: "Design 2",
+    alt: "video 5",
     type: "video",
+    poster: "/motion-graphics/thumbnail_5.png"
   },
   {
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714373376/motion-graphics/wzry6ncaqcvojizs8ubz.mp4",
-    alt: "Design 2",
+    alt: "video 6",
     type: "video",
+    poster: "/motion-graphics/thumbnail_6.png"
   },
   {
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714372591/motion-graphics/tsship7fypvpfarmzaja.mp4",
-    alt: "Design 2",
+    alt: "video 7",
     type: "video",
+    poster: "/motion-graphics/thumbnail_7.png"
   },
   {
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714372551/motion-graphics/tzm0tirugc1kbuqptiob.mp4",
-    alt: "Design 2",
+    alt: "video 8",
     type: "video",
+    poster: "/motion-graphics/thumbnail_8.png"
   },
 ];
 
@@ -83,8 +94,8 @@ const Videos = () => {
                 src={"/curve.png"}
                 className="absolute top-full left-0 w-full mt-1"
                 alt="Curve"
-                width={100}
-                height={100}
+                width={400}
+                height={400}
               />
             </span>
         <p className="pt-16 text-white text-lg font-normaltext-neutral-300 max-w-lg text-center mx-auto px-4">
@@ -99,23 +110,29 @@ const Videos = () => {
       </div>
           </div>
 
-      <div className="w-full columns-1 z-10 md:columns-2 relative lg:columns-3 space-y-5 gap-5 p-5">
+      <div className="w-full  z-10 grid grid-cols-1 md:grid-cols-2 py-8 gap-8 lg:grid-cols-3">
         {videoData.map((data, index) => {
           return (
             <div
               key={index}
               onClick={() => openModal(data)}
-              className="overflow-hidden rounded-xl p-2"
+              className="overflow-hidden   relative "
             >
+              <div className="absolute left-8 top-8 p-2 bg-neutral-900/70 rounded-full ">
+                <FaPlayCircle className="text-white text-2xl" />
+              </div>
+              
               <video
                 key={index}
-                className="rounded-xl overflow-hidden object-cover w-full cursor-pointer h-auto shadow-lg"
+                className=" overflow-hidden object-cover w-full cursor-pointer h-60 shadow-lg"
                 src={data.src}
                 width={400}
-                height={400}
-                autoPlay
+                height={100}
                 loop
                 muted
+                poster={data.poster}
+                playsInline
+                preload="none"
               />
             </div>
           );

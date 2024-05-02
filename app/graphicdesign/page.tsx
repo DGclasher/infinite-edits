@@ -124,17 +124,17 @@ const GraphicDesign = () => {
         </Link>
       </div>
 
-      <div className="w-full columns-1 z-10 relative md:columns-2 lg:columns-3 space-y-5 gap-5 p-5 ">
+      <div className="w-full columns-1 z-10 relative  px-4 md:px-8 lg:px-16 md:columns-2 lg:columns-3 space-y-5 gap-5 p-5 ">
         {imageData.map((data, index) => {
           return (
             <div
               key={index}
               onClick={() => openModal(data)}
-              className="overflow-hidden rounded-xl p-2"
+              className="overflow-hidden p-2"
             >
               <Image
                 key={index}
-                className="rounded-xl overflow-hidden object-cover w-full cursor-pointer h-auto shadow-lg"
+                className=" overflow-hidden object-cover w-full cursor-pointer h-auto shadow-lg"
                 src={data.src}
                 alt="Porfolio_img"
                 width={500}

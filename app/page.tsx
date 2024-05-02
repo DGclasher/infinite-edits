@@ -14,15 +14,12 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export default function Home() {
   return (
-    <div className="overflow-x-hidden overscroll-content antialiased relative  min-h-screen max-w-screen flex flex-col justify-center items-center">
-      <div className="absolute -top-80 z-10 flex left-0 items-center ">
-        <div className="w-[500px] h-[1000px] -rotate-45  rounded-full z-2 blur-3xl bg-gradient-to-br from-indigo-600/20 to-transparent "></div>
-      </div>
+    <div className="overflow-x-hidden  antialiased relative  min-h-screen max-w-screen flex flex-col justify-center items-center" style={{overscrollBehavior:"none"}}>
+      
+      <div className="min-h-[55rem]    flex-col overflow-hidden w-full    flex  items-center justify-center overflow-x-hidden">
+        
 
-      <div className="min-h-[55rem]    flex-col overflow-hidden w-full bg-black   flex  items-center justify-center overflow-x-hidden">
-        <div className="fixed pointer-events-none max-w-full inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-
-        <div className=" w-full overflow-x-hidden p-2 md:p-4 lg:p-8 bg-gradient-to-b from-neutral-600/20 to-black relative flex lg:flex-row flex-col items-center justify-center antialiased">
+        <div className=" w-full overflow-x-hidden p-2 md:p-4 lg:p-8 bg-gradient-to-b from-indigo-600/20 to-black relative flex lg:flex-row flex-col items-center justify-center antialiased">
           <div className=" w-full h-full flex flex-col z-40 justify-center items-start p-8 ">
             <div className="  ">
               <span className="text-xl text-white bg-zinc-200 bg-opacity-25 backdrop-blur-md border border-zinc-500 rounded-xl my-2 inline-block px-2">

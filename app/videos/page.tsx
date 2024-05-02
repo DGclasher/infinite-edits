@@ -5,39 +5,40 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
+import { FaPlayCircle } from "react-icons/fa";
 
-interface ImageData {
+interface videoData {
   src: string;
   alt: string;
   type: string;
-  thumbnailSrc?: string;
+  poster: string;
 }
 
-const imageData: ImageData[] = [
+const videos: videoData[] = [
   {
     src: "https://res.cloudinary.com/dltmqv10j/video/upload/v1714302673/sample-videos/osmkliskp1ygnwqvm4se.mp4",
     alt: "Design 1",
     type: "video",
-    thumbnailSrc: "/thumbnail_video_1.png",
+    poster: "/thumbnail_video_1.png",
   },
   {
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714333114/shorts/w2ugziuwgd24smkln97g.mp4",
-    alt: "Design 2",
+    alt: "video 2",
     type: "video",
-    thumbnailSrc: "/thumbnail_video_2.png",
+    poster: "/thumbnail_video_2.png",
   },
   
   {
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714390286/shorts/dbylhlpzgsalwgg4fsif.mp4",
-    alt: "Design 2",
+    alt: "video 3",
     type: "video",
-    thumbnailSrc: "/thumbnail_video_3.png",
+    poster: "/thumbnail_video_3.png",
   },
   {
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714321127/shorts/yb8bylruv5mctx32flyt.mp4",
-    alt: "Design 2",
+    alt: "video 4",
     type: "video",
-    thumbnailSrc: "/landing_video_thumbnail.png",
+    poster: "/landing_video_thumbnail.png",
   },
   
   
@@ -51,7 +52,7 @@ const Videos = () => {
   } | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = (img: ImageData) => {
+  const openModal = (img: videoData) => {
     setFile(img);
     setIsModalOpen(true);
   };
@@ -61,7 +62,7 @@ const Videos = () => {
     setFile(null);
   };
   return (
-    <div className="bg-gradient-to-b  from-neutral-950  max-w-screen  overflow-x-hidden text-center">
+    <div className="bg-gradient-to-b pb-16 from-neutral-950  max-w-screen  overflow-x-hidden text-center">
       <BackgroundBeams />
       <div className="p-4 mx-auto relative z-10 w-full pt-10 md:pt-20 px-2">
       <div className="relative mb-12 flex flex-col justify-center items-center w-full">
@@ -71,7 +72,7 @@ const Videos = () => {
                 src={"/curve.png"}
                 className="absolute top-full left-0 w-full mt-1"
                 alt="Curve"
-                width={100}
+                width={300}
                 height={100}
               />
             </span>
@@ -87,24 +88,29 @@ const Videos = () => {
       </div>
       </div>
 
-      <div className="w-full flex flex-wrap justify-center items-center z-10 relative space-y-5 gap-5 p-5 ">
-        {imageData.map((data, index) => {
+      <div className="w-full  z-10 grid grid-cols-1 md:grid-cols-2 py-8 gap-8 lg:grid-cols-4 px-4 md:px-8 lg:px-20">
+        {videos.map((data, index) => {
           return (
             <div
               key={index}
               onClick={() => openModal(data)}
-              className="overflow-hidden rounded-xl p-2"
+              className="overflow-hidden   relative "
             >
+              <div className="absolute left-8 top-8 p-2 bg-neutral-900/70 rounded-full ">
+                <FaPlayCircle className="text-white text-2xl" />
+              </div>
+              
               <video
                 key={index}
-                poster={data.thumbnailSrc}
-                className="rounded-xl h-[500px] overflow-hidden object-cover w-full cursor-pointer shadow-lg"
+                className=" overflow-hidden object-cover w-full cursor-pointer h-full shadow-lg"
                 src={data.src}
-                width={100}
+                width={400}
                 height={100}
                 loop
-                playsInline
                 muted
+                poster={data.poster}
+                playsInline
+                preload="none"
               />
             </div>
           );

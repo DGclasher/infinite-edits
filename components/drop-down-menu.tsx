@@ -42,18 +42,11 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({ onClose }) => {
           <Link href="/#portfolio" scroll={true}>
             Portfolio
           </Link>
-          <Link href="/#team" scroll={true}>
-            Team
-          </Link>
-          <Link href="/#testimonials" scroll={true}>
-            Testimonials
-          </Link>
+        
           <Link href="/#pricing" scroll={true}>
             Pricing
           </Link>
-          <Link href="/#faq" scroll={true}>
-            FAQ
-          </Link>
+      
           <Link href='/media-school'>
             Media School
           </Link>
