@@ -20,49 +20,49 @@ const videoData: VideoData[] = [
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714373536/motion-graphics/mh44ehw0qzhfabr0t01h.mp4",
     alt: "video 1",
     type: "video",
-    poster: "/motion-graphics/thumbnail_1.png"
+    poster: "/motion-graphics/thumbnail_1.webp"
   },
   {
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714373505/motion-graphics/llgbzr0cjomlkwbpejbb.mp4",
     alt: "video 2",
     type: "video",
-    poster: "/motion-graphics/thumbnail_2.png"
+    poster: "/motion-graphics/thumbnail_2.webp"
   },
   {
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714373484/motion-graphics/hxconbgg6zm19om6jttw.mp4",
     alt: "video 3",
     type: "video",
-    poster: "/motion-graphics/thumbnail_3.png"
+    poster: "/motion-graphics/thumbnail_3.webp"
   },
   {
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714373457/motion-graphics/iqfww08fxlwz4swpstm9.mp4",
     alt: "video 4",
     type: "video",
-    poster: "/motion-graphics/thumbnail_4.png"
+    poster: "/motion-graphics/thumbnail_4.webp"
   },
   {
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714373409/motion-graphics/b3gzfqu30gkffdjlzx1d.mp4",
     alt: "video 5",
     type: "video",
-    poster: "/motion-graphics/thumbnail_5.png"
+    poster: "/motion-graphics/thumbnail_5.webp"
   },
   {
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714373376/motion-graphics/wzry6ncaqcvojizs8ubz.mp4",
     alt: "video 6",
     type: "video",
-    poster: "/motion-graphics/thumbnail_6.png"
+    poster: "/motion-graphics/thumbnail_6.webp"
   },
   {
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714372591/motion-graphics/tsship7fypvpfarmzaja.mp4",
     alt: "video 7",
     type: "video",
-    poster: "/motion-graphics/thumbnail_7.png"
+    poster: "/motion-graphics/thumbnail_7.webp"
   },
   {
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714372551/motion-graphics/tzm0tirugc1kbuqptiob.mp4",
     alt: "video 8",
     type: "video",
-    poster: "/motion-graphics/thumbnail_8.png"
+    poster: "/motion-graphics/thumbnail_8.webp"
   },
 ];
 
@@ -95,7 +95,7 @@ const Videos = () => {
                 className="absolute top-full left-0 w-full mt-1"
                 alt="Curve"
                 width={400}
-                height={400}
+                height={100}
               />
             </span>
         <p className="pt-16 text-white text-lg font-normaltext-neutral-300 max-w-lg text-center mx-auto px-4">
