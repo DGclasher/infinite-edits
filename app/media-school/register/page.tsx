@@ -8,6 +8,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoaderIcon } from "lucide-react";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 // Define Zod schema
 const FormSchema = z.object({
@@ -65,11 +66,12 @@ const CourseRegistrationForm: FC = () => {
   };
 
   return (
-    <div className="bg-grid-white/[0.08] min-h-screen flex flex-col justify-center items-center p-8">
+    <div className=" min-h-screen flex flex-col justify-center items-center p-8">
+      <BackgroundBeams />
       <h2 className="text-4xl font-semibold text-indigo-500 mb-8">Register for the Course</h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-gradient-to-b from-neutral-900 to-black rounded-xl border border-neutral-800 p-8 max-w-xl w-full"
+        className="bg-gradient-to-b z-10 from-neutral-900 to-black rounded-xl border border-neutral-800 p-8 max-w-xl w-full"
       >
         <p className="text-lg text-white mb-4">Personal Information</p>
 
@@ -136,7 +138,7 @@ const CourseRegistrationForm: FC = () => {
         {/* Submit button with a loading spinner */}
         <button
           type="submit"
-          className="bg-gradient-to-r from-indigo-800/20 to bg-black px-6 py-3 rounded-full text-white flex items-center gap-4"
+          className=" mx-auto bg-gradient-to-r from-indigo-800/20 to bg-black px-6 py-3 rounded-full border border-indigo-500 text-white flex items-center gap-4"
           disabled={isSubmitting} 
         >
           {isSubmitting ? (

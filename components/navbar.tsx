@@ -83,8 +83,8 @@ const Navbar = () => {
           <Link
             href="/contact"
             className="
-            bg-white text-black px-4 py-2 rounded-xl
-
+            bg-gradient-to-r from-indigo-800/20 to-black border border-indigo-500 px-4 py-2 rounded-full
+            text-white flex items-center gap-2
             "
           >
             Contact

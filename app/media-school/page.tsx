@@ -14,7 +14,7 @@ import { AnimatedPinDemo } from "@/components/enrollment-steps";
 
 const CourseRegistration: FC = () => {
   return (
-    <div className="bg-grid-white/[0.08] min-h-screen flex max-w-screen pb-16 flex-col justify-center items-center">
+    <div className=" min-h-screen flex max-w-screen pb-16 flex-col justify-center items-center">
       <BackgroundBeamsDemo />
       <div className="  w-full flex flex-col items-center justify-center ">
         <div className="flex w-[80%] flex-col md:flex-row-reverse justify-around items-center gap-16">

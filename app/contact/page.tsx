@@ -112,7 +112,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className=" bg-gradient-to-b  from-neutral-950  max-w-screen  overflow-x-hidden">
+    <div className=" bg-gradient-to-b  from-neutral-950  max-w-screen pb-8 overflow-x-hidden">
       <BackgroundBeams />
       <div className="flex flex-col md:flex-row gap-8 items-start z-10 justify-center md:py-40 px-6">
         <div className="z-10">
@@ -158,7 +158,7 @@ export default function ContactForm() {
                     <FormControl>
                       <Input
                         {...field}
-                        className="bg-zinc-900 rounded-xl text-white"
+                        className="bg-zinc-950 rounded-xl p-6 border border-neutral-600 text-white"
                       />
                     </FormControl>
                   </FormItem>
@@ -177,7 +177,8 @@ export default function ContactForm() {
                   <FormControl>
                     <Input
                       {...field}
-                      className="bg-zinc-900 rounded-xl text-white"
+                      className="bg-zinc-950 rounded-xl p-6 border border-neutral-600 text-white"
+                      
                     />
                   </FormControl>
                 </FormItem>
@@ -195,7 +196,7 @@ export default function ContactForm() {
                   <FormControl>
                     <Input
                       {...field}
-                      className="bg-zinc-900 rounded-xl text-white"
+                      className="bg-zinc-950 rounded-xl p-6 border border-neutral-600 text-white"
                     />
                   </FormControl>
                 </FormItem>
@@ -215,18 +216,18 @@ export default function ContactForm() {
                     defaultValue={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger className="bg-zinc-900 rounded-xl text-white">
+                      <SelectTrigger className="bg-zinc-950 rounded-xl p-6 border border-neutral-600 text-white">
                         <SelectValue
                           placeholder="Select an option"
-                          className="bg-zinc-900 text-white"
+                          className="bg-zinc-950 rounded-xl p-2 border border-neutral-600 text-white"
                         />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent className="bg-zinc-900 rounded-xl text-white">
+                    <SelectContent className="bg-zinc-950 rounded-xl p-6 border border-neutral-600 text-white">
                       <div className="flex gap-4">
                         <SelectItem
                           value="Graphic design"
-                          className="text-white"
+                          className="text-white "
                         >
                           Graphic design
                         </SelectItem>
@@ -274,14 +275,14 @@ export default function ContactForm() {
                     defaultValue={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger className="bg-zinc-900 rounded-xl text-white">
+                      <SelectTrigger className="bg-zinc-950 rounded-xl p-6 border border-neutral-600 text-white">
                         <SelectValue
                           placeholder="Select an option"
-                          className="bg-zinc-900 rounded-xl text-white"
+                          className="bg-zinc-950 rounded-xl p-6 border border-neutral-600 text-white"
                         />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent className="bg-zinc-900 rounded-xl text-white">
+                    <SelectContent className="bg-zinc-950 rounded-xl p-6 border border-neutral-600 text-white">
                       <SelectItem value="Learn More" className="text-white">
                         Learn More
                       </SelectItem>
@@ -309,7 +310,7 @@ export default function ContactForm() {
                     <Textarea
                       style={{ height: "100px" }}
                       {...field}
-                      className="bg-zinc-900 rounded-xl text-white"
+                      className="bg-zinc-950 rounded-xl p-6 border border-neutral-600 text-white"
                     />
                   </FormControl>
                 </FormItem>
@@ -322,12 +323,12 @@ export default function ContactForm() {
               <Button
                 type="submit"
                 className="
-                            text-lg
+                            text-xl
                             flex
                             gap-2
                             items-center
                             font-light
-                            bg-indigo-800 rounded-xl text-white
+                            bg-gradient-to-r from-indigo-800/20 to-black border border-indigo-500 rounded-full text-white
                             hover:bg-indigo-950
                             "
                 disabled={loading}

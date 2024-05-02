@@ -30,7 +30,7 @@ export function AnimatedPinDemo() {
       <div className="relative w-full max-w-xl">
         {stepsData.map((step, index) => (
           <div key={index} className="flex items-center space-x-6 mb-8 relative">
-            <div className="flex-shrink-0 h-12 w-12 bg-indigo-600 rounded-full flex items-center justify-center relative">
+            <div className="flex-shrink-0 h-12 w-12 bg-gradient-to-b from-indigo-600 to-indigo-950 rounded-full flex items-center justify-center relative">
               <span className="text-white z-10">{index + 1}</span>
               {index !== 4 && (
                 <div className="absolute top-[48px] left-[22px] h-[80px] w-[3px] border-l-2 bg-gradient-to-b from-neutral-500 to black"></div>
