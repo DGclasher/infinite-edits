@@ -99,7 +99,7 @@ export function ServiceCards() {
             src={"/curve.png"}
             className="absolute top-full left-0 w-full mt-1"
             alt="Curve"
-            width={100}
+            width={300}
             height={100}
           />
         </span>

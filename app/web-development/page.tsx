@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const WebDevelopment = () => {
   return (
-    <div className="bg-gradient-to-b  from-neutral-900 min-h-screen flex max-w-screen pb-16 flex-col justify-center items-center">
+    <div className="bg-gradient-to-b  from-indigo-600/20 min-h-screen flex max-w-screen pb-16 flex-col justify-center items-center">
       <div className="p-8 flex flex-col h-[40rem] items-center py-16 justify-center text-center">
         <h1 className="text-5xl text-white font-bold">
           <span className="bg-clip-text  text-transparent bg-gradient-to-br from-indigo-50 to">
@@ -38,8 +38,8 @@ const WebDevelopment = () => {
       </div>
       <div className="flex flex-col lg:flex-row justify-center items-center gap-8">
         <div className="flex flex-col gap-8 w-full md:w-3/4 lg:w-1/2 px-4 ">
-          <h2 className="text-3xl text-white pb-4">Why choose us ?</h2>
-          <div className="w-full flex flex-col gap-4 bg-gradient-to-b from-neutral-950 to-black p-8 rounded-xl border border-neutral-800">
+          <h2 className="text-4xl text-white pb-4">Why choose us ?</h2>
+          <div className="w-full flex flex-col gap-4 bg-gradient-to-b from-neutral-950/20 to-black p-8 rounded-xl border border-neutral-800">
             <div className="flex gap-4 items-center z-10">
               <div className="bg-gradient-to-r from-indigo-500 to bg-indigo-800 p-2 h-10 text-center flex justify-center r w-12 rounded-full text-white items-center gap-2">
                 <span className="text-2xl">
