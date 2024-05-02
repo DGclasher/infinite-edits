@@ -129,11 +129,11 @@ const Thumbnails = () => {
             <div
               key={index}
               onClick={() => openModal(data)}
-              className="overflow-hidden rounded-xl p-2"
+              className="overflow-hidden  p-2"
             >
               <Image
                 key={index}
-                className="rounded-xl overflow-hidden object-cover w-full cursor-pointer h-auto shadow-lg"
+                className=" overflow-hidden object-cover w-full cursor-pointer h-auto shadow-lg"
                 src={data.src}
                 alt="Porfolio_img"
                 width={500}
