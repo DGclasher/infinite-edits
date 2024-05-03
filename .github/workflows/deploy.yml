@@ -1,0 +1,21 @@
+name: Deploy to server
+on:
+    workflow_run:
+        workflows: ["Build and Push Docker Image"]
+        branches: [master]
+        types: 
+          - completed
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: SSHinh to server
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        port: ${{ secrets.PORT }}
+        script: deploy-infinite
