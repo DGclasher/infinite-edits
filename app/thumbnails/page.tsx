@@ -94,7 +94,7 @@ const Thumbnails = () => {
     setFile(null);
   };
   return (
-    <div className="bg-gradient-to-b  from-neutral-950  max-w-screen  overflow-x-hidden text-center px-4 md:px-8 lg:px-16">
+    <div className="bg-gradient-to-b  from-indigo-600/20  max-w-screen  overflow-x-hidden text-center px-4 md:px-8 lg:px-16">
       <BackgroundBeams />
       <div className="fixed pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       <div className="p-4 mx-auto relative z-10 w-full pt-10 md:pt-20 px-2">
@@ -129,11 +129,11 @@ const Thumbnails = () => {
             <div
               key={index}
               onClick={() => openModal(data)}
-              className="overflow-hidden  p-2"
+              className="overflow-hidden shadow-2xl   "
             >
               <Image
                 key={index}
-                className=" overflow-hidden object-cover w-full cursor-pointer h-auto shadow-lg"
+                className=" overflow-hidden object-cover w-full cursor-pointer h-auto "
                 src={data.src}
                 alt="Porfolio_img"
                 width={500}

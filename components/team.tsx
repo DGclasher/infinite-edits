@@ -66,7 +66,7 @@ export function TeamSection() {
       </div>
       {teamData && (
   <Carousel
-    className="w-full"
+    className="w-full z-10"
     autoPlay={true}
     infinite={true}
     swipeable={true}

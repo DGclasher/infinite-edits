@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { FaPlayCircle } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 
 interface videoData {
   src: string;
@@ -62,7 +63,7 @@ const Videos = () => {
     setFile(null);
   };
   return (
-    <div className="bg-gradient-to-b pb-16 from-neutral-950  max-w-screen  overflow-x-hidden text-center">
+    <div className="bg-gradient-to-b pb-16 from-indigo-600/20 max-w-screen  overflow-x-hidden text-center">
       <BackgroundBeams />
       <div className="p-4 mx-auto relative z-10 w-full pt-10 md:pt-20 px-2">
       <div className="relative mb-12 flex flex-col justify-center items-center w-full">
@@ -116,7 +117,7 @@ const Videos = () => {
           );
         })}
       </div>
-      <div className="popup-media" style={{ display: file ? "block" : "none" }}>
+      <div className="popup-media relative" style={{ display: file ? "block" : "none" }}>
         <span onClick={() => setFile(null)}>&times;</span>
 
         {file ? (
