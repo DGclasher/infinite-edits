@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import * as React from "react";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -57,7 +58,9 @@ export function TeamSection() {
       <div className="relative mb-20">
         <span className="relative text-white inline-block text-4xl md:text-5xl">
           Meet our Team
-          <img
+          <Image
+            width={300}
+            height={100}
             src={"/curve.webp"}
             className="absolute top-full left-0 w-full mt-1"
             alt="Curve"
@@ -75,9 +78,9 @@ export function TeamSection() {
     itemClass="carousel-item"
   >
     {teamData.map((team, index) => (
-      <div key={index} className="carousel-item lg:mx-4 text-white h-88 bg-gradient-to-b from-neutral-800 to-black border border-neutral-700 rounded-xl p-4">
-        <div className="h-60 mb-8">
-        <img src={team.photo} alt="" className="w-full h-full rounded-xl object-cover" />
+      <div key={index} className="carousel-item lg:mx-4 text-white h-[300px] bg-gradient-to-b from-neutral-800 to-black border border-neutral-700 rounded-xl p-4">
+        <div className="h-[200px] mb-4 w-full relative  p-1">
+        <Image fill src={team.photo} alt="" className=" rounded-xl object-cover" />
         </div>
         <p className="text-xl font-bold">{team.name}</p>
         <p className="text-lg">{team.position}</p>

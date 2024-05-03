@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FaCheckCircle } from "react-icons/fa";
 
@@ -7,8 +8,10 @@ const PricingSection = () => {
       <div className="relative mb-16">
         <span className="relative text-white inline-block text-4xl md:text-5xl">
           Pricing
-          <img
-            src={'curve.webp'}
+          <Image
+            width={300}
+            height={100}
+            src={'/curve.webp'}
             className="absolute top-full left-0 w-full mt-1"
             alt="Curve"
           />
