@@ -27,10 +27,10 @@ import { LoaderIcon } from "lucide-react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 
 const FormSchema = z.object({
-  name: z.string(),
-  email: z.string().email(),
+  name: z.string().min(2, "Name required"),
+  email: z.string().email("Invalid email"),
   job_title: z.string(),
-  company_name: z.string(),
+  company_name: z.string().optional(),
   help: z.enum(["Learn More", "Get a Quote", "Other"]), 
   services: z.enum([
     "Short video edits",
@@ -40,7 +40,7 @@ const FormSchema = z.object({
     "Digital Marketing",
     "Web Development",
   ]),
-  info: z.string(),
+  info: z.string().optional(),
 });
 
 type FormValues = {
