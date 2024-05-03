@@ -98,7 +98,7 @@ const GraphicDesign = () => {
     setFile(null);
   };
   return (
-    <div className=" bg-gradient-to-b  from-neutral-950  max-w-screen  overflow-x-hidden text-center">
+    <div className=" bg-gradient-to-b  from-indigo-600/20  max-w-screen  overflow-x-hidden text-center">
       <BackgroundBeams />
       <div className="p-4 mx-auto relative text-center z-10 flex flex-col items-center justify-center w-full pt-10 md:pt-20 px-2">
         <div className="relative mb-12">

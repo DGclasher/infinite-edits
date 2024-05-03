@@ -84,7 +84,7 @@ const Videos = () => {
     setFile(null);
   };
   return (
-    <div className="bg-gradient-to-b  from-neutral-950  max-w-screen  overflow-x-hidden text-center px-4 md:px-8 lg:px-16">
+    <div className="bg-gradient-to-b  from-indigo-600/20  max-w-screen  overflow-x-hidden text-center px-4 md:px-8 lg:px-16">
       <BackgroundBeams />
       <div className="p-4 mx-auto relative z-10 w-full pt-10 md:pt-20 px-2">
       <div className="relative mb-12 flex flex-col justify-center items-center w-full">
