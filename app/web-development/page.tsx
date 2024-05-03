@@ -99,7 +99,7 @@ const WebDevelopment = () => {
 
         <div className="w-full md:w-3/4 lg:w-1/2 px-4 flex justify-center items-center">
           <Image
-            src="/web_development_hero.png"
+            src="/web_development_hero.webp"
             alt="digital marketing"
             width={400}
             height={400}

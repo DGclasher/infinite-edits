@@ -18,7 +18,7 @@ export function HeroScroll() {
           controls={false}  
           className="mx-auto rounded-2xl object-cover h-full w-full"  
           draggable={false}  
-          poster="/landing_video_thumbnail.png"
+          poster="/landing_video_thumbnail.webp"
         />
       </ContainerScroll>
     </div>

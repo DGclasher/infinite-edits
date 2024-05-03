@@ -21,13 +21,13 @@ const medias: MediaItem[] = [
     title: "Reel 2",
     type: "video",
     url: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714333114/shorts/w2ugziuwgd24smkln97g.mp4",
-    poster: "/thumbnail_video_2.png"
+    poster: "/thumbnail_video_2.webp"
   },
   {
     title: "Reel 3",
     type: "video",
     url: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714390286/shorts/dbylhlpzgsalwgg4fsif.mp4",
-    poster: "/thumbnail_video_3.png"
+    poster: "/thumbnail_video_3.webp"
   },
 ];
 
@@ -99,7 +99,7 @@ const Portfolio: React.FC = () => {
         <span className="relative text-white inline-block text-4xl md:text-5xl">
           Portfolio
           <Image
-            src={"/curve.png"}
+            src={"/curve.webp"}
             className="absolute top-full left-0 w-full mt-1"
             alt="Curve"
             width={300}
@@ -237,7 +237,7 @@ const Portfolio: React.FC = () => {
                     loop
                     playsInline
                     preload="none"
-                    poster={media.poster}
+                    poster="/mosquito.webp"
                   >
                     <source src={`${media.url}#t=0.001`} type="video/mp4" />
                     Your browser does not support the video tag.

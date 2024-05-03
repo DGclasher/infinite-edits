@@ -58,7 +58,7 @@ export function TeamSection() {
         <span className="relative text-white inline-block text-4xl md:text-5xl">
           Meet our Team
           <img
-            src={"/curve.png"}
+            src={"/curve.webp"}
             className="absolute top-full left-0 w-full mt-1"
             alt="Curve"
           />

@@ -24,7 +24,7 @@ const Navbar = () => {
           <Link className="cursor-pointer" href="/">
             <Image
               priority
-              src="/logo_infinite_media.png"
+              src="/logo_infinite_media.webp"
               alt="Logo"
               width={500}
               height={500}

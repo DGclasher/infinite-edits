@@ -40,7 +40,7 @@ export function ServiceCards() {
       imageSrc:
         "https://res.cloudinary.com/dpzciuywe/video/upload/v1714411118/videos/y7u5cuh5f1lm3kddmfhx.mp4",
       type: "video",
-      thumbnailSrc: "/creative-video-thumbnail.jpg",
+      thumbnailSrc: "/creative-video-thumbnail.webp",
       onClick: () => router.push("/videos"),
     },
     {
@@ -96,7 +96,7 @@ export function ServiceCards() {
         <span className="relative text-white inline-block text-4xl md:text-5xl">
           Our Services
           <Image
-            src={"/curve.png"}
+            src={"/curve.webp"}
             className="absolute top-full left-0 w-full mt-1"
             alt="Curve"
             width={300}

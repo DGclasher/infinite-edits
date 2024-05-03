@@ -20,26 +20,26 @@ const videos: videoData[] = [
     src: "https://res.cloudinary.com/dltmqv10j/video/upload/v1714302673/sample-videos/osmkliskp1ygnwqvm4se.mp4",
     alt: "Design 1",
     type: "video",
-    poster: "/thumbnail_video_1.png",
+    poster: "/thumbnail_video_1.webp",
   },
   {
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714333114/shorts/w2ugziuwgd24smkln97g.mp4",
     alt: "video 2",
     type: "video",
-    poster: "/thumbnail_video_2.png",
+    poster: "/thumbnail_video_2.webp",
   },
   
   {
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714390286/shorts/dbylhlpzgsalwgg4fsif.mp4",
     alt: "video 3",
     type: "video",
-    poster: "/thumbnail_video_3.png",
+    poster: "/thumbnail_video_3.webp",
   },
   {
     src: "https://res.cloudinary.com/dpzciuywe/video/upload/v1714321127/shorts/yb8bylruv5mctx32flyt.mp4",
     alt: "video 4",
     type: "video",
-    poster: "/landing_video_thumbnail.png",
+    poster: "/landing_video_thumbnail.webp",
   },
   
   
@@ -70,7 +70,7 @@ const Videos = () => {
             <span className="relative text-white inline-block text-4xl md:text-5xl">
               Shorts / Reels
               <Image
-                src={"/curve.png"}
+                src={"/curve.webp"}
                 className="absolute top-full left-0 w-full mt-1"
                 alt="Curve"
                 width={300}

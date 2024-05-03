@@ -43,8 +43,7 @@ export const Slider = () => {
         <Image
           alt="after image"
           fill
-          priority
-          src="/after.png"
+          src="/after.webp"
         />
 
         <div
@@ -53,9 +52,8 @@ export const Slider = () => {
         >
           <Image
             fill
-            priority
             alt="before image"
-            src="/before.png"
+            src="/before.webp"
             className="filter object-cover pointer-events-none grayscale-[50%] "
           />
         </div>

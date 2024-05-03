@@ -104,7 +104,7 @@ const DigitalMarketing = () => {
 
         <div className="w-full px-4 lg:w-1/2 md:3/4 flex justify-center items-center">
           <Image
-            src="/digital_marketing_hero.png"
+            src="/digital_marketing_hero.webp"
             alt="digital marketing"
             width={400}
             height={400}
